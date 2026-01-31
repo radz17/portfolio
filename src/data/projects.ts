@@ -1,7 +1,6 @@
 // src/data/projects.ts
 import Mock1 from '../assets/images/mock-1-1400.webp';
 import Mock2 from '../assets/images/mock-2-1400.webp';
-import Mock4 from '../assets/images/mock-4-1400.webp';
 import Mock5 from '../assets/images/mock-5.webp';
 
 import ImageFiller from '../assets/images/Landing/image-filler-1.webp';
