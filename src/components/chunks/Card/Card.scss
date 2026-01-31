@@ -1,0 +1,114 @@
+@import '../../../styles/variables';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: $primary-color;
+  border: none;
+  outline: none;
+  border-radius: 16px;
+  overflow: visible; /* Change from hidden to visible */
+  cursor: pointer;
+  min-height: auto;
+  background: none;
+
+  .image-container {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+  aspect-ratio: 4 / 3; // This alone will maintain consistent sizing
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+  }
+
+  .card-content {
+    padding-top: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: transparent;
+
+    h3 {
+      font-family: $font-family-base;
+      font-size: clamp(1rem, 2vw + 1rem, 2rem);
+      font-weight: $font-weight-semi-bold;
+      font-optical-sizing: auto;
+      line-height: $line-height-h2;
+      letter-spacing: $letter-spacing-h1;
+      text-rendering: optimizeLegibility;
+      color: $primary-color;
+      margin: 0;
+      text-align: left;
+      width: 100%;
+    }
+
+    p {
+      color: $primary-color;
+      font-family: $font-family-base;
+      font-weight: $font-weight-light;
+      letter-spacing: $letter-spacing-h2;
+      font-size: $font-size-base;
+      line-height: $line-height-body;
+      margin: 0.5rem 0 0;
+      max-width: 100%;
+      overflow: visible;
+      padding-bottom: 2rem;
+      text-align: left;
+      width: 100%;
+    }
+  }
+}
+
+.app.dark {
+  .card {
+    color: $background-color;
+ 
+
+    .card-image {
+      filter: brightness(90%);
+    }
+
+    .card-content {
+      h3 {
+        color: $background-color;
+      }
+
+      p {
+        color: lighten($background-color, 20%);
+      }
+    }
+  }
+}
+
+.app.dev-mode {
+  .card {
+    background-color: #00D1FF;
+    color: #2e2e2e;
+    border: none; /* Ensure no border in dev mode */
+    outline: none; /* Ensure no outline in dev mode */
+
+    .card-image {
+      filter: brightness(100%);
+    }
+
+    .card-content {
+      h3 {
+        color: #2e2e2e;
+      }
+
+      p {
+        color: #2e2e2e;
+      }
+    }
+  }
+}

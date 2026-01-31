@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.portfolio {
+  min-height: 100vh;
+  
+  &.light {
+    background-color: $background-color;
+    transition: opacity 0.3s ease-in-out, color 0.2s ease;
+  }
+
+  &.dark {
+    background-color: $primary-color;
+    transition: opacity 0.3s ease-in-out, color 0.2s ease;
+  }
+}

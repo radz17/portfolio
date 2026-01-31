@@ -1,0 +1,162 @@
+@import '../../../styles/variables';
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  overflow: visible;
+  contain: layout;
+  color: $primary-color;
+  gap: 1rem;
+  
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(12, 1fr);
+    padding: 0rem 2rem 0;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0rem 1rem 0;
+  }
+
+  .values-content {
+    margin-top: 15rem;
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 10rem;
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-top: 15rem;
+      margin-bottom: 5rem;
+    }
+    
+    @media (max-height: $breakpoint-tablet-height) { 
+      margin-top: 10rem;
+    }
+  
+    @media (min-width: $breakpoint-desktop) {
+      grid-column: 4 / -1;
+    }
+
+    @media (min-width: $breakpoint-large) {
+      grid-column: 5 / -1;
+    }
+
+    h1 {
+      font-family: $font-family-base;
+      font-size: clamp(1.5rem, 4.5vw + 1rem, 5rem);
+      font-weight: $font-weight-regular;
+      font-optical-sizing: auto;
+      line-height: $line-height-h2;
+      letter-spacing: $letter-spacing-h1;
+      z-index: 2;
+      margin: 0;
+      text-rendering: optimizeLegibility;
+      padding-bottom: 10rem;
+
+      @media (max-width: $breakpoint-tablet) {
+        padding-bottom: 5rem;
+      }
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 10rem 1rem;
+
+      @media (max-width: $breakpoint-tablet) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        gap: 5rem 1rem;
+      }
+
+      .values-item {
+        .sticky-image-container{
+          display: none;
+          padding: 0;
+          margin: 0;
+          height: 15rem;
+          width: 15rem;
+
+
+      img {
+          width: 100%;
+          height: 100%;
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: cover;
+          display: block;
+          margin: 0;
+      }
+    }
+        
+        p {
+          color: $primary-color;
+          font-family: $font-family-base;
+          font-weight: $font-weight-regular;
+          letter-spacing: $letter-spacing-h2;
+          font-size: $font-size-body;
+          line-height: $line-height-body;
+          margin: 0;
+          max-width: 34rem;
+          width: 100%;
+          text-rendering: optimizeLegibility;  
+          
+            @media (max-width: $breakpoint-tablet) {
+       max-width: 34rem;
+      }
+
+
+        }
+      }
+    }
+  }
+}
+
+.app.dark {
+  .values {
+    color: $background-color;
+
+    .values-content {
+      h1 {
+        color: $background-color;
+      }
+
+      .values-grid {
+        .values-item {
+          p {
+            color: $background-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.app.dev-mode {
+  .values {
+    color: #2e2e2e;
+
+    .values-content {
+      background-color: #00D1FF;
+
+      h1 {
+        color: #2e2e2e;
+        
+      }
+
+      .values-grid {
+        .sticky-image-container{
+          display: block;
+        }
+
+        .values-item {
+          background-color: #ff8080;
+          p {
+            color: #2e2e2e;
+          }
+        }
+      }
+    }
+  }
+}

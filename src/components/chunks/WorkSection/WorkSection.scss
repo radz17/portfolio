@@ -1,0 +1,77 @@
+@import '../../../styles/variables';
+
+.work {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  color: $primary-color;
+  gap: 1rem;
+  overflow: visible;
+  contain: layout;
+  caret: none;
+
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(12, 1fr);
+    padding: 0rem 2rem 0;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0rem 1rem 0; 
+    
+  }
+
+  .work-content {
+    margin-top: 15rem;
+    grid-column: 1 / -1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10rem;
+    caret: none;
+    border-radius: 16px;
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-top: 15rem;
+      margin-bottom: 5rem;
+    }
+    
+    @media (max-height: $breakpoint-tablet-height) { 
+      margin-top: 10rem;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      grid-column: 3 / -1;
+    }
+
+    @media (min-width: $breakpoint-large) {
+      grid-column: 3 / -1;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      width: 100%;
+    
+      @media (max-width: $breakpoint-tablet) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+.app.dark {
+  .work {
+    color: $background-color;
+  }
+}
+
+.app.dev-mode {
+  .work {
+    background-color: #f7a4ff;
+    color: #2e2e2e;
+
+    .work-content {
+      background-color: #ffbb00;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+  // C:\Users\kyle_\my-portfolio\src\components\chunks\AboutSection\AboutSection.scss
+  @import '../../../styles/variables';
+
+  .about {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    height: auto;
+    color: $primary-color;
+    gap: 1rem;
+    contain: layout;
+
+    @media (min-width: $breakpoint-desktop) {
+      grid-template-columns: repeat(12, 1fr);
+    
+    }
+    
+
+    .about-content {
+      margin-top: 15rem;
+      margin-bottom: 7.5rem;
+      grid-column: 1 / -1;
+      width: 100%;
+      height: max-content;
+      position: relative;
+      padding: 0;
+
+        @media (max-width: $breakpoint-tablet) {
+          margin-top: 15rem;
+          margin-bottom: 5rem;
+        }
+
+        @media (max-height: $breakpoint-tablet-height) { 
+          margin-top: 10rem;
+        }
+
+      .about-collage {
+        width: 100%;
+        height: 0;
+        padding-bottom: 184.79%;
+        background-size: cover; 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url('../../../assets/images/large-collage-5760-low.webp');
+        contain: strict;
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+          background-image: url('../../../assets/images/med-collage-2880.webp');
+        }
+
+        @media (max-width: 768px) {
+          background-image: url('../../../assets/images/small-collage-1440.webp');
+        }
+      }
+    }
+
+
+  .about-grid-content {
+      margin-top: 12.5rem;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2.5rem;
+
+      @media (min-width: $breakpoint-desktop) { 
+        padding: 0rem 2rem 0;
+      }
+
+      @media (max-width: $breakpoint-tablet) {
+        padding: 0rem 1rem 0; 
+        justify-content: flex-start;
+        margin-top: 7.5rem;
+      }
+
+    .about-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        max-width: fit-content;
+        grid-column: 1 / -1;
+
+        .about-item {
+          width: 20rem;
+      
+          p {
+            color: $primary-color;
+            font-family: $font-family-base;
+            font-weight: $font-weight-regular;
+            letter-spacing: $letter-spacing-h2;
+            font-size: $font-size-body;
+            line-height: $line-height-body;
+            margin: 0;
+            max-width: 32rem;
+            width: 100%;
+            text-rendering: optimizeLegibility;         
+          }
+        }
+      }
+    }
+  }
+
+  .app.dark {
+    .about {
+      color: $background-color;
+
+      .about-content {
+        .about-grid {
+          .about-item {
+            p {
+              color: $background-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .app.dev-mode {
+    .about {
+      background-color: #ff80c0;
+
+      .about-content {
+        background-color: #00D1FF;
+      }
+
+      .about-grid {
+        background-color: #ffbb00;
+        .about-item {
+          background-color: #ff8080;
+          p {
+            color: #2e2e2e;
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,217 @@
+@import '../../../styles/variables';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:  1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4rem;
+  z-index: 10;
+  width: 100%;
+  
+    @media (max-width: $breakpoint-tablet) {
+      height:3rem;
+    }
+  .header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    height: 100%;
+    cursor: pointer;
+    caret: none;
+    color: $primary-color;
+
+      width: auto;
+      height: auto;
+    
+    .logo-svg {
+      width: 100px;
+      height: 32px;
+      object-fit: contain;
+      padding: 0;
+      align-items: center;
+    }
+  }
+
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    z-index: 3000;
+    display: block;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      path {
+        stroke: $primary-color;
+        transition: stroke 0.2s ease;
+      }
+    }
+  }
+
+  .mobile-nav {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: $background-color;
+    z-index: 110;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 0;
+    
+    .menu-links {
+      height: fit-content;
+      padding: 0;
+      width: 100%;
+    }
+
+    a {
+      font-family: $font-family-base;
+      font-weight: $font-weight-bold;
+      letter-spacing: $letter-spacing-h2;
+      line-height: $line-height-body;
+      margin: 0;
+      color: $primary-color;
+      font-size: $font-size-h2;
+      display: block;
+      text-decoration: none;
+      opacity: 0.7;
+      cursor: pointer;
+      outline: none;
+      -webkit-user-select: none;
+      user-select: none;
+      text-rendering: optimizeLegibility;
+      padding: 0;
+              padding-top: 0.1rem;
+
+      
+      &.active {
+        opacity: 1;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  
+  @media (max-width: $breakpoint-tablet) {
+    .mobile-nav {
+      width: 100%;
+      display: block;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+      padding: 15rem 1rem 0;
+      z-index: 5000;
+
+      @media (max-height: $breakpoint-tablet-height) { 
+        padding: 10rem 1rem 0;
+      }
+    
+      &.active {
+        display: grid;
+    
+        .menu-links {
+          grid-column: 1 / -1;
+          width: 100%; 
+        }
+      }
+    }
+
+    .hamburger {
+      display: block;
+      z-index: 5001;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    .hamburger {
+      display: none;
+    }
+    .header-logo {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.app.dark {
+  .header {
+
+    .header-logo  {
+      color: $background-color;
+    }
+
+    .hamburger svg path {
+      stroke: $background-color;
+    }
+
+    .mobile-nav {
+      background-color: $primary-color;
+
+      .menu-links {
+    
+        a {
+          color: $background-color;
+          opacity: 0.7;
+
+          &.active {
+            opacity: 1;
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.app.dev-mode {
+  .header {
+    background-color: #00D1FF;
+
+    .header-logo {
+      background: #FF9F1C;
+    }
+
+    .hamburger {
+        background: #FF9F1C;
+    }
+
+    .mobile-nav {
+      background-color: #FF9F1C;
+
+      .menu-links {
+        background-color: #00D1FF;
+
+        a {
+          color: #2e2e2e;
+          opacity: 0.7;
+
+          &.active {
+            opacity: 1;
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

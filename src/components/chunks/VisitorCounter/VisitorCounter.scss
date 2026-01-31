@@ -1,0 +1,90 @@
+@import '../../../styles/variables';
+
+.visitor-counter {
+  font-family: $font-family-base;
+  font-weight: $font-weight-semi-bold;
+  letter-spacing: $letter-spacing-h1;
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+  margin: 0;
+  padding-top: 0.1rem;
+  color: $primary-color;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  .visitor-label {
+    opacity: 0.65;
+  }
+
+  .visitor-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .digit-box {
+    background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 33%, #2a2a2a 100%);
+    color: #ffffff;
+    padding: 0.1rem 0.1rem;
+    border-radius: 4px;
+    font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+    font-weight: $font-weight-regular;
+    letter-spacing: $letter-spacing-h1;
+    font-size: $font-size-small;
+    line-height: $line-height-body;
+    display: inline-block;
+    min-width: 1.2rem;
+    text-align: center;
+    opacity: 0.8;
+    box-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 2px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .digit-comma {
+    color: currentColor;
+    opacity: 0.6;
+    padding: 0 0.125rem;
+    font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+  }
+
+  &.light {
+    color: $primary-color;
+    
+    .visitor-label {
+      color: $primary-color;
+    }
+  }
+
+  &.dark {
+    color: $background-color;
+    
+    .visitor-label {
+      color: $background-color;
+    }
+
+    .digit-box {
+      background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 33%, #f0f0f0 100%);
+      color: #1a1a1a;
+      box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &.dev-mode {
+    color: #2e2e2e;
+    background-color: #FF9F1C;
+    
+    .visitor-label {
+      color: #2e2e2e;
+    }
+  }
+}
