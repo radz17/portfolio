@@ -1,6 +1,7 @@
 {
-  "name": "Kyle Radcliffe — Designer",
+  "name": "Kyle Radcliffe - UX Designer",
   "short_name": "Kyle Radcliffe",
+  "description": "UX Designer Portfolio - Enterprise Dashboards, E-Commerce, AI Applications",
   "icons": [
     {
       "src": "/blk-dot-192x192.png",
@@ -13,7 +14,8 @@
       "type": "image/png"
     }
   ],
+  "start_url": "/",
+  "display": "standalone",
   "theme_color": "#F9FAFB",
-  "background_color": "#F9FAFB",
-  "display": "standalone"
+  "background_color": "#ffffff"
 }
