@@ -7,7 +7,7 @@
   font-size: $font-size-body;
   line-height: $line-height-body;
   margin: 0;
-  padding-top: 0.1rem;
+  padding-top: 0;
   color: $primary-color;
   display: flex;
   align-items: center;
@@ -20,13 +20,13 @@
   .visitor-count {
     display: inline-flex;
     align-items: center;
-    gap: 0.2rem;
+    gap: 0.15rem;
   }
 
   .digit-box {
     background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 33%, #2a2a2a 100%);
     color: #ffffff;
-    padding: 0.1rem 0.1rem;
+    padding: 0.05rem 0.05rem;
     border-radius: 4px;
     font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
     font-weight: $font-weight-regular;

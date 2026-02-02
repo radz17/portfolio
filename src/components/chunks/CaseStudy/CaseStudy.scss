@@ -158,7 +158,37 @@
       }
     }
 
-
+    .image-block {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  margin: $spacing-lg 0;
+  
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+  
+  // Video styles
+  .case-study-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image-caption {
+    margin-top: $spacing-sm;
+    font-size: 0.875rem;
+    color: $secondary-color;
+    text-align: center;
+    font-style: italic;
+  }
+}
     
     // Context Section
     .case-study-context {

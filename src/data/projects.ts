@@ -173,16 +173,16 @@ export const projects: Project[] = [
   {
     id: 'themeforge',
     title: 'ThemeForge',
-    subtitle: 'AI-Powered RGB Keyboard Theme Platform',
-    description: 'First-to-market AI theme generator for mechanical keyboards, launched in 7 days from concept to production with 20+ concurrent users within 24 hours.',
+    subtitle: 'RGB Keyboard Theme Platform',
+    description: 'First-to-market AI theme generator for mechanical keyboards, launched in 14 days from concept to production with 100/100 Lighthouse performance score.',
     imageUrl: ThemeForgeHero,
     caseStudy: {
-      impact: 'Captured a zero-competitor market gap serving 900,000+ RGB keyboard enthusiasts by launching the first AI-powered theme visualization platform in 7 days—achieving 20+ concurrent users within 24 hours of launch.',
+      impact: 'Captured a zero-competitor market gap serving millions of mechanical keyboard enthusiasts by launching the first RGB theme visualisation generator platform in 14 days.',
       
       heroImages: [ThemeForgeHero],
       images: [ThemeForgeHero],
       
-      duration: '7 days (concept to launch)',
+      duration: '14 days (concept to launch)',
       date: 'January 2026',
       role: [
         'Product Strategy & Market Research',
@@ -190,7 +190,7 @@ export const projects: Project[] = [
         'Full-Stack Development',
         'Business Operations & Legal Compliance'
       ],
-      team: 'Solo founder (Apphouse Pty Ltd)',
+      team: 'Solo',
       tools: [
         'Next.js 14',
         'TypeScript',

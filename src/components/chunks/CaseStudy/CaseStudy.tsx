@@ -121,6 +121,13 @@ interface CaseStudyProps {
   onBack: () => void;
 }
 
+// Helper function to detect if a file is a video
+const isVideo = (filePath: string): boolean => {
+  return filePath.endsWith('.mp4') || 
+         filePath.endsWith('.webm') || 
+         filePath.endsWith('.mov');
+};
+
 const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
   return (
     <section className="case-study">
@@ -207,7 +214,20 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
             )}
             {project.caseStudy.problemImage && (
               <div className="image-block">
-                <img src={project.caseStudy.problemImage} alt="Problem visualization" loading="lazy" />
+                {isVideo(project.caseStudy.problemImage) ? (
+                  <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="case-study-video"
+                  >
+                    <source src={project.caseStudy.problemImage} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img src={project.caseStudy.problemImage} alt="Problem visualization" loading="lazy" />
+                )}
               </div>
             )}
           </div>
@@ -223,11 +243,47 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
             {project.caseStudy.solution.content && (
               <p className="section-text">{project.caseStudy.solution.content}</p>
             )}
+            
+            {/* Main solution image/video */}
             {project.caseStudy.solutionImage && (
               <div className="image-block">
-                <img src={project.caseStudy.solutionImage} alt="Solution visualization" loading="lazy" />
+                {isVideo(project.caseStudy.solutionImage) ? (
+                  <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="case-study-video"
+                  >
+                    <source src={project.caseStudy.solutionImage} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img src={project.caseStudy.solutionImage} alt="Solution visualization" loading="lazy" />
+                )}
               </div>
             )}
+
+            {/* Additional solution images/videos array */}
+            {project.caseStudy.solution.images && 
+              project.caseStudy.solution.images.map((media, index) => (
+                <div key={index} className="image-block">
+                  {isVideo(media) ? (
+                    <video 
+                      autoPlay 
+                      loop 
+                      muted 
+                      playsInline
+                      className="case-study-video"
+                    >
+                      <source src={media} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <img src={media} alt={`Solution ${index + 1}`} loading="lazy" />
+                  )}
+                </div>
+              ))}
           </div>
         )}
 
@@ -254,7 +310,13 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
               <>
                 {project.caseStudy.researchWork.image1 && (
                   <div className="image-block">
-                    <img src={project.caseStudy.researchWork.image1} alt="Research work" loading="lazy" />
+                    {isVideo(project.caseStudy.researchWork.image1) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.researchWork.image1} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.researchWork.image1} alt="Research work" loading="lazy" />
+                    )}
                     {project.caseStudy.researchWork.caption1 && (
                       <p className="image-caption">{project.caseStudy.researchWork.caption1}</p>
                     )}
@@ -262,7 +324,13 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
                 )}
                 {project.caseStudy.researchWork.image2 && (
                   <div className="image-block">
-                    <img src={project.caseStudy.researchWork.image2} alt="Research work" loading="lazy" />
+                    {isVideo(project.caseStudy.researchWork.image2) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.researchWork.image2} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.researchWork.image2} alt="Research work" loading="lazy" />
+                    )}
                     {project.caseStudy.researchWork.caption2 && (
                       <p className="image-caption">{project.caseStudy.researchWork.caption2}</p>
                     )}
@@ -286,7 +354,13 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
               <>
                 {project.caseStudy.defineWork.image1 && (
                   <div className="image-block">
-                    <img src={project.caseStudy.defineWork.image1} alt="Define work" loading="lazy" />
+                    {isVideo(project.caseStudy.defineWork.image1) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.defineWork.image1} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.defineWork.image1} alt="Define work" loading="lazy" />
+                    )}
                     {project.caseStudy.defineWork.caption1 && (
                       <p className="image-caption">{project.caseStudy.defineWork.caption1}</p>
                     )}
@@ -294,7 +368,13 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
                 )}
                 {project.caseStudy.defineWork.image2 && (
                   <div className="image-block">
-                    <img src={project.caseStudy.defineWork.image2} alt="Define work" loading="lazy" />
+                    {isVideo(project.caseStudy.defineWork.image2) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.defineWork.image2} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.defineWork.image2} alt="Define work" loading="lazy" />
+                    )}
                     {project.caseStudy.defineWork.caption2 && (
                       <p className="image-caption">{project.caseStudy.defineWork.caption2}</p>
                     )}
@@ -348,7 +428,13 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
                 <p className="section-text">{project.caseStudy.designIteration.concept.content}</p>
                 {project.caseStudy.designIteration.concept.image && (
                   <div className="image-block">
-                    <img src={project.caseStudy.designIteration.concept.image} alt="Initial concept" loading="lazy" />
+                    {isVideo(project.caseStudy.designIteration.concept.image) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.designIteration.concept.image} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.designIteration.concept.image} alt="Initial concept" loading="lazy" />
+                    )}
                     {project.caseStudy.designIteration.concept.caption && (
                       <p className="image-caption">{project.caseStudy.designIteration.concept.caption}</p>
                     )}
@@ -365,7 +451,13 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
 
                 {project.caseStudy.designIteration.prototype.beforeImage && (
                   <div className="image-block">
-                    <img src={project.caseStudy.designIteration.prototype.beforeImage} alt="Initial prototype" loading="lazy" />
+                    {isVideo(project.caseStudy.designIteration.prototype.beforeImage) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.designIteration.prototype.beforeImage} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.designIteration.prototype.beforeImage} alt="Initial prototype" loading="lazy" />
+                    )}
                     {project.caseStudy.designIteration.prototype.beforeCaption && (
                       <p className="image-caption">{project.caseStudy.designIteration.prototype.beforeCaption}</p>
                     )}
@@ -374,7 +466,13 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
 
                 {project.caseStudy.designIteration.prototype.afterImage && (
                   <div className="image-block">
-                    <img src={project.caseStudy.designIteration.prototype.afterImage} alt="Refined prototype" loading="lazy" />
+                    {isVideo(project.caseStudy.designIteration.prototype.afterImage) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.designIteration.prototype.afterImage} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.designIteration.prototype.afterImage} alt="Refined prototype" loading="lazy" />
+                    )}
                     {project.caseStudy.designIteration.prototype.afterCaption && (
                       <p className="image-caption">{project.caseStudy.designIteration.prototype.afterCaption}</p>
                     )}
@@ -390,7 +488,13 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
                 <p className="section-text">{project.caseStudy.designIteration.abTesting.content}</p>
                 {project.caseStudy.designIteration.abTesting.image && (
                   <div className="image-block">
-                    <img src={project.caseStudy.designIteration.abTesting.image} alt="A/B testing results" loading="lazy" />
+                    {isVideo(project.caseStudy.designIteration.abTesting.image) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.designIteration.abTesting.image} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.designIteration.abTesting.image} alt="A/B testing results" loading="lazy" />
+                    )}
                     {project.caseStudy.designIteration.abTesting.caption && (
                       <p className="image-caption">{project.caseStudy.designIteration.abTesting.caption}</p>
                     )}
@@ -408,7 +512,13 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
                 {project.caseStudy.designIteration.finalSolution.screens &&
                   project.caseStudy.designIteration.finalSolution.screens.slice(0, 4).map((screen, index) => (
                     <div key={index} className="image-block">
-                      <img src={screen} alt={`Final screen ${index + 1}`} loading="lazy" />
+                      {isVideo(screen) ? (
+                        <video autoPlay loop muted playsInline className="case-study-video">
+                          <source src={screen} type="video/mp4" />
+                        </video>
+                      ) : (
+                        <img src={screen} alt={`Final screen ${index + 1}`} loading="lazy" />
+                      )}
                       {project.caseStudy.designIteration?.finalSolution.captions?.[index] && (
                         <p className="image-caption">
                           {project.caseStudy.designIteration.finalSolution.captions[index]}
