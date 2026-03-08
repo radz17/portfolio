@@ -18,17 +18,14 @@ const App: React.FC = () => {
   const resetCaseStudy = () => {
     setSelectedCaseStudy(null);
     
-    // Wait for Portfolio component to render before scrolling
+    // Defer to allow Portfolio to re-render before the DOM element exists
     setTimeout(() => {
       const workSection = document.getElementById('work');
       if (workSection) {
         const y = workSection.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({ top: y, behavior: 'smooth' });
-        console.log('Scrolled to work section, y:', y);
-      } else {
-        console.warn('Work section not found');
       }
-    },);
+    });
   };
 
   return (

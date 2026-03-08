@@ -6,11 +6,7 @@ const AboutSection: React.FC = () => {
   return (
     <section id="about" className="about section-content">
       <div className="about-content">
-        <div
-          className="about-collage"
-          role="img"
-          aria-label="Project Collage"
-        ></div>
+        <div className="about-collage"></div>
         <div className="about-grid-content">
           <div className="about-grid">
           <div className="about-item">

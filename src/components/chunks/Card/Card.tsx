@@ -44,8 +44,6 @@ const Card: React.FC<CardProps> = ({
           alt={`${title} project preview`}
           className="card-image"
           loading="lazy"
-          animate={{ scale: isHovered ? 1 : 1 }}
-          transition={{ duration: 0.05, ease: 'easeOut' }}
         />
       </motion.div>
       <div className="card-content">

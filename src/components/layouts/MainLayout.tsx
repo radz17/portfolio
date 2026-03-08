@@ -48,7 +48,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ stuffInside, resetCaseStudy, is
           ))}
         </div>
       </div>
-      <Header />
+      <Header onBack={resetCaseStudy} isCaseStudyView={isCaseStudyOpen} />
       
       {!isCaseStudyOpen && <Sidebar resetCaseStudy={resetCaseStudy} />}
       <main>{stuffInside}</main>

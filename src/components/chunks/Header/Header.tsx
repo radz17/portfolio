@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useAnimation } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Hamburger from '../../basics/Hamburger/Hamburger';
 import HeaderLogo from '../../basics/HeaderLogo/HeaderLogo';
 
@@ -13,7 +13,6 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onBack, isCaseStudyView }) => {
   const [isOpen, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('intro');
-  const controls = useAnimation();
 
   const toggleMobileMenu = () => {
     setOpen(!isOpen);
@@ -74,14 +73,10 @@ const Header: React.FC<HeaderProps> = ({ onBack, isCaseStudyView }) => {
     }),
   };
 
-  const handleScroll = async (sectionId: string) => {
+  const handleScroll = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       const y = section.getBoundingClientRect().top + window.scrollY;
-      await controls.start({
-        y: [window.scrollY, y],
-        transition: { duration: 0, ease: [0.25, 0.1, 0.25, 1] },
-      });
       window.scrollTo({ top: y });
       setActiveSection(sectionId);
     }
@@ -90,7 +85,7 @@ const Header: React.FC<HeaderProps> = ({ onBack, isCaseStudyView }) => {
     }
   };
 
-  const handleLogoClick = async () => {
+  const handleLogoClick = () => {
     if (isCaseStudyView && onBack) {
       onBack(); // Exit CaseStudyView
       setTimeout(() => {

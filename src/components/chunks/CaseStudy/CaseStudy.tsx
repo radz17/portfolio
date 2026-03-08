@@ -1,120 +1,7 @@
 // CaseStudy.tsx
 import React from 'react';
 import './CaseStudy.scss';
-
-interface Project {
-  id: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  imageUrl: string;
-  caseStudy: {
-    impact: string;
-    heroImages: string[];
-    duration: string;
-    date: string;
-    role: string[];
-    team: string;
-    tools: string[];
-    problemTitle: string;
-    problem: string;
-    problemImage?: string;
-    solutionImage?: string;
-    research: {
-      content: string;
-      headingTitle: string;
-      keyFindings?: string[];
-      researchMethods?: string[];
-      images?: string[];
-    };
-    researchWork?: {
-      image1?: string;
-      image2?: string;
-      image3?: string;
-      image4?: string;
-      caption1?: string;
-      caption2?: string;
-      caption3?: string;
-      caption4?: string;
-    };
-    define?: {
-      heading: string;
-      content: string[];
-    };
-    defineWork?: {
-      image1?: string;
-      image2?: string;
-      image3?: string;
-      image4?: string;
-      caption1?: string;
-      caption2?: string;
-      caption3?: string;
-      caption4?: string;
-    };
-    insights: {
-      content: string;
-      headingTitle: string;
-      userNeeds?: string[];
-      designPrinciples?: string[];
-      images?: string[];
-    };
-    designIteration?: {
-      concept: {
-        heading: string;
-        content: string;
-        image?: string;
-        caption?: string;
-      };
-      prototype: {
-        heading: string;
-        content: string;
-        beforeImage?: string;
-        afterImage?: string;
-        beforeCaption?: string;
-        afterCaption?: string;
-      };
-      testingWork?: {
-        image1?: string;
-        image2?: string;
-        image3?: string;
-        image4?: string;
-        caption1?: string;
-        caption2?: string;
-        caption3?: string;
-        caption4?: string;
-      };
-      abTesting: {
-        heading: string;
-        content: string;
-        image?: string;
-        caption?: string;
-      };
-      finalSolution: {
-        heading: string;
-        content: string;
-        screens?: string[];
-        captions?: string[];
-      };
-    };
-    solution: {
-      solutionTitle: string;
-      content: string;
-      solutionImage?: string;
-      keyFeatures?: string[];
-      images?: string[];
-    };
-    outcomes: {
-      metrics: string[];
-      qualitative?: string[];
-    };
-    reflection: {
-      heading: string;
-      content: string[];
-    };
-    images: string[];
-    url?: string;
-  };
-}
+import { Project } from '../../../data/projects';
 
 interface CaseStudyProps {
   project: Project;
@@ -205,9 +92,9 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
         {/* Problem Section */}
         {(project.caseStudy.problemTitle || project.caseStudy.problem) && (
           <div className="content-section">
-            <h2 className="section-label">Problem</h2>
+            <p className="section-label">Problem</p>
             {project.caseStudy.problemTitle && (
-              <h1 className="section-heading">{project.caseStudy.problemTitle}</h1>
+              <h3 className="section-heading">{project.caseStudy.problemTitle}</h3>
             )}
             {project.caseStudy.problem && (
               <p className="section-text">{project.caseStudy.problem}</p>
@@ -236,9 +123,9 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
         {/* Solution Section */}
         {(project.caseStudy.solution.solutionTitle || project.caseStudy.solution.content) && (
           <div className="content-section">
-            <h2 className="section-label">Solution</h2>
+            <p className="section-label">Solution</p>
             {project.caseStudy.solution.solutionTitle && (
-              <h1 className="section-heading">{project.caseStudy.solution.solutionTitle}</h1>
+              <h3 className="section-heading">{project.caseStudy.solution.solutionTitle}</h3>
             )}
             {project.caseStudy.solution.content && (
               <p className="section-text">{project.caseStudy.solution.content}</p>
@@ -290,9 +177,9 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
         {/* Research Section */}
         {(project.caseStudy.research.headingTitle || project.caseStudy.research.content) && (
           <div className="content-section">
-            <h2 className="section-label">Research</h2>
+            <p className="section-label">Research</p>
             {project.caseStudy.research.headingTitle && (
-              <h1 className="section-heading">{project.caseStudy.research.headingTitle}</h1>
+              <h3 className="section-heading">{project.caseStudy.research.headingTitle}</h3>
             )}
             {project.caseStudy.research.content && (
               <p className="section-text">{project.caseStudy.research.content}</p>
@@ -336,6 +223,34 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
                     )}
                   </div>
                 )}
+                {project.caseStudy.researchWork.image3 && (
+                  <div className="image-block">
+                    {isVideo(project.caseStudy.researchWork.image3) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.researchWork.image3} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.researchWork.image3} alt="Research work" loading="lazy" />
+                    )}
+                    {project.caseStudy.researchWork.caption3 && (
+                      <p className="image-caption">{project.caseStudy.researchWork.caption3}</p>
+                    )}
+                  </div>
+                )}
+                {project.caseStudy.researchWork.image4 && (
+                  <div className="image-block">
+                    {isVideo(project.caseStudy.researchWork.image4) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.researchWork.image4} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.researchWork.image4} alt="Research work" loading="lazy" />
+                    )}
+                    {project.caseStudy.researchWork.caption4 && (
+                      <p className="image-caption">{project.caseStudy.researchWork.caption4}</p>
+                    )}
+                  </div>
+                )}
               </>
             )}
           </div>
@@ -344,8 +259,8 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
         {/* Define Section */}
         {project.caseStudy.define && (
           <div className="content-section">
-            <h2 className="section-label">Define</h2>
-            <h1 className="section-heading">{project.caseStudy.define.heading}</h1>
+            <p className="section-label">Define</p>
+            <h3 className="section-heading">{project.caseStudy.define.heading}</h3>
             {project.caseStudy.define.content.map((paragraph, index) => (
               paragraph && <p key={index} className="section-text">{paragraph}</p>
             ))}
@@ -380,6 +295,34 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
                     )}
                   </div>
                 )}
+                {project.caseStudy.defineWork.image3 && (
+                  <div className="image-block">
+                    {isVideo(project.caseStudy.defineWork.image3) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.defineWork.image3} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.defineWork.image3} alt="Define work" loading="lazy" />
+                    )}
+                    {project.caseStudy.defineWork.caption3 && (
+                      <p className="image-caption">{project.caseStudy.defineWork.caption3}</p>
+                    )}
+                  </div>
+                )}
+                {project.caseStudy.defineWork.image4 && (
+                  <div className="image-block">
+                    {isVideo(project.caseStudy.defineWork.image4) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.defineWork.image4} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.defineWork.image4} alt="Define work" loading="lazy" />
+                    )}
+                    {project.caseStudy.defineWork.caption4 && (
+                      <p className="image-caption">{project.caseStudy.defineWork.caption4}</p>
+                    )}
+                  </div>
+                )}
               </>
             )}
           </div>
@@ -388,9 +331,9 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
         {/* Insights Section */}
         {(project.caseStudy.insights.headingTitle || project.caseStudy.insights.content) && (
           <div className="content-section">
-            <h2 className="section-label">Insights</h2>
+            <p className="section-label">Insights</p>
             {project.caseStudy.insights.headingTitle && (
-              <h1 className="section-heading">{project.caseStudy.insights.headingTitle}</h1>
+              <h3 className="section-heading">{project.caseStudy.insights.headingTitle}</h3>
             )}
             {project.caseStudy.insights.content && (
               <p className="section-text">{project.caseStudy.insights.content}</p>
@@ -423,8 +366,8 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
             {/* Concept */}
             {project.caseStudy.designIteration.concept.heading && (
               <div className="content-section">
-                <h2 className="section-label">Design & Iteration</h2>
-                <h1 className="section-heading">{project.caseStudy.designIteration.concept.heading}</h1>
+                <p className="section-label">Design & Iteration</p>
+                <h3 className="section-heading">{project.caseStudy.designIteration.concept.heading}</h3>
                 <p className="section-text">{project.caseStudy.designIteration.concept.content}</p>
                 {project.caseStudy.designIteration.concept.image && (
                   <div className="image-block">
@@ -446,7 +389,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
             {/* Prototype */}
             {project.caseStudy.designIteration.prototype.heading && (
               <div className="content-section">
-                <h1 className="section-heading">{project.caseStudy.designIteration.prototype.heading}</h1>
+                <h3 className="section-heading">{project.caseStudy.designIteration.prototype.heading}</h3>
                 <p className="section-text">{project.caseStudy.designIteration.prototype.content}</p>
 
                 {project.caseStudy.designIteration.prototype.beforeImage && (
@@ -481,10 +424,72 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
               </div>
             )}
 
+            {/* Testing Work */}
+            {project.caseStudy.designIteration.testingWork && (
+              <div className="content-section">
+                {project.caseStudy.designIteration.testingWork.image1 && (
+                  <div className="image-block">
+                    {isVideo(project.caseStudy.designIteration.testingWork.image1) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.designIteration.testingWork.image1} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.designIteration.testingWork.image1} alt="Testing work" loading="lazy" />
+                    )}
+                    {project.caseStudy.designIteration.testingWork.caption1 && (
+                      <p className="image-caption">{project.caseStudy.designIteration.testingWork.caption1}</p>
+                    )}
+                  </div>
+                )}
+                {project.caseStudy.designIteration.testingWork.image2 && (
+                  <div className="image-block">
+                    {isVideo(project.caseStudy.designIteration.testingWork.image2) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.designIteration.testingWork.image2} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.designIteration.testingWork.image2} alt="Testing work" loading="lazy" />
+                    )}
+                    {project.caseStudy.designIteration.testingWork.caption2 && (
+                      <p className="image-caption">{project.caseStudy.designIteration.testingWork.caption2}</p>
+                    )}
+                  </div>
+                )}
+                {project.caseStudy.designIteration.testingWork.image3 && (
+                  <div className="image-block">
+                    {isVideo(project.caseStudy.designIteration.testingWork.image3) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.designIteration.testingWork.image3} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.designIteration.testingWork.image3} alt="Testing work" loading="lazy" />
+                    )}
+                    {project.caseStudy.designIteration.testingWork.caption3 && (
+                      <p className="image-caption">{project.caseStudy.designIteration.testingWork.caption3}</p>
+                    )}
+                  </div>
+                )}
+                {project.caseStudy.designIteration.testingWork.image4 && (
+                  <div className="image-block">
+                    {isVideo(project.caseStudy.designIteration.testingWork.image4) ? (
+                      <video autoPlay loop muted playsInline className="case-study-video">
+                        <source src={project.caseStudy.designIteration.testingWork.image4} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={project.caseStudy.designIteration.testingWork.image4} alt="Testing work" loading="lazy" />
+                    )}
+                    {project.caseStudy.designIteration.testingWork.caption4 && (
+                      <p className="image-caption">{project.caseStudy.designIteration.testingWork.caption4}</p>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* A/B Testing */}
             {project.caseStudy.designIteration.abTesting.heading && (
               <div className="content-section">
-                <h1 className="section-heading">{project.caseStudy.designIteration.abTesting.heading}</h1>
+                <h3 className="section-heading">{project.caseStudy.designIteration.abTesting.heading}</h3>
                 <p className="section-text">{project.caseStudy.designIteration.abTesting.content}</p>
                 {project.caseStudy.designIteration.abTesting.image && (
                   <div className="image-block">
@@ -506,7 +511,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
             {/* Final Solution */}
             {project.caseStudy.designIteration.finalSolution.heading && (
               <div className="content-section">
-                <h1 className="section-heading">{project.caseStudy.designIteration.finalSolution.heading}</h1>
+                <h3 className="section-heading">{project.caseStudy.designIteration.finalSolution.heading}</h3>
                 <p className="section-text">{project.caseStudy.designIteration.finalSolution.content}</p>
 
                 {project.caseStudy.designIteration.finalSolution.screens &&
@@ -535,9 +540,9 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
        {/* Reflection Section */}
         {(project.caseStudy.reflection.heading || project.caseStudy.reflection.content.length > 0) && (
           <div className="content-section">
-            <h2 className="section-label">Reflection</h2>
+            <p className="section-label">Reflection</p>
             {project.caseStudy.reflection.heading && (
-              <h1 className="section-heading">{project.caseStudy.reflection.heading}</h1>
+              <h3 className="section-heading">{project.caseStudy.reflection.heading}</h3>
             )}
             {project.caseStudy.reflection.content.map((paragraph, index) => (
               paragraph && <p key={index} className="section-text">{paragraph}</p>

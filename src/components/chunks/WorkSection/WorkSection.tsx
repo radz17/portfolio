@@ -11,10 +11,8 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setSelectedCaseStudy }) => {
   const [hoveredCardId, setHoveredCardId] = useState<string | null>(null);
 
   const handleCardClick = (project: Project) => {
-    if (project?.caseStudy?.images?.every((img) => img)) {
+    if (project?.caseStudy?.problem) {
       setSelectedCaseStudy(project);
-    } else {
-      console.error(`Invalid case study data for project: ${project.title}`);
     }
   };
 

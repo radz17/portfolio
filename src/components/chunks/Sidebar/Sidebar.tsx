@@ -9,11 +9,9 @@ interface SidebarProps {
 
 const SidebarNav: React.FC<SidebarProps> = ({ resetCaseStudy }) => {
   const [activeSection, setActiveSection] = useState('intro');
-  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     const handleScrollPosition = () => {
-      if (isScrolling) return;
       const sections = ['intro', 'work', 'values', 'about', 'contact'];
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
@@ -32,33 +30,27 @@ const SidebarNav: React.FC<SidebarProps> = ({ resetCaseStudy }) => {
           }
         }
       }
-      console.log('Active section:', newActiveSection, 'ScrollY:', scrollY);
       setActiveSection(newActiveSection);
     };
 
     window.addEventListener('scroll', handleScrollPosition);
     handleScrollPosition();
     return () => window.removeEventListener('scroll', handleScrollPosition);
-  }, [isScrolling]);
+  }, []);
 
   const handleScroll = (sectionId: string) => {
-    console.log('Scrolling to:', sectionId);
-    setIsScrolling(true);
     resetCaseStudy(); // Clear case study to show Portfolio view
+    // Defer to allow Portfolio to re-render before the DOM element exists
     setTimeout(() => {
       const section = document.getElementById(sectionId);
       if (section) {
-        const y = section.getBoundingClientRect().top + window.scrollY ; // Offset for header
+        const y = section.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({ top: y, behavior: 'smooth' });
         setActiveSection(sectionId);
-      } else {
-        console.warn(`Section ${sectionId} not found`);
-        if (sectionId === 'intro') {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          setActiveSection(sectionId);
-        }
+      } else if (sectionId === 'intro') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setActiveSection(sectionId);
       }
-      setIsScrolling(false);
     });
   };
 
