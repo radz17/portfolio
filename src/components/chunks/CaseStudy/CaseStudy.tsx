@@ -273,27 +273,6 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
               </div>
             )}
 
-            {/* Testing Work */}
-            {project.caseStudy.designIteration.testingWork && (
-              <div className="content-section">
-                {project.caseStudy.designIteration.testingWork.image1 && (
-                  <div className="image-block">
-                    <img src={project.caseStudy.designIteration.testingWork.image1} alt="Testing work" loading="lazy" />
-                    {project.caseStudy.designIteration.testingWork.caption1 && (
-                      <p className="image-caption">{project.caseStudy.designIteration.testingWork.caption1}</p>
-                    )}
-                  </div>
-                )}
-                {project.caseStudy.designIteration.testingWork.image2 && (
-                  <div className="image-block">
-                    <img src={project.caseStudy.designIteration.testingWork.image2} alt="Testing work" loading="lazy" />
-                    {project.caseStudy.designIteration.testingWork.caption2 && (
-                      <p className="image-caption">{project.caseStudy.designIteration.testingWork.caption2}</p>
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
 
             {/* A/B Testing */}
             {project.caseStudy.designIteration.abTesting.heading && (
