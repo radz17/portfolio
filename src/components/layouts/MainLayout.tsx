@@ -50,7 +50,9 @@ const MainLayout: React.FC<MainLayoutProps> = ({ stuffInside, resetCaseStudy, is
       </div>
       <Header onBack={resetCaseStudy} isCaseStudyView={isCaseStudyOpen} />
       
-      {!isCaseStudyOpen && <Sidebar resetCaseStudy={resetCaseStudy} />}
+      <div style={{ display: isCaseStudyOpen ? 'none' : undefined }}>
+        <Sidebar resetCaseStudy={resetCaseStudy} isCaseStudyOpen={isCaseStudyOpen} />
+      </div>
       <main>{stuffInside}</main>
       
       {/* Visitor Counter - positioned with the other fixed UI elements */}

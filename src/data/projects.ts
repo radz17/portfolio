@@ -50,6 +50,7 @@ export interface Project {
   subtitle: string;
   description: string;
   imageUrl: string;
+  comingSoon?: boolean;
   caseStudy: {
     impact: string;
     heroImages: string[];
@@ -538,6 +539,7 @@ export const projects: Project[] = [
   subtitle: 'Brand Design & E-Commerce',
   description: 'Complete e-commerce brand launched in 6 weeks from competitive research to live Shopify store.',
   imageUrl: AxisHero,
+  comingSoon: true,
   caseStudy: {
     impact: 'Designed and launched a complete e-commerce brand in 6 weeks, bridging the gap between design theory and real-world product launch.',
     

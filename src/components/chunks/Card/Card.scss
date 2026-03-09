@@ -13,12 +13,35 @@
   min-height: auto;
   background: none;
 
+  .card-image-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
   .image-container {
-  width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-  box-sizing: border-box;
-  aspect-ratio: 4 / 3; // This alone will maintain consistent sizing
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-sizing: border-box;
+    aspect-ratio: 4 / 3;
+  }
+
+  .card-coming-soon-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.72);
+    color: rgba(255, 255, 255, 0.85);
+    font-family: $font-family-base;
+    font-size: 0.7rem;
+    font-weight: $font-weight-regular;
+    letter-spacing: $letter-spacing-small;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    pointer-events: none;
+    backdrop-filter: blur(4px);
+    z-index: 1;
   }
 
   .card-image {
@@ -27,6 +50,13 @@
     object-fit: cover;
     object-position: center;
     flex-shrink: 0;
+    transition: filter $transition-base;
+  }
+
+  &.card--coming-soon {
+    .card-image {
+      filter: saturate(0.35) brightness(0.85);
+    }
   }
 
   .card-content {
@@ -72,10 +102,13 @@
 .app.dark {
   .card {
     color: $background-color;
- 
 
     .card-image {
       filter: brightness(90%);
+    }
+
+    &.card--coming-soon .card-image {
+      filter: saturate(0.35) brightness(0.75);
     }
 
     .card-content {

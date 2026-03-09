@@ -9,23 +9,26 @@ const App: React.FC = () => {
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<Project | null>(null);
 
   const handleCaseStudySelect = (project: Project | null) => {
-    setSelectedCaseStudy(project);
     if (project) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
     }
+    setSelectedCaseStudy(project);
   };
 
   const resetCaseStudy = () => {
     setSelectedCaseStudy(null);
-    
-    // Defer to allow Portfolio to re-render before the DOM element exists
+  };
+
+  const handleBack = () => {
+    setSelectedCaseStudy(null);
+    // Exit is instant so portfolio mounts on next tick
     setTimeout(() => {
       const workSection = document.getElementById('work');
       if (workSection) {
         const y = workSection.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        window.scrollTo({ top: y, behavior: 'instant' as ScrollBehavior });
       }
-    });
+    }, 0);
   };
 
   return (
@@ -37,12 +40,12 @@ const App: React.FC = () => {
               key="case-study"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              exit={{ opacity: 0, transition: { duration: 0 } }}
               transition={{ duration: 0.2 }}
             >
               <CaseStudy
                 project={selectedCaseStudy}
-                onBack={resetCaseStudy}
+                onBack={handleBack}
               />
             </motion.div>
           ) : (
@@ -50,7 +53,7 @@ const App: React.FC = () => {
               key="portfolio"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              exit={{ opacity: 0, transition: { duration: 0 } }}
               transition={{ duration: 0.2 }}
             >
               <Portfolio setSelectedCaseStudy={handleCaseStudySelect} />

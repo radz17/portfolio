@@ -5,43 +5,51 @@ import './Sidebar.scss';
 
 interface SidebarProps {
   resetCaseStudy: () => void;
+  isCaseStudyOpen: boolean;
 }
 
-const SidebarNav: React.FC<SidebarProps> = ({ resetCaseStudy }) => {
+const SidebarNav: React.FC<SidebarProps> = ({ resetCaseStudy, isCaseStudyOpen }) => {
   const [activeSection, setActiveSection] = useState('intro');
 
-  useEffect(() => {
-    const handleScrollPosition = () => {
-      const sections = ['intro', 'work', 'values', 'about', 'contact'];
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
+  const detectActiveSection = () => {
+    const sections = ['intro', 'work', 'values', 'about', 'contact'];
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
 
-      let newActiveSection = 'intro';
-      for (const sectionId of sections) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          const { top, bottom } = section.getBoundingClientRect();
-          const sectionTop = top + scrollY;
-          const sectionBottom = bottom + scrollY;
+    let newActiveSection = 'intro';
+    for (const sectionId of sections) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const { top, bottom } = section.getBoundingClientRect();
+        const sectionTop = top + scrollY;
+        const sectionBottom = bottom + scrollY;
 
-          if (scrollY + windowHeight / 2 >= sectionTop && scrollY + windowHeight / 2 < sectionBottom) {
-            newActiveSection = sectionId;
-            break;
-          }
+        if (scrollY + windowHeight / 2 >= sectionTop && scrollY + windowHeight / 2 < sectionBottom) {
+          newActiveSection = sectionId;
+          break;
         }
       }
-      setActiveSection(newActiveSection);
-    };
+    }
+    setActiveSection(newActiveSection);
+  };
 
-    window.addEventListener('scroll', handleScrollPosition);
-    handleScrollPosition();
-    return () => window.removeEventListener('scroll', handleScrollPosition);
+  useEffect(() => {
+    window.addEventListener('scroll', detectActiveSection);
+    detectActiveSection();
+    return () => window.removeEventListener('scroll', detectActiveSection);
   }, []);
 
+  // When returning from a case study, re-detect after the scroll snap settles
+  useEffect(() => {
+    if (!isCaseStudyOpen) {
+      setTimeout(detectActiveSection, 32);
+    }
+  }, [isCaseStudyOpen]);
+
   const handleScroll = (sectionId: string) => {
-    resetCaseStudy(); // Clear case study to show Portfolio view
-    // Defer to allow Portfolio to re-render before the DOM element exists
-    setTimeout(() => {
+    resetCaseStudy();
+
+    const scrollToSection = () => {
       const section = document.getElementById(sectionId);
       if (section) {
         const y = section.getBoundingClientRect().top + window.scrollY;
@@ -51,7 +59,15 @@ const SidebarNav: React.FC<SidebarProps> = ({ resetCaseStudy }) => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         setActiveSection(sectionId);
       }
-    });
+    };
+
+    // If the section is already in the DOM (portfolio visible), scroll immediately.
+    // Otherwise wait for the AnimatePresence exit animation before the portfolio mounts.
+    if (document.getElementById(sectionId) || sectionId === 'intro') {
+      scrollToSection();
+    } else {
+      setTimeout(scrollToSection, 250);
+    }
   };
 
   return (
