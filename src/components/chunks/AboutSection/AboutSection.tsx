@@ -16,7 +16,7 @@ const AboutSection: React.FC = () => {
             <source media="(max-width: 1440px)" srcSet={medCollage} type="image/webp" />
             <img
               src={largeCollage}
-              alt="Photo collage"
+              alt="A collage of personal and work moments"
               loading="lazy"
               width={5760}
               height={10644}
