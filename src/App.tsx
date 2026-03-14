@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import MainLayout from './components/layouts/MainLayout';
 import Portfolio from './components/views/Portfolio';
 import CaseStudy from './components/chunks/CaseStudy/CaseStudy';
@@ -67,6 +68,7 @@ const App: React.FC = () => {
       isCaseStudyOpen={!!selectedCaseStudy}
     />
     <Analytics />
+    <SpeedInsights />
     </>
   );
 };

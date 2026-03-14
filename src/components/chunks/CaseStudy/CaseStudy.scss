@@ -163,7 +163,7 @@
   width: 100%;
   max-width: 100%;
   overflow: hidden;
-  margin: $spacing-lg 0;
+  margin: $spacing-md 0;
   
   img {
     width: 100%;
@@ -173,14 +173,6 @@
     object-fit: contain;
   }
   
-  // Video styles
-  .case-study-video {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
   
   .image-caption {
     margin-top: $spacing-sm;
@@ -200,7 +192,7 @@
       border-top: 1px solid $accent-mid;
       border-bottom: 1px solid $accent-mid;
       margin-top: 0rem;
-      margin-bottom: 10rem;
+      margin-bottom: 7rem;
 
       @media (max-width: $breakpoint-tablet) {
         padding: 1.5rem 0;
@@ -251,7 +243,7 @@
       margin-bottom: 8rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.5rem;
       
 
       @media (max-width: $breakpoint-tablet) {

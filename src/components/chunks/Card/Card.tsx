@@ -23,6 +23,8 @@ const Card: React.FC<CardProps> = ({
   hasAnyHovered,
   comingSoon,
 }) => {
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
   return (
     <motion.button
       className={`card${comingSoon ? ' card--coming-soon' : ''}`}
@@ -32,14 +34,14 @@ const Card: React.FC<CardProps> = ({
       aria-label={`View case study for ${title}${comingSoon ? ' (coming soon)' : ''}`}
       type="button"
       animate={{
-        opacity: hasAnyHovered && !isHovered ? 0.75 : 1,
+        opacity: !isMobile && hasAnyHovered && !isHovered ? 0.75 : 1,
       }}
       transition={{ duration: 0.1 }}
     >
       <div className="card-image-wrapper">
         <motion.div
           className="image-container"
-          animate={{ y: isHovered ? -2 : 0 }}
+          animate={{ y: !isMobile && isHovered ? -2 : 0 }}
           transition={{ duration: 0.1, ease: 'easeOut' }}
         >
           <motion.img

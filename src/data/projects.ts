@@ -7,10 +7,25 @@ import ImageFiller from '../assets/images/Landing/image-filler-1.webp';
 
 //Project 1 - THEMEFORGE
 import ThemeForgeHero from '../assets/images/Themeforge/themeforge-hero.webp';
+import ThemeForgeLand from '../assets/images/Themeforge/theme-landing.webp';
+import ThemeForgeProblem from '../assets/images/Themeforge/theme-problem.webp';
+import ThemeForgeSolution from '../assets/images/Themeforge/theme-solution.webp';
+
+
+
 import TFCompetitors from '../assets/images/mock-5.webp';
 import TFMarketSize from '../assets/images/mock-5.webp';
 import TFReddit from '../assets/images/mock-5.webp';
 import TFWooting from '../assets/images/mock-5.webp';
+
+
+
+
+
+
+
+
+
 
 //Project 2 - TELSTRA (formerly Project 1)
 import TelcoHero from '../assets/images/P1/p1-hero-telco-v2.jpg';
@@ -180,30 +195,30 @@ export const projects: Project[] = [
   description: 'First-to-market AI theme generator launched in 7 days, achieving 100/100 Lighthouse performance score.',
   imageUrl: ThemeForgeHero,
   caseStudy: {
-    impact: 'Launched the first web-based RGB keyboard theme visualizer in 7 days, capturing a zero-competitor market serving 900,000+ mechanical keyboard enthusiasts.',
+    impact: 'Developed and launched an AI-powered RGB keyboard theme generator that visualises themes on an interactive keyboard.',
     
-    heroImages: [ThemeForgeHero],
+    heroImages: [ThemeForgeLand],
     images: [ThemeForgeHero],
     
-    duration: '7 days',
+    duration: '14 days',
     date: 'January 2026',
     role: [
-      'Product Strategy',
+      'Product Research',
       'UX/UI Design',
       'Full-Stack Development',
-      'Business Operations'
+   
     ],
     team: 'Solo',
-    tools: ['Next.js', 'TypeScript', 'Firebase', 'Claude API', 'Vercel', 'Figma'],
+    tools: ['Next.js', 'Firebase', 'Claude API', 'Vercel', 'Figma'],
     
-    problemTitle: 'RGB customization requires hours of manual trial-and-error with zero preview',
-    problem: 'Keyboard enthusiasts spent hours manually entering hex values into hardware with no way to preview results before applying changes. Existing desktop tools (OpenRGB, SignalRGB, Wootility) all lacked visual preview functionality.',
-    problemImage: ThemeForgeHero,
-    solutionImage: ThemeForgeHero,
+    problemTitle: 'RGB theme customisation for mechanical keyboards requires hours of manual trial-and-error',
+    problem: 'Keyboard enthusiasts spent valuable time manually creating themes with little to no direction or way to preview their thought of theme. Existing desktop tools (OpenRGB, SignalRGB, Wootility) all lacked user prompted generatrion.',
+    problemImage: ThemeForgeProblem,
+    solutionImage: ThemeForgeSolution,
     
     solution: {
-      solutionTitle: 'AI-powered generation with live preview—zero installation required',
-      content: 'Users describe their vision in natural language, Claude AI generates a 6-color theme instantly, and the live visualizer shows exactly how it looks before touching hardware. One-click export makes themes ready for Wootility import in under 60 seconds.',
+      solutionTitle: 'AI-powered theme generation with live preview—zero installation required',
+      content: 'Users describe their vision in natural language, Claude AI generates a theme instantly, and the live visualiser shows exactly how it looks before touching hardware.',
       keyFeatures: [],
       images: [ThemeForgeHero]
     },
@@ -320,11 +335,10 @@ export const projects: Project[] = [
     
     outcomes: {
       metrics: [
-        'Launched in 7 days from concept to production',
-        '20+ concurrent users within 24 hours (zero marketing)',
-        'Zero direct competitors in 900K+ market',
-        '50 themes with 100% pattern coverage',
-        '$75 total investment to validated product-market fit'
+        'AI-powered theme generation',
+        '20+ users, zero marketing',
+        '14 days concept to production',
+       
       ],
       qualitative: [
         'First-to-market in AI-powered keyboard themes',
