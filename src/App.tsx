@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 import MainLayout from './components/layouts/MainLayout';
 import Portfolio from './components/views/Portfolio';
 import CaseStudy from './components/chunks/CaseStudy/CaseStudy';
@@ -32,6 +33,7 @@ const App: React.FC = () => {
   };
 
   return (
+    <>
     <MainLayout
       stuffInside={
         <AnimatePresence mode="wait">
@@ -64,6 +66,8 @@ const App: React.FC = () => {
       resetCaseStudy={resetCaseStudy}
       isCaseStudyOpen={!!selectedCaseStudy}
     />
+    <Analytics />
+    </>
   );
 };
 

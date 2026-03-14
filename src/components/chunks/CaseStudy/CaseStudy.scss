@@ -105,11 +105,12 @@
       .hero-info-grid {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 0rem;
+        gap: 2rem;
         margin-bottom: 0rem;
-        
+
         @media (min-width: $breakpoint-desktop) {
           grid-template-columns: 1fr 1fr;
+          gap: 0;
         }
 
         @media (max-width: $breakpoint-tablet) {
