@@ -194,6 +194,7 @@ export const projects: Project[] = [
   subtitle: 'AI-Powered RGB Keyboard Theme Platform',
   description: 'First-to-market AI theme generator launched in 7 days, achieving 100/100 Lighthouse performance score.',
   imageUrl: ThemeForgeHero,
+  comingSoon: true,
   caseStudy: {
     impact: 'Developed and launched an AI-powered RGB keyboard theme generator that visualises themes on an interactive keyboard.',
     
@@ -378,6 +379,7 @@ export const projects: Project[] = [
   subtitle: 'Enterprise Dashboard • B2B Platform',
   description: 'Enterprise dashboard redesign reducing task time by 64% through intelligent automation.',
   imageUrl: TelcoHero,
+  comingSoon: true,
   caseStudy: {
     impact: 'Designed an integrated dashboard that reduced task completion time by 64% for IT managers juggling 8 disconnected tools.',
     
@@ -714,6 +716,7 @@ export const projects: Project[] = [
     subtitle: 'Analytics Platform',
     description: '/* Designed an intuitive data visualisation tool */',
     imageUrl: Mock5,
+    comingSoon: true,
     caseStudy: {
       impact: 'Reduced time-to-insight by 67% through intuitive data visualization and natural language queries.',
       heroImages: [Mock5],

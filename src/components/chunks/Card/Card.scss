@@ -53,11 +53,6 @@
     transition: filter $transition-base;
   }
 
-  &.card--coming-soon {
-    .card-image {
-      filter: saturate(0.35) brightness(0.85);
-    }
-  }
 
   .card-content {
     padding-top: 2rem;
@@ -107,11 +102,7 @@
       filter: brightness(90%);
     }
 
-    &.card--coming-soon .card-image {
-      filter: saturate(0.35) brightness(0.75);
-    }
-
-    .card-content {
+.card-content {
       h3 {
         color: $background-color;
       }
