@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 interface HeaderLogoProps {
@@ -7,15 +7,14 @@ interface HeaderLogoProps {
 
 const HeaderLogo: React.FC<HeaderLogoProps> = ({ onClick }) => {
     const [scrollY, setScrollY] = useState(0);
-    
+
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
             setScrollY(currentScrollY);
         };
-        
+
         handleScroll();
-        
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);

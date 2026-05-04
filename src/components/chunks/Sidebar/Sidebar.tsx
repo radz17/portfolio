@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import './Sidebar.scss';
 
@@ -10,12 +10,12 @@ interface SidebarProps {
 
 const SidebarNav: React.FC<SidebarProps> = ({ resetCaseStudy, isCaseStudyOpen }) => {
   const [activeSection, setActiveSection] = useState('intro');
+  const rafRef = useRef<number | null>(null);
 
   const detectActiveSection = () => {
     const sections = ['intro', 'work', 'values', 'about', 'contact'];
     const scrollY = window.scrollY;
     const windowHeight = window.innerHeight;
-
     let newActiveSection = 'intro';
     for (const sectionId of sections) {
       const section = document.getElementById(sectionId);
@@ -23,7 +23,6 @@ const SidebarNav: React.FC<SidebarProps> = ({ resetCaseStudy, isCaseStudyOpen })
         const { top, bottom } = section.getBoundingClientRect();
         const sectionTop = top + scrollY;
         const sectionBottom = bottom + scrollY;
-
         if (scrollY + windowHeight / 2 >= sectionTop && scrollY + windowHeight / 2 < sectionBottom) {
           newActiveSection = sectionId;
           break;
@@ -34,15 +33,25 @@ const SidebarNav: React.FC<SidebarProps> = ({ resetCaseStudy, isCaseStudyOpen })
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', detectActiveSection);
+    const handleScroll = () => {
+      if (rafRef.current !== null) return;
+      rafRef.current = requestAnimationFrame(() => {
+        detectActiveSection();
+        rafRef.current = null;
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
     detectActiveSection();
-    return () => window.removeEventListener('scroll', detectActiveSection);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
-  // When returning from a case study, re-detect after the scroll snap settles
   useEffect(() => {
     if (!isCaseStudyOpen) {
-      setTimeout(detectActiveSection, 32);
+      requestAnimationFrame(detectActiveSection);
     }
   }, [isCaseStudyOpen]);
 

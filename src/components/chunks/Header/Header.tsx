@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Hamburger from '../../basics/Hamburger/Hamburger';
 import HeaderLogo from '../../basics/HeaderLogo/HeaderLogo';
@@ -13,6 +13,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onBack, isCaseStudyView }) => {
   const [isOpen, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('intro');
+  const rafRef = useRef<number | null>(null);
 
   const toggleMobileMenu = () => {
     setOpen(!isOpen);
@@ -29,19 +30,17 @@ const Header: React.FC<HeaderProps> = ({ onBack, isCaseStudyView }) => {
   }, [isOpen]);
 
   useEffect(() => {
-    const handleScrollPosition = () => {
-      if (isCaseStudyView) return; // Skip scroll handling in CaseStudyView
+    const detectSection = () => {
+      if (isCaseStudyView) return;
       const sections = ['intro', 'work', 'values', 'about', 'contact'];
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
-
       for (const sectionId of sections) {
         const section = document.getElementById(sectionId);
         if (section) {
           const { top, bottom } = section.getBoundingClientRect();
           const sectionTop = top + scrollY;
           const sectionBottom = bottom + scrollY;
-
           if (scrollY + windowHeight / 2 >= sectionTop && scrollY + windowHeight / 2 < sectionBottom) {
             setActiveSection(sectionId);
             break;
@@ -50,9 +49,20 @@ const Header: React.FC<HeaderProps> = ({ onBack, isCaseStudyView }) => {
       }
     };
 
+    const handleScrollPosition = () => {
+      if (rafRef.current !== null) return;
+      rafRef.current = requestAnimationFrame(() => {
+        detectSection();
+        rafRef.current = null;
+      });
+    };
+
     window.addEventListener('scroll', handleScrollPosition);
-    handleScrollPosition();
-    return () => window.removeEventListener('scroll', handleScrollPosition);
+    detectSection();
+    return () => {
+      window.removeEventListener('scroll', handleScrollPosition);
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
   }, [isCaseStudyView]);
 
   const navVariants = {

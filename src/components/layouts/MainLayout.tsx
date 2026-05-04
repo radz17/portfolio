@@ -12,14 +12,14 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ stuffInside, resetCaseStudy, isCaseStudyOpen }) => {
   const [showGrid, setShowGrid] = useState(false);
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState<string>(() => {
+    try { return localStorage.getItem('theme') || 'dark'; } catch { return 'dark'; }
+  });
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1022);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-    document.documentElement.className = `app ${showGrid ? 'dev-mode' : savedTheme}`;
-  }, [showGrid]);
+    document.documentElement.className = `app ${showGrid ? 'dev-mode' : theme}`;
+  }, [theme, showGrid]);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 1022);

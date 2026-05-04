@@ -67,8 +67,8 @@
 
       .signal-outer {
         transform-origin: center;
-        animation: breathe 2s infinite ease-in-out;
         -webkit-animation: breathe 2s infinite ease-in-out;
+        animation: breathe 2s infinite ease-in-out;
       }
 
       .signal-inner {

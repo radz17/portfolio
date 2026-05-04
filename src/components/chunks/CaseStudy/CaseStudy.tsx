@@ -119,213 +119,6 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
           </div>
         )}
 
-        {/* Research Section */}
-        {(project.caseStudy.research.headingTitle || project.caseStudy.research.content) && (
-          <div className="content-section">
-            <p className="section-label">Research</p>
-            {project.caseStudy.research.headingTitle && (
-              <h3 className="section-heading">{project.caseStudy.research.headingTitle}</h3>
-            )}
-            {project.caseStudy.research.content && (
-              <p className="section-text">{project.caseStudy.research.content}</p>
-            )}
-
-            {project.caseStudy.research.keyFindings && (
-              <div className="findings-list">
-                {project.caseStudy.research.keyFindings.map((finding, index) => (
-                  <p key={index} className="finding-item">• {finding}</p>
-                ))}
-              </div>
-            )}
-
-            {project.caseStudy.researchWork && (
-              <>
-                {project.caseStudy.researchWork.image1 && (
-                  <div className="image-block">
-                    <img src={project.caseStudy.researchWork.image1} alt="Research work" loading="lazy" />
-                    {project.caseStudy.researchWork.caption1 && (
-                      <p className="image-caption">{project.caseStudy.researchWork.caption1}</p>
-                    )}
-                  </div>
-                )}
-                {project.caseStudy.researchWork.image2 && (
-                  <div className="image-block">
-                    <img src={project.caseStudy.researchWork.image2} alt="Research work" loading="lazy" />
-                    {project.caseStudy.researchWork.caption2 && (
-                      <p className="image-caption">{project.caseStudy.researchWork.caption2}</p>
-                    )}
-                  </div>
-                )}
-              </>
-            )}
-          </div>
-        )}
-
-        {/* Define Section */}
-        {project.caseStudy.define && (
-          <div className="content-section">
-            <p className="section-label">Define</p>
-            <h3 className="section-heading">{project.caseStudy.define.heading}</h3>
-            {project.caseStudy.define.content.map((paragraph, index) => (
-              paragraph && <p key={index} className="section-text">{paragraph}</p>
-            ))}
-
-            {project.caseStudy.defineWork && (
-              <>
-                {project.caseStudy.defineWork.image1 && (
-                  <div className="image-block">
-                    <img src={project.caseStudy.defineWork.image1} alt="Define work" loading="lazy" />
-                    {project.caseStudy.defineWork.caption1 && (
-                      <p className="image-caption">{project.caseStudy.defineWork.caption1}</p>
-                    )}
-                  </div>
-                )}
-                {project.caseStudy.defineWork.image2 && (
-                  <div className="image-block">
-                    <img src={project.caseStudy.defineWork.image2} alt="Define work" loading="lazy" />
-                    {project.caseStudy.defineWork.caption2 && (
-                      <p className="image-caption">{project.caseStudy.defineWork.caption2}</p>
-                    )}
-                  </div>
-                )}
-              </>
-            )}
-          </div>
-        )}
-
-        {/* Insights Section */}
-        {(project.caseStudy.insights.headingTitle || project.caseStudy.insights.content) && (
-          <div className="content-section">
-            <p className="section-label">Insights</p>
-            {project.caseStudy.insights.headingTitle && (
-              <h3 className="section-heading">{project.caseStudy.insights.headingTitle}</h3>
-            )}
-            {project.caseStudy.insights.content && (
-              <p className="section-text">{project.caseStudy.insights.content}</p>
-            )}
-
-            <div className="insights-grid">
-              {project.caseStudy.insights.userNeeds && (
-                <div className="insights-list">
-                  <p className="list-label">What users needed:</p>
-                  {project.caseStudy.insights.userNeeds.map((need, index) => (
-                    <p key={index} className="insight-item">• {need}</p>
-                  ))}
-                </div>
-              )}
-
-              {project.caseStudy.insights.designPrinciples && (
-                <div className="insights-list">
-                  <p className="list-label">Design principles:</p>
-                  {project.caseStudy.insights.designPrinciples.map((principle, index) => (
-                    <p key={index} className="insight-item">• {principle}</p>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Design & Iteration Section */}
-        {project.caseStudy.designIteration && (
-          <div className="content-section">
-
-            {/* Concept */}
-            {project.caseStudy.designIteration.concept.heading && (
-              <div className="content-section">
-                <p className="section-label">Design & Iteration</p>
-                <h3 className="section-heading">{project.caseStudy.designIteration.concept.heading}</h3>
-                <p className="section-text">{project.caseStudy.designIteration.concept.content}</p>
-                {project.caseStudy.designIteration.concept.image && (
-                  <div className="image-block">
-                    <img src={project.caseStudy.designIteration.concept.image} alt="Initial concept" loading="lazy" />
-                    {project.caseStudy.designIteration.concept.caption && (
-                      <p className="image-caption">{project.caseStudy.designIteration.concept.caption}</p>
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Prototype */}
-            {project.caseStudy.designIteration.prototype.heading && (
-              <div className="content-section">
-                <h3 className="section-heading">{project.caseStudy.designIteration.prototype.heading}</h3>
-                <p className="section-text">{project.caseStudy.designIteration.prototype.content}</p>
-
-                {project.caseStudy.designIteration.prototype.beforeImage && (
-                  <div className="image-block">
-                    <img src={project.caseStudy.designIteration.prototype.beforeImage} alt="Initial prototype" loading="lazy" />
-                    {project.caseStudy.designIteration.prototype.beforeCaption && (
-                      <p className="image-caption">{project.caseStudy.designIteration.prototype.beforeCaption}</p>
-                    )}
-                  </div>
-                )}
-
-                {project.caseStudy.designIteration.prototype.afterImage && (
-                  <div className="image-block">
-                    <img src={project.caseStudy.designIteration.prototype.afterImage} alt="Refined prototype" loading="lazy" />
-                    {project.caseStudy.designIteration.prototype.afterCaption && (
-                      <p className="image-caption">{project.caseStudy.designIteration.prototype.afterCaption}</p>
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
-
-
-            {/* A/B Testing */}
-            {project.caseStudy.designIteration.abTesting.heading && (
-              <div className="content-section">
-                <h3 className="section-heading">{project.caseStudy.designIteration.abTesting.heading}</h3>
-                <p className="section-text">{project.caseStudy.designIteration.abTesting.content}</p>
-                {project.caseStudy.designIteration.abTesting.image && (
-                  <div className="image-block">
-                    <img src={project.caseStudy.designIteration.abTesting.image} alt="A/B testing results" loading="lazy" />
-                    {project.caseStudy.designIteration.abTesting.caption && (
-                      <p className="image-caption">{project.caseStudy.designIteration.abTesting.caption}</p>
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Final Solution */}
-            {project.caseStudy.designIteration.finalSolution.heading && (
-              <div className="content-section">
-                <h3 className="section-heading">{project.caseStudy.designIteration.finalSolution.heading}</h3>
-                <p className="section-text">{project.caseStudy.designIteration.finalSolution.content}</p>
-
-                {project.caseStudy.designIteration.finalSolution.screens &&
-                  project.caseStudy.designIteration.finalSolution.screens.slice(0, 4).map((screen, index) => (
-                    <div key={index} className="image-block">
-                      <img src={screen} alt={`Final screen ${index + 1}`} loading="lazy" />
-                      {project.caseStudy.designIteration?.finalSolution.captions?.[index] && (
-                        <p className="image-caption">
-                          {project.caseStudy.designIteration.finalSolution.captions[index]}
-                        </p>
-                      )}
-                    </div>
-                  ))}
-              </div>
-            )}
-
-          </div>
-        )}
-
-       {/* Reflection Section */}
-        {(project.caseStudy.reflection.heading || project.caseStudy.reflection.content.length > 0) && (
-          <div className="content-section">
-            <p className="section-label">Reflection</p>
-            {project.caseStudy.reflection.heading && (
-              <h3 className="section-heading">{project.caseStudy.reflection.heading}</h3>
-            )}
-            {project.caseStudy.reflection.content.map((paragraph, index) => (
-              paragraph && <p key={index} className="section-text">{paragraph}</p>
-            ))}
-          </div>
-        )}
-
         {/* CTA Buttons */}
         <div className="case-study-cta">
           <button className="cta-button" onClick={onBack}>
@@ -336,10 +129,211 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
               className="cta-button"
               onClick={() => window.open(project.caseStudy.url, '_blank', 'noopener,noreferrer')}
             >
-              View Live Prototype →
+              View Live Project →
             </button>
           )}
         </div>
+
+        {/* WIP blur section — research and beyond */}
+        <div className="case-study-wip">
+          <div className="wip-badge">
+            <span>This case study is still a work in progress</span>
+          </div>
+          <div className="wip-blur-wrapper">
+          <div className="case-study-wip-inner">
+
+            {/* Research Section */}
+            {(project.caseStudy.research.headingTitle || project.caseStudy.research.content) && (
+              <div className="content-section">
+                <p className="section-label">Research</p>
+                {project.caseStudy.research.headingTitle && (
+                  <h3 className="section-heading">{project.caseStudy.research.headingTitle}</h3>
+                )}
+                {project.caseStudy.research.content && (
+                  <p className="section-text">{project.caseStudy.research.content}</p>
+                )}
+                {project.caseStudy.research.keyFindings && (
+                  <div className="findings-list">
+                    {project.caseStudy.research.keyFindings.map((finding, index) => (
+                      <p key={index} className="finding-item">• {finding}</p>
+                    ))}
+                  </div>
+                )}
+                {project.caseStudy.researchWork && (
+                  <>
+                    {project.caseStudy.researchWork.image1 && (
+                      <div className="image-block">
+                        <img src={project.caseStudy.researchWork.image1} alt="Research work" loading="lazy" />
+                        {project.caseStudy.researchWork.caption1 && (
+                          <p className="image-caption">{project.caseStudy.researchWork.caption1}</p>
+                        )}
+                      </div>
+                    )}
+                    {project.caseStudy.researchWork.image2 && (
+                      <div className="image-block">
+                        <img src={project.caseStudy.researchWork.image2} alt="Research work" loading="lazy" />
+                        {project.caseStudy.researchWork.caption2 && (
+                          <p className="image-caption">{project.caseStudy.researchWork.caption2}</p>
+                        )}
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
+            )}
+
+            {/* Define Section */}
+            {project.caseStudy.define && (
+              <div className="content-section">
+                <p className="section-label">Define</p>
+                <h3 className="section-heading">{project.caseStudy.define.heading}</h3>
+                {project.caseStudy.define.content.map((paragraph, index) => (
+                  paragraph && <p key={index} className="section-text">{paragraph}</p>
+                ))}
+                {project.caseStudy.defineWork && (
+                  <>
+                    {project.caseStudy.defineWork.image1 && (
+                      <div className="image-block">
+                        <img src={project.caseStudy.defineWork.image1} alt="Define work" loading="lazy" />
+                        {project.caseStudy.defineWork.caption1 && (
+                          <p className="image-caption">{project.caseStudy.defineWork.caption1}</p>
+                        )}
+                      </div>
+                    )}
+                    {project.caseStudy.defineWork.image2 && (
+                      <div className="image-block">
+                        <img src={project.caseStudy.defineWork.image2} alt="Define work" loading="lazy" />
+                        {project.caseStudy.defineWork.caption2 && (
+                          <p className="image-caption">{project.caseStudy.defineWork.caption2}</p>
+                        )}
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
+            )}
+
+            {/* Insights Section */}
+            {(project.caseStudy.insights.headingTitle || project.caseStudy.insights.content) && (
+              <div className="content-section">
+                <p className="section-label">Insights</p>
+                {project.caseStudy.insights.headingTitle && (
+                  <h3 className="section-heading">{project.caseStudy.insights.headingTitle}</h3>
+                )}
+                {project.caseStudy.insights.content && (
+                  <p className="section-text">{project.caseStudy.insights.content}</p>
+                )}
+                <div className="insights-grid">
+                  {project.caseStudy.insights.userNeeds && (
+                    <div className="insights-list">
+                      <p className="list-label">What users needed:</p>
+                      {project.caseStudy.insights.userNeeds.map((need, index) => (
+                        <p key={index} className="insight-item">• {need}</p>
+                      ))}
+                    </div>
+                  )}
+                  {project.caseStudy.insights.designPrinciples && (
+                    <div className="insights-list">
+                      <p className="list-label">Design principles:</p>
+                      {project.caseStudy.insights.designPrinciples.map((principle, index) => (
+                        <p key={index} className="insight-item">• {principle}</p>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Design & Iteration Section */}
+            {project.caseStudy.designIteration && (
+              <div className="content-section">
+                {project.caseStudy.designIteration.concept.heading && (
+                  <div className="content-section">
+                    <p className="section-label">Design & Iteration</p>
+                    <h3 className="section-heading">{project.caseStudy.designIteration.concept.heading}</h3>
+                    <p className="section-text">{project.caseStudy.designIteration.concept.content}</p>
+                    {project.caseStudy.designIteration.concept.image && (
+                      <div className="image-block">
+                        <img src={project.caseStudy.designIteration.concept.image} alt="Initial concept" loading="lazy" />
+                        {project.caseStudy.designIteration.concept.caption && (
+                          <p className="image-caption">{project.caseStudy.designIteration.concept.caption}</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+                {project.caseStudy.designIteration.prototype.heading && (
+                  <div className="content-section">
+                    <h3 className="section-heading">{project.caseStudy.designIteration.prototype.heading}</h3>
+                    <p className="section-text">{project.caseStudy.designIteration.prototype.content}</p>
+                    {project.caseStudy.designIteration.prototype.beforeImage && (
+                      <div className="image-block">
+                        <img src={project.caseStudy.designIteration.prototype.beforeImage} alt="Initial prototype" loading="lazy" />
+                        {project.caseStudy.designIteration.prototype.beforeCaption && (
+                          <p className="image-caption">{project.caseStudy.designIteration.prototype.beforeCaption}</p>
+                        )}
+                      </div>
+                    )}
+                    {project.caseStudy.designIteration.prototype.afterImage && (
+                      <div className="image-block">
+                        <img src={project.caseStudy.designIteration.prototype.afterImage} alt="Refined prototype" loading="lazy" />
+                        {project.caseStudy.designIteration.prototype.afterCaption && (
+                          <p className="image-caption">{project.caseStudy.designIteration.prototype.afterCaption}</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+                {project.caseStudy.designIteration.abTesting.heading && (
+                  <div className="content-section">
+                    <h3 className="section-heading">{project.caseStudy.designIteration.abTesting.heading}</h3>
+                    <p className="section-text">{project.caseStudy.designIteration.abTesting.content}</p>
+                    {project.caseStudy.designIteration.abTesting.image && (
+                      <div className="image-block">
+                        <img src={project.caseStudy.designIteration.abTesting.image} alt="A/B testing results" loading="lazy" />
+                        {project.caseStudy.designIteration.abTesting.caption && (
+                          <p className="image-caption">{project.caseStudy.designIteration.abTesting.caption}</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+                {project.caseStudy.designIteration.finalSolution.heading && (
+                  <div className="content-section">
+                    <h3 className="section-heading">{project.caseStudy.designIteration.finalSolution.heading}</h3>
+                    <p className="section-text">{project.caseStudy.designIteration.finalSolution.content}</p>
+                    {project.caseStudy.designIteration.finalSolution.screens &&
+                      project.caseStudy.designIteration.finalSolution.screens.slice(0, 4).map((screen, index) => (
+                        <div key={index} className="image-block">
+                          <img src={screen} alt={`Final screen ${index + 1}`} loading="lazy" />
+                          {project.caseStudy.designIteration?.finalSolution.captions?.[index] && (
+                            <p className="image-caption">
+                              {project.caseStudy.designIteration.finalSolution.captions[index]}
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Reflection Section */}
+            {(project.caseStudy.reflection.heading || project.caseStudy.reflection.content.length > 0) && (
+              <div className="content-section">
+                <p className="section-label">Reflection</p>
+                {project.caseStudy.reflection.heading && (
+                  <h3 className="section-heading">{project.caseStudy.reflection.heading}</h3>
+                )}
+                {project.caseStudy.reflection.content.map((paragraph, index) => (
+                  paragraph && <p key={index} className="section-text">{paragraph}</p>
+                ))}
+              </div>
+            )}
+
+          </div>
+          </div>{/* end wip-blur-wrapper */}
+        </div>{/* end case-study-wip */}
       </div>
     </section>
   );

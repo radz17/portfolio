@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import MainLayout from './components/layouts/MainLayout';
 import Portfolio from './components/views/Portfolio';
-import CaseStudy from './components/chunks/CaseStudy/CaseStudy';
 import { Project } from './data/projects';
+
+const CaseStudy = lazy(() => import('./components/chunks/CaseStudy/CaseStudy'));
 
 const App: React.FC = () => {
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<Project | null>(null);
@@ -46,10 +47,12 @@ const App: React.FC = () => {
               exit={{ opacity: 0, transition: { duration: 0 } }}
               transition={{ duration: 0.2 }}
             >
-              <CaseStudy
-                project={selectedCaseStudy}
-                onBack={handleBack}
-              />
+              <Suspense fallback={null}>
+                <CaseStudy
+                  project={selectedCaseStudy}
+                  onBack={handleBack}
+                />
+              </Suspense>
             </motion.div>
           ) : (
             <motion.div

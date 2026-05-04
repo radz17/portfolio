@@ -15,7 +15,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setSelectedCaseStudy }) => {
       <div className="work-content">
         <div className="work-grid">
           {projects.map((project) => {
-            const comingSoon = project.comingSoon || !project?.caseStudy?.problem;
+            const comingSoon = !!project.comingSoon;
             return (
               <Card
                 key={project.id}
