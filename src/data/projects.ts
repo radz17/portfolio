@@ -1,14 +1,10 @@
 // src/data/projects.ts
-import Mock1 from '../assets/images/mock-1-1400.webp';
 import Mock2 from '../assets/images/mock-2-1400.webp';
-import Mock5 from '../assets/images/mock-5.webp';
 
 import ImageFiller from '../assets/images/Landing/image-filler-1.webp';
 
 //Project 1 - THEMEFORGE
-import ThemeForgeThumbnail from '../assets/images/Themeforge/themeforge-thumbnail.webp';
 import ThemeForgeHero from '../assets/images/Themeforge/themeforge-hero.webp';
-import ThemeForgeLand from '../assets/images/Themeforge/theme-landing.webp';
 import ThemeForgeProblem from '../assets/images/Themeforge/theme-problem.webp';
 import ThemeForgeSolution from '../assets/images/Themeforge/theme-solution.webp';
 
@@ -43,7 +39,6 @@ import FinalIsoScreens from '../assets/images/P3/p3-finial-iso-screens.webp';
 // Project 3 - CLUERA
 import ClueraThumbnail from '../assets/images/Cluera/cluera-thumbnail-mock.webp';
 
-import AxisHero from '../assets/images/P3/p3-hero-axis.webp';
 import P3Problem from '../assets/images/p3-problem.webp';
 import P3Solution from '../assets/images/P3/p3-hero-axis.webp';
 import P3AxisBranding from '../assets/images/p3-axis-branding.webp';
