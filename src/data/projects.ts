@@ -188,7 +188,7 @@ export const projects: Project[] = [
     id: 'cluera',
     title: 'Cluera',
     subtitle: 'Etsy Review Intelligence • Micro-SaaS',
-    description: 'First-to-market AI review intelligence platform for Etsy sellers, delivering weekly insights that no existing tool provides.',
+    description: 'Review intelligence platform for Etsy sellers, delivering weekly insights that no existing tool provides.',
     imageUrl: ClueraThumbnail,
     comingSoon: false,
     caseStudy: {
@@ -385,7 +385,7 @@ export const projects: Project[] = [
   id: 'themeforge',
   title: 'ThemeForge',
   subtitle: 'AI-Powered RGB Keyboard Theme Platform',
-  description: 'First-to-market AI theme generator launched in 7 days, achieving 100/100 Lighthouse performance score.',
+  description: 'AI powered mechanical keyboard theme generator launched in 7 days, achieving 100/100 Lighthouse performance score.',
   imageUrl: ThemeForgeHero,
   comingSoon: false,
   caseStudy: {
