@@ -34,14 +34,14 @@ const Card: React.FC<CardProps> = ({
       aria-label={`View case study for ${title}${comingSoon ? ' (coming soon)' : ''}`}
       type="button"
       animate={{
-        opacity: !isMobile && hasAnyHovered && !isHovered ? 0.75 : 1,
+        opacity: !isMobile && hasAnyHovered && !isHovered ? 0.9 : 1,
       }}
       transition={{ duration: 0.1 }}
     >
       <div className="card-image-wrapper">
         <motion.div
           className="image-container"
-          animate={{ y: !isMobile && isHovered ? -2 : 0 }}
+          animate={{ y: !isMobile && isHovered ? -1.5 : 0 }}
           transition={{ duration: 0.1, ease: 'easeOut' }}
         >
           <motion.img

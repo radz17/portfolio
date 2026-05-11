@@ -6,10 +6,10 @@ import Sticky1 from '../../../assets/images/Landing/intro-sticky.webp';
 
 const text = [
   "I'm a designer",
-  "crafting bold",
-  "solutions to shape",
-  "people-first",
-  "experiences",
+  "who builds.",
+  "Concept to",
+  "production",
+  
 ];
 
 const IntroSection: React.FC = () => {
