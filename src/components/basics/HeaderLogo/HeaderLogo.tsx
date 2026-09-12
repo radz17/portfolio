@@ -5,6 +5,9 @@ interface HeaderLogoProps {
     onClick: () => void;
 }
 
+// Toggle back on when the name-to-logo scroll animation is ready to show again.
+const ANIMATE_NAME_TO_LOGO = false;
+
 const HeaderLogo: React.FC<HeaderLogoProps> = ({ onClick }) => {
     const [scrollY, setScrollY] = useState(0);
 
@@ -27,7 +30,9 @@ useEffect(() => {
     }
 }, [scrollY, hasTransitioned]);
 
-const scrollProgress = hasTransitioned ? 1 : Math.min(Math.max(scrollY / 100, 0), 1);
+const scrollProgress = ANIMATE_NAME_TO_LOGO
+    ? (hasTransitioned ? 1 : Math.min(Math.max(scrollY / 100, 0), 1))
+    : 1;
 const nameOpacity = 1 - scrollProgress;
 const initialsOpacity = scrollProgress;
 const logoWidth = 154 - (scrollProgress * 122);

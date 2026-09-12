@@ -10,6 +10,9 @@ interface MainLayoutProps {
   isCaseStudyOpen: boolean;
 }
 
+// Toggle back on when the visitor counter is ready to show again.
+const SHOW_VISITOR_COUNTER = false;
+
 const MainLayout: React.FC<MainLayoutProps> = ({ stuffInside, resetCaseStudy, isCaseStudyOpen }) => {
   const [showGrid, setShowGrid] = useState(false);
   const [theme, setTheme] = useState<string>(() => {
@@ -56,10 +59,12 @@ const MainLayout: React.FC<MainLayoutProps> = ({ stuffInside, resetCaseStudy, is
       <main>{stuffInside}</main>
       
       {/* Visitor Counter - positioned with the other fixed UI elements */}
-      <div className="visitor-counter-wrapper">
-        <VisitorCounter theme={showGrid ? 'dev-mode' : theme} />
-      </div>
-      
+      {SHOW_VISITOR_COUNTER && (
+        <div className="visitor-counter-wrapper">
+          <VisitorCounter theme={showGrid ? 'dev-mode' : theme} />
+        </div>
+      )}
+
       <div className="dev-mode-button">
         <button
           className="grid-toggle"
