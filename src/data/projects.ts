@@ -406,7 +406,7 @@ export const projects: Project[] = [
     tools: ['Next.js', 'Firebase', 'Claude API', 'Vercel', 'Figma'],
     
     problemTitle: 'RGB theme customisation for mechanical keyboards requires hours of manual trial-and-error',
-    problem: 'Keyboard enthusiasts spent valuable time manually creating themes with little to no direction or way to preview their thought of theme. Existing desktop tools (OpenRGB, SignalRGB, Wootility) all lacked user prompted generatrion.',
+    problem: 'Keyboard enthusiasts spent valuable time manually creating themes with little to no direction or way to preview their thought of theme. Existing desktop tools (OpenRGB, SignalRGB, Wootility) all lacked user prompted generation.',
     problemImage: ThemeForgeProblem,
     solutionImage: ThemeForgeSolution,
     
@@ -442,15 +442,15 @@ export const projects: Project[] = [
       image4: TFWooting,
       caption1: '[Competitive Analysis] Matrix comparing OpenRGB, SignalRGB, Aurora, Wootility—highlighting ThemeForge as only web-based solution with live preview',
       caption2: '[Market Sizing] 15M keyboards → 9M RGB (60%) → 900K enthusiasts (10%), plus r/MechanicalKeyboards 2M members',
-      caption3: '[Community Validation] r/MechanicalKeyboards posts showing RGB customization frustrations',
+      caption3: '[Community Validation] r/MechanicalKeyboards posts showing RGB customisation frustrations',
       caption4: '[Launch Timing] Wooting 80HE campaign data—23K keyboards shipped creating built-in audience'
     },
     
     define: {
       heading: 'Speed over scope—ship fast to capture first-mover advantage',
       content: [
-        'Zero competitors meant the window was temporary, so every decision prioritized launch velocity: support one keyboard (Wooting 80HE), ship 50 curated themes, defer user accounts and social features. Domain choice (themeforge.dev vs .gg) unlocked 80-90% market accessibility by signaling "developer tool" rather than "gaming-only."',
-        'Technical stack optimized for days-to-launch: Next.js + TypeScript for type safety, Firebase for instant auth/database, Claude API for AI features in hours. Every choice answered one question: can we ship this week?'
+        'Zero competitors meant the window was temporary, so every decision prioritised launch velocity: support one keyboard (Wooting 80HE), ship 50 curated themes, defer user accounts and social features. Domain choice (themeforge.dev vs .gg) unlocked 80-90% market accessibility by signalling "developer tool" rather than "gaming-only."',
+        'Technical stack optimised for days-to-launch: Next.js + TypeScript for type safety, Firebase for instant auth/database, Claude API for AI features in hours. Every choice answered one question: can we ship this week?'
       ]
     },
     
@@ -458,12 +458,12 @@ export const projects: Project[] = [
       image1: ImageFiller,
       image2: ImageFiller,
       caption1: '[Domain Strategy] Comparison showing .dev wins 80-90% market vs .gg at 40%',
-      caption2: '[Tech Stack] Next.js → Firebase → Claude API → Vercel, optimized for speed-to-market'
+      caption2: '[Tech Stack] Next.js → Firebase → Claude API → Vercel, optimised for speed-to-market'
     },
     
     insights: {
       headingTitle: 'Users wanted bold visuals and iteration control',
-      content: 'Testing revealed users rejected conservative defaults—background gradients went from 15% to 55% opacity after four "more color" requests. The refinement system became critical when users wanted to tweak one aspect without regenerating everything.',
+      content: 'Testing revealed users rejected conservative defaults—background gradients went from 15% to 55% opacity after four "more colour" requests. The refinement system became critical when users wanted to tweak one aspect without regenerating everything.',
       userNeeds: [
         'Visual preview before hardware commitment',
         'Iteration without starting over',
@@ -473,7 +473,7 @@ export const projects: Project[] = [
       designPrinciples: [
         'Speed to value: working theme in under 60 seconds',
         'Iteration over perfection: refine without full regeneration',
-        'Show, don\'t tell: live visualizer demonstrates results',
+        'Show, don\'t tell: live visualiser demonstrates results',
         'Minimal friction: one-click export, zero account requirements'
       ],
       images: []
@@ -502,14 +502,14 @@ export const projects: Project[] = [
         image3: ImageFiller,
         image4: ImageFiller,
         caption1: '[Animation Flow] Before (chaotic pattern) vs After (smooth left-to-right wave)',
-        caption2: '[Color Iterations] 15% → 35% → 55% opacity progression with user feedback quotes',
+        caption2: '[Colour Iterations] 15% → 35% → 55% opacity progression with user feedback quotes',
         caption3: '[Layout Validation] ThemeForge vs Wootility screenshot comparison with alignment grid',
         caption4: '[User Feedback] Discord/Reddit quotes: "still more", "animations meh", "alot better!"'
       },
       
       abTesting: {
         heading: 'Layout testing validated 20/60/20 information architecture',
-        content: 'Three layouts tested: centered with sidebars, full-width with stacked info, and 20/60/20 split. Users wanted keyboard visually dominant (60% width) while maintaining quick access to color codes and instructions.',
+        content: 'Three layouts tested: centred with sidebars, full-width with stacked info, and 20/60/20 split. Users wanted keyboard visually dominant (60% width) while maintaining quick access to colour codes and instructions.',
         image: ImageFiller,
         caption: '[A/B Testing] Three layouts compared—20/60/20 split won with user preference data'
       },
@@ -520,8 +520,8 @@ export const projects: Project[] = [
         screens: [ImageFiller, ImageFiller, ImageFiller, ImageFiller],
         captions: [
           '[Landing Page] Hero with dual CTAs and 4 feature cards',
-          '[Browse Themes] Horizontal carousels for 5 categories with color strip previews',
-          '[Theme Detail] 20/60/20 layout with live keyboard visualizer and color codes',
+          '[Browse Themes] Horizontal carousels for 5 categories with colour strip previews',
+          '[Theme Detail] 20/60/20 layout with live keyboard visualiser and colour codes',
           '[AI Generator] 50/50 split with chat interface and live preview'
         ]
       }
@@ -592,7 +592,7 @@ export const projects: Project[] = [
 
     solution: {
       solutionTitle: 'A dashboard that learns your workflow—zero setup required',
-      content: 'Machine learning observes behavior and auto-optimizes the interface with a simple toggle to personalized workspace. Competitors require 15+ minutes of manual configuration; this takes zero seconds.',
+      content: 'Machine learning observes behaviour and auto-optimises the interface with a simple toggle to personalised workspace. Competitors require 15+ minutes of manual configuration; this takes zero seconds.',
       keyFeatures: [],
       images: [TelcoSolution]
     },
@@ -601,9 +601,9 @@ export const projects: Project[] = [
       headingTitle: 'Competitors offered features, not usability',
       content: 'Optus, Aussie Broadband, and Vodafone all had feature-rich platforms with slow loading, confusing navigation, and 10-15 minutes of manual setup friction. The insight: users didn\'t want more tools—they wanted smarter tools.',
       keyFindings: [
-        'All competitors relied on manual dashboard customization',
+        'All competitors relied on manual dashboard customisation',
         'Service desk consultants spent 40% of workday chasing status updates',
-        'IT managers prioritized proactive alerts over real-time visualizations (3:1 margin)'
+        'IT managers prioritised proactive alerts over real-time visualisations (3:1 margin)'
       ],
       researchMethods: [
         'SWOT analysis on Optus platform',
@@ -628,7 +628,7 @@ export const projects: Project[] = [
     define: {
       heading: 'Three requirements emerged from research',
       content: [
-        'Dashboard needed to eliminate manual configuration entirely—users wanted intelligence, not customization screens. Status visibility had to be immediate without clicking through menus.',
+        'Dashboard needed to eliminate manual configuration entirely—users wanted intelligence, not customisation screens. Status visibility had to be immediate without clicking through menus.',
         'Service desk consultants needed speed over completeness during critical incidents. When network outages occur, every second matters—quick scanning and one-tap actions over comprehensive displays.'
       ]
     },
@@ -645,7 +645,7 @@ export const projects: Project[] = [
     },
     
     insights: {
-      headingTitle: 'Personalization without manual effort was the highest-impact feature',
+      headingTitle: 'Personalisation without manual effort was the highest-impact feature',
       content: 'Kano Model testing with 4 participants identified smart defaults over configuration screens as the key need. Widget-based interface won decisively in testing—users praised "condensed clean interface" and said "simple is best."',
       userNeeds: [
         'Single source of truth for all service data',
@@ -654,7 +654,7 @@ export const projects: Project[] = [
       ],
       designPrinciples: [
         'Speed over completeness during outages',
-        'Zero manual setup—automatic personalization',
+        'Zero manual setup—automatic personalisation',
         'Visual status indicators—awareness without clicking'
       ],
       images: []
@@ -689,19 +689,19 @@ export const projects: Project[] = [
       },
       
       abTesting: {
-        heading: 'A/B testing proved personalization was essential',
-        content: 'Personalized dashboard completed tasks 60% faster and scored 4.6/5 satisfaction vs 3.2/5 for standard overview. Data validated the design decision.',
+        heading: 'A/B testing proved personalisation was essential',
+        content: 'Personalised dashboard completed tasks 60% faster and scored 4.6/5 satisfaction vs 3.2/5 for standard overview. Data validated the design decision.',
         image: ImageFiller,
-        caption: '[A/B Results] Prototype A (personalized) 40% faster, 4.6/5 rating vs Prototype B 3.2/5'
+        caption: '[A/B Results] Prototype A (personalised) 40% faster, 4.6/5 rating vs Prototype B 3.2/5'
       },
       
       finalSolution: {
         heading: 'Self-learning dashboard with zero setup time',
-        content: 'Machine learning observes user behavior and auto-optimizes the interface. Toggle on and the dashboard surfaces most-used tools with proactive notifications—no configuration screens, no training required.',
+        content: 'Machine learning observes user behaviour and auto-optimises the interface. Toggle on and the dashboard surfaces most-used tools with proactive notifications—no configuration screens, no training required.',
         screens: [FinalBrand, FinalSocial, FinalLogo, FinalIsoScreens],
         captions: [
-          '[Final Dashboard] Personalized layout with widget arrangement, status indicators, ML toggle',
-          '[Widget Customization] Intelligent arrangement with usage frequency and automatic reordering',
+          '[Final Dashboard] Personalised layout with widget arrangement, status indicators, ML toggle',
+          '[Widget Customisation] Intelligent arrangement with usage frequency and automatic reordering',
           '[Notification System] Proactive alerts with one-tap actions and escalation options',
           '[Mobile Responsive] Condensed widget layout maintaining full functionality'
         ]
@@ -721,7 +721,7 @@ export const projects: Project[] = [
       heading: 'Early testing saved weeks, data validated decisions',
       content: [
         'Testing concept sketches before building high-fidelity designs prevented wasted effort. Users immediately told me "simple is best"—a signal I couldn\'t have gotten from assumptions alone.',
-        'A/B testing gave stakeholders measurable proof: "Prototype A completed tasks 60% faster" beats opinions every time. The biggest lesson: IT managers wanted at-a-glance status updates, not detailed data visualizations—that distinction shaped the entire widget philosophy.'
+        'A/B testing gave stakeholders measurable proof: "Prototype A completed tasks 60% faster" beats opinions every time. The biggest lesson: IT managers wanted at-a-glance status updates, not detailed data visualisations—that distinction shaped the entire widget philosophy.'
       ]
     },
     
@@ -833,7 +833,7 @@ export const projects: Project[] = [
 
       insights: {
         headingTitle: 'Real-device testing exposed what the simulator hid',
-        content: 'The Xcode simulator rendered everything cleanly. The first build on a real iPhone revealed layout bugs in the calendar, notification interaction differences, and an app icon that simply did not display. Every meaningful iteration came from device testing, not simulator runs. The dot system also went through several rounds — green dots felt like traffic lights rather than streaks, so the final palette landed on white for complete, red for partial, gray for missed, and dark gray for future days.',
+        content: 'The Xcode simulator rendered everything cleanly. The first build on a real iPhone revealed layout bugs in the calendar, notification interaction differences, and an app icon that simply did not display. Every meaningful iteration came from device testing, not simulator runs. The dot system also went through several rounds — green dots felt like traffic lights rather than streaks, so the final palette landed on white for complete, red for partial, grey for missed, and dark grey for future days.',
         userNeeds: [
           'A clear daily signal — did I do my three things or not',
           'Zero friction to mark complete — no app open, no navigation',
@@ -871,7 +871,7 @@ export const projects: Project[] = [
           image2: ImageFiller,
           image3: ImageFiller,
           image4: ImageFiller,
-          caption1: '[Calendar Dot States] Four-state system — white (all 3 complete), red (partial), gray (missed), dark gray (future) — green was tested and rejected for reading like traffic lights',
+          caption1: '[Calendar Dot States] Four-state system — white (all 3 complete), red (partial), grey (missed), dark grey (future) — green was tested and rejected for reading like traffic lights',
           caption2: '[Lock Screen Notification] Interactive notification with three checkbox actions — habits ticked directly without unlocking the phone or opening the app',
           caption3: '[Constraint Modal] Attempted fourth-habit flow — modal surfaces the philosophy, no override, returns user to their existing three',
           caption4: '[Real Device vs Simulator] Side-by-side captures showing layout and icon rendering differences only visible on a physical iPhone'
@@ -917,7 +917,7 @@ export const projects: Project[] = [
         heading: 'Building the constraint into the code was the whole point',
         content: [
           'The temptation throughout this project was to soften the 3-habit cap — add a "premium tier" with more slots, or a settings toggle to override. Every one of those decisions would have been the marketing team beating the product team. Enforcing the limit at the data layer meant the philosophy could not be diluted later. The product is the constraint.',
-          'Learning Swift, SwiftUI, Xcode, and switching from Windows to macOS while shipping a real production app was a longer road than expected. The Apple Developer enrollment alone took two months as an Organization, with D-U-N-S registration, business verification, and multiple rounds of follow-up. Real-device testing exposed what the simulator never would. The biggest lesson: building for a real App Store launch forces production-quality decisions at every step — legal compliance, asset management, privacy positioning — that a portfolio prototype would have skipped entirely.'
+          'Learning Swift, SwiftUI, Xcode, and switching from Windows to macOS while shipping a real production app was a longer road than expected. The Apple Developer enrolment alone took two months as an Organization, with D-U-N-S registration, business verification, and multiple rounds of follow-up. Real-device testing exposed what the simulator never would. The biggest lesson: building for a real App Store launch forces production-quality decisions at every step — legal compliance, asset management, privacy positioning — that a portfolio prototype would have skipped entirely.'
         ]
       },
 
