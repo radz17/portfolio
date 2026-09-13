@@ -10,10 +10,7 @@ import ThemeForgeSolution from '../assets/images/Themeforge/theme-solution.webp'
 
 
 
-import TFCompetitors from '../assets/images/mock-5.webp';
-import TFMarketSize from '../assets/images/mock-5.webp';
-import TFReddit from '../assets/images/mock-5.webp';
-import TFWooting from '../assets/images/mock-5.webp';
+
 
 
 //Project 2 - TELSTRA (formerly Project 1)
@@ -54,7 +51,7 @@ import ZroThumbnail from '../assets/images/ZRO/zro-thumbnail.webp';
 
 // Project - MAINS
 import MainsHero from '../assets/images/Mains/mains-hero.png';
-import MainsOg from '../assets/images/Mains/mains-og.png';
+
 
 
 
