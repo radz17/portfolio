@@ -8,7 +8,27 @@ interface CaseStudyProps {
   onBack: () => void;
 }
 
+const COMPLETE_CASE_STUDY_IDS = ['Telco', 'themeforge', 'cluera', 'mains'];
+
 const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
+  const isComplete = COMPLETE_CASE_STUDY_IDS.includes(project.id);
+
+  const ctaButtons = (
+    <div className="case-study-cta">
+      <button className="cta-button" onClick={onBack}>
+        ← Back to Portfolio
+      </button>
+      {project.caseStudy.url && (
+        <button
+          className="cta-button"
+          onClick={() => window.open(project.caseStudy.url, '_blank', 'noopener,noreferrer')}
+        >
+          View Live Project →
+        </button>
+      )}
+    </div>
+  );
+
   return (
     <section className="case-study">
       <div className="case-study-content">
@@ -119,26 +139,38 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
           </div>
         )}
 
-        {/* CTA Buttons */}
-        <div className="case-study-cta">
-          <button className="cta-button" onClick={onBack}>
-            ← Back to Portfolio
-          </button>
-          {project.caseStudy.url && (
-            <button
-              className="cta-button"
-              onClick={() => window.open(project.caseStudy.url, '_blank', 'noopener,noreferrer')}
-            >
-              View Live Project →
-            </button>
-          )}
-        </div>
-
-        {/* WIP blur section — research and beyond */}
-        <div className="case-study-wip">
-          <div className="wip-badge">
-            <span>This case study is still a work in progress</span>
+        {/* Project Mockup Images */}
+        {project.caseStudy.projectWork && (project.caseStudy.projectWork.image1 || project.caseStudy.projectWork.image2 || project.caseStudy.projectWork.image3) && (
+          <div className="content-section">
+            <p className="section-label">The Product</p>
+            {project.caseStudy.projectWork.image1 && (
+              <div className="image-block">
+                <img src={project.caseStudy.projectWork.image1} alt={`${project.title} mockup`} loading="lazy" />
+              </div>
+            )}
+            {project.caseStudy.projectWork.image2 && (
+              <div className="image-block">
+                <img src={project.caseStudy.projectWork.image2} alt={`${project.title} mockup`} loading="lazy" />
+              </div>
+            )}
+            {project.caseStudy.projectWork.image3 && (
+              <div className="image-block">
+                <img src={project.caseStudy.projectWork.image3} alt={`${project.title} mockup`} loading="lazy" />
+              </div>
+            )}
           </div>
+        )}
+
+        {/* CTA Buttons — only shown here when the rest of the case study is still blurred out */}
+        {!isComplete && ctaButtons}
+
+        {/* Research and beyond — blurred with a WIP badge unless the case study is complete */}
+        <div className={`case-study-wip${isComplete ? ' case-study-wip--complete' : ''}`}>
+          {!isComplete && (
+            <div className="wip-badge">
+              <span>This case study is still a work in progress</span>
+            </div>
+          )}
           <div className="wip-blur-wrapper">
           <div className="case-study-wip-inner">
 
@@ -334,6 +366,9 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
           </div>
           </div>{/* end wip-blur-wrapper */}
         </div>{/* end case-study-wip */}
+
+        {/* CTA Buttons — shown at the end once the full case study is visible */}
+        {isComplete && ctaButtons}
       </div>
     </section>
   );

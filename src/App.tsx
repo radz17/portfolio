@@ -7,6 +7,7 @@ import Portfolio from './components/views/Portfolio';
 import { Project } from './data/projects';
 
 const CaseStudy = lazy(() => import('./components/chunks/CaseStudy/CaseStudy'));
+const ProjectSnapshot = lazy(() => import('./components/chunks/ProjectSnapshot/ProjectSnapshot'));
 
 const App: React.FC = () => {
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<Project | null>(null);
@@ -48,10 +49,17 @@ const App: React.FC = () => {
               transition={{ duration: 0.2 }}
             >
               <Suspense fallback={null}>
-                <CaseStudy
-                  project={selectedCaseStudy}
-                  onBack={handleBack}
-                />
+                {selectedCaseStudy.displayType === 'snapshot' ? (
+                  <ProjectSnapshot
+                    project={selectedCaseStudy}
+                    onBack={handleBack}
+                  />
+                ) : (
+                  <CaseStudy
+                    project={selectedCaseStudy}
+                    onBack={handleBack}
+                  />
+                )}
               </Suspense>
             </motion.div>
           ) : (

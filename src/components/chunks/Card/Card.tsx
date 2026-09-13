@@ -49,6 +49,7 @@ const Card: React.FC<CardProps> = ({
             alt={`${title} project preview`}
             className="card-image"
             loading="lazy"
+            draggable={false}
           />
         </motion.div>
         {comingSoon && (

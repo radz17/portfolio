@@ -52,6 +52,10 @@ import P3DraftBrand from '../assets/images/P3/p3-proto-branding.webp';
 // Project - ZRO
 import ZroThumbnail from '../assets/images/ZRO/zro-thumbnail.webp';
 
+// Project - MAINS
+import MainsHero from '../assets/images/Mains/mains-hero.png';
+import MainsOg from '../assets/images/Mains/mains-og.png';
+
 
 
 
@@ -62,6 +66,13 @@ export interface Project {
   description: string;
   imageUrl: string;
   comingSoon?: boolean;
+  displayType?: 'casestudy' | 'snapshot';
+  snapshot?: {
+    tabletImage: string;
+    phoneImage: string;
+    url?: string;
+    accordionItems: { title: string; content: string; }[];
+  };
   caseStudy: {
     impact: string;
     heroImages: string[];
@@ -181,18 +192,18 @@ export interface Project {
 export const projects: Project[] = [
 
   // ============================================
-  // PROJECT 1: CLUERA
+  // CLUERA (hidden — returning later as senior-level snapshot)
   // ============================================
 
   {
-    id: 'cluera',
+    id: 'cluera-archive',
     title: 'Cluera',
     subtitle: 'Etsy Review Intelligence • Micro-SaaS',
     description: 'Review intelligence platform for Etsy sellers, delivering weekly insights that no existing tool provides.',
     imageUrl: ClueraThumbnail,
     comingSoon: false,
     caseStudy: {
-      impact: 'Designed and launched a full micro-SaaS product from zero — brand, architecture, AI pipeline, and three-tier email report system — in a single intensive build sprint.',
+      impact: 'Designed and launched a micro-SaaS product from zero. Brand, architecture, AI pipeline, and email report system built in one sprint.',
 
       heroImages: [ClueraThumbnail],
       images: [ClueraThumbnail],
@@ -419,12 +430,12 @@ export const projects: Project[] = [
     
     research: {
       headingTitle: 'Zero competitors existed despite massive demand',
-      content: 'Analysis revealed 100% of RGB tools were desktop applications without preview functionality. Reddit\'s 2M+ r/MechanicalKeyboards members actively discussed RGB frustrations, and Wooting\'s 23K+ recent keyboard shipments created immediate demand.',
+      content: 'Every RGB tool on the market was a desktop application with no preview. Reddit\'s r/MechanicalKeyboards (2M+ members) regularly discussed RGB frustrations. Wooting had just shipped 23K keyboards to early adopters.',
       keyFindings: [
-        '100% of competitors lacked web-based preview functionality',
-        '900K addressable market (10% of 9M annual RGB keyboard sales)',
-        '23K+ Wooting 80HE keyboards just shipped to early adopters',
-        'Hours wasted on trial-and-error without visual reference'
+        'No competitor offered web-based preview',
+        '900K addressable enthusiast market',
+        '23K+ Wooting 80HE keyboards just shipped',
+        'Users wasting hours on trial-and-error'
       ],
       researchMethods: [
         'Competitive analysis of 5 major RGB tools',
@@ -436,43 +447,29 @@ export const projects: Project[] = [
     },
     
     researchWork: {
-      image1: TFCompetitors,
-      image2: TFMarketSize,
-      image3: TFReddit,
-      image4: TFWooting,
-      caption1: '[Competitive Analysis] Matrix comparing OpenRGB, SignalRGB, Aurora, Wootility—highlighting ThemeForge as only web-based solution with live preview',
-      caption2: '[Market Sizing] 15M keyboards → 9M RGB (60%) → 900K enthusiasts (10%), plus r/MechanicalKeyboards 2M members',
-      caption3: '[Community Validation] r/MechanicalKeyboards posts showing RGB customisation frustrations',
-      caption4: '[Launch Timing] Wooting 80HE campaign data—23K keyboards shipped creating built-in audience'
+      image1: ImageFiller,
+      image2: ImageFiller,
+      caption1: 'Competitive analysis mapping existing tools against web preview and AI generation',
+      caption2: 'Market sizing: 15M keyboards annually, 9M with RGB, 900K enthusiasts'
     },
     
     define: {
-      heading: 'Speed over scope—ship fast to capture first-mover advantage',
+      heading: 'Speed over scope — ship fast to capture first-mover advantage',
       content: [
-        'Zero competitors meant the window was temporary, so every decision prioritised launch velocity: support one keyboard (Wooting 80HE), ship 50 curated themes, defer user accounts and social features. Domain choice (themeforge.dev vs .gg) unlocked 80-90% market accessibility by signalling "developer tool" rather than "gaming-only."',
-        'Technical stack optimised for days-to-launch: Next.js + TypeScript for type safety, Firebase for instant auth/database, Claude API for AI features in hours. Every choice answered one question: can we ship this week?'
+        'Zero competitors meant the window was temporary. Every decision prioritised launch velocity: one keyboard, 50 curated themes, no user accounts. Can we ship this week?'
       ]
     },
     
-    defineWork: {
-      image1: ImageFiller,
-      image2: ImageFiller,
-      caption1: '[Domain Strategy] Comparison showing .dev wins 80-90% market vs .gg at 40%',
-      caption2: '[Tech Stack] Next.js → Firebase → Claude API → Vercel, optimised for speed-to-market'
-    },
-    
     insights: {
-      headingTitle: 'Users wanted bold visuals and iteration control',
-      content: 'Testing revealed users rejected conservative defaults—background gradients went from 15% to 55% opacity after four "more colour" requests. The refinement system became critical when users wanted to tweak one aspect without regenerating everything.',
+      headingTitle: 'Users wanted bold visuals and control',
+      content: 'Users rejected conservative defaults. Background gradients went from 15% to 55% opacity after repeated requests for more colour. The refinement system became critical for tweaking without regenerating.',
       userNeeds: [
         'Visual preview before hardware commitment',
         'Iteration without starting over',
-        'Bold, high-contrast themes (not conservative defaults)',
-        'Zero-friction browser workflow'
+        'Bold, high-contrast themes (not conservative defaults)'
       ],
       designPrinciples: [
         'Speed to value: working theme in under 60 seconds',
-        'Iteration over perfection: refine without full regeneration',
         'Show, don\'t tell: live visualiser demonstrates results',
         'Minimal friction: one-click export, zero account requirements'
       ],
@@ -482,70 +479,54 @@ export const projects: Project[] = [
     designIteration: {
       concept: {
         heading: 'From gaming aesthetic to professional minimalism',
-        content: 'Initial designs (cosmic gradients, Orbitron 2rem, heavy shadows) felt amateur. Studying Wootility.io inspired a pivot to minimalism: 1.5rem headings, glass morphism, viewport-locked architecture—elevating from "cool tool" to "professional platform."',
+        content: 'Initial designs felt amateur. Cosmic gradients, heavy shadows, flashy gaming vibes. Studying Wootility.io inspired a pivot to minimalism. Went from "cool tool" to "professional platform."',
         image: ImageFiller,
-        caption: '[Design Evolution] Before (flashy gaming aesthetic) vs After (minimal professional interface inspired by Wootility)'
+        caption: 'Design evolution: flashy gaming aesthetic vs minimal professional interface inspired by Wootility'
       },
       
       prototype: {
-        heading: 'Five iterations achieved pixel-perfect keyboard layout',
-        content: 'Wooting\'s 87-key TKL layout requires exact key widths (1u, 1.5u, 2.25u, 6.25u spacebar) that early prototypes missed. Cross-referencing official screenshots and removing CSS animation overrides achieved pixel-perfect accuracy and smooth left-to-right wave timing.',
+        heading: 'Five iterations to pixel-perfect keyboard layout',
+        content: 'Wooting\'s 87-key layout requires exact key widths that early prototypes missed. Cross-referencing official screenshots got it to pixel-perfect accuracy with smooth wave timing.',
         beforeImage: ImageFiller,
         afterImage: ImageFiller,
-        beforeCaption: '[Early Prototype] Missing F-keys, incorrect widths, misaligned navigation (red circles showing errors)',
-        afterCaption: '[Final Layout] Pixel-perfect Wooting 80HE specs with accurate key widths (green checkmarks)'
-      },
-      
-      testingWork: {
-        image1: ImageFiller,
-        image2: ImageFiller,
-        image3: ImageFiller,
-        image4: ImageFiller,
-        caption1: '[Animation Flow] Before (chaotic pattern) vs After (smooth left-to-right wave)',
-        caption2: '[Colour Iterations] 15% → 35% → 55% opacity progression with user feedback quotes',
-        caption3: '[Layout Validation] ThemeForge vs Wootility screenshot comparison with alignment grid',
-        caption4: '[User Feedback] Discord/Reddit quotes: "still more", "animations meh", "alot better!"'
+        beforeCaption: 'Early prototype with missing F-keys and incorrect widths',
+        afterCaption: 'Final layout matching Wooting 80HE specs with accurate key widths'
       },
       
       abTesting: {
-        heading: 'Layout testing validated 20/60/20 information architecture',
-        content: 'Three layouts tested: centred with sidebars, full-width with stacked info, and 20/60/20 split. Users wanted keyboard visually dominant (60% width) while maintaining quick access to colour codes and instructions.',
+        heading: 'Layout testing validated 20/60/20 split',
+        content: 'Three layouts tested: centred with sidebars, full-width stacked, and 20/60/20 split. Users wanted the keyboard visually dominant (60% width) while keeping quick access to colour codes and instructions.',
         image: ImageFiller,
-        caption: '[A/B Testing] Three layouts compared—20/60/20 split won with user preference data'
+        caption: 'Three layouts compared. 20/60/20 split won with user preference data'
       },
       
       finalSolution: {
-        heading: 'Shipped with 50 themes, 9 animations, zero TypeScript errors',
-        content: 'Production build includes 50 curated themes (5 categories × 10 each), 9 Wooting animations, AI generation with conversation context, Firebase auth, and full legal compliance. 3,000+ lines of TypeScript with zero console errors following BEM methodology.',
-        screens: [ImageFiller, ImageFiller, ImageFiller, ImageFiller],
+        heading: 'Shipped in 14 days with zero errors',
+        content: '50 curated themes, 9 keyboard animations, AI generation with live preview, and full legal compliance. Production build with zero console errors.',
+        screens: [ImageFiller, ImageFiller],
         captions: [
-          '[Landing Page] Hero with dual CTAs and 4 feature cards',
-          '[Browse Themes] Horizontal carousels for 5 categories with colour strip previews',
-          '[Theme Detail] 20/60/20 layout with live keyboard visualiser and colour codes',
-          '[AI Generator] 50/50 split with chat interface and live preview'
+          'Theme detail with live keyboard visualiser and colour codes',
+          'AI generator with chat interface and live preview'
         ]
       }
     },
     
     outcomes: {
       metrics: [
-        'AI-powered theme generation',
-        '20+ users, zero marketing',
-        '14 days concept to production',
-       
+        'First to market in AI keyboard themes',
+        '20+ users with zero marketing',
+        '14 days from concept to production',
       ],
       qualitative: [
-        'First-to-market in AI-powered keyboard themes',
-        '0 TypeScript errors, 0 console errors in production',
-        'Professional positioning via minimal design + legal compliance'
+        'Zero TypeScript errors, zero console errors in production',
+        'Professional positioning through minimal design and legal compliance'
       ]
     },
     
     reflection: {
       heading: 'Shipping beats perfecting',
       content: [
-        'Four years of UX education taught design thinking but not entrepreneurial execution: scope decisions under pressure, debugging at 2am, launching with bugs for market validation. Entrepreneurial skills (deciding, problem-solving, finishing) mattered more than coding ability.',
-        'Framing as "experiment #1 of 5 products" enabled faster decisions and higher risk tolerance—acceptable to launch narrow, iterate on feedback, potentially pivot if validation fails. Next time: deploy Firebase rules first, write legal policies before launch, establish success metrics upfront rather than celebrating vague traction.'
+        'This was the first product I actually shipped. UX education taught me how to think about design but not how to scope under pressure, debug at 2am, or launch something that isn\'t perfect yet. The biggest lesson was that finishing matters more than polishing.',
       ]
     },
     
@@ -553,17 +534,12 @@ export const projects: Project[] = [
     nextSteps: '',
     url: 'https://themeforge.dev',
     
-    projectWork: {
-      image1: ImageFiller,
-      image2: ImageFiller,
-      image3: ImageFiller,
-      image4: ImageFiller
-    }
+    projectWork: {}
   }
 },
 
 // ============================================
-// PROJECT 3: TELSTRA CONNECT 
+// TELCO
 // ============================================
 
 {
@@ -592,14 +568,14 @@ export const projects: Project[] = [
 
     solution: {
       solutionTitle: 'A dashboard that learns your workflow—zero setup required',
-      content: 'Machine learning observes behaviour and auto-optimises the interface with a simple toggle to personalised workspace. Competitors require 15+ minutes of manual configuration; this takes zero seconds.',
+      content: 'The system observes how you work and adapts the interface with a simple toggle to a personalised workspace. Competitors require 15+ minutes of manual configuration; this takes zero seconds.',
       keyFeatures: [],
       images: [TelcoSolution]
     },
 
     research: {
       headingTitle: 'Competitors offered features, not usability',
-      content: 'Optus, Aussie Broadband, and Vodafone all had feature-rich platforms with slow loading, confusing navigation, and 10-15 minutes of manual setup friction. The insight: users didn\'t want more tools—they wanted smarter tools.',
+      content: 'Optus, Aussie Broadband, and Vodafone all had feature-rich platforms with slow loading, confusing navigation, and manual setup friction. Users didn\'t want more tools. They wanted smarter tools.',
       keyFindings: [
         'All competitors relied on manual dashboard customisation',
         'Service desk consultants spent 40% of workday chasing status updates',
@@ -619,17 +595,17 @@ export const projects: Project[] = [
       image2: User2,
       image3: CompAnalysis,
       image4: CompSwot,
-      caption1: '[IT Manager Persona] Ryan Quinn: 3+ hours daily switching apps, needs unified dashboard',
-      caption2: '[Service Desk Persona] Toby Matthews: delayed incident response, needs instant service health access',
-      caption3: '[Competitive Analysis] Optus, Aussie Broadband, Vodafone comparison showing manual configuration weakness',
-      caption4: '[SWOT Analysis] Optus platform strengths (feature-rich) vs weaknesses (slow load, confusing nav)'
+      caption1: 'IT Manager persona, Ryan Quinn: 3+ hours daily switching apps',
+      caption2: 'Service Desk persona, Toby Matthews: delayed incident response from chasing updates',
+      caption3: 'Competitive analysis of Optus, Aussie Broadband, and Vodafone',
+      caption4: 'SWOT analysis of Optus platform'
     },
 
     define: {
       heading: 'Three requirements emerged from research',
       content: [
-        'Dashboard needed to eliminate manual configuration entirely—users wanted intelligence, not customisation screens. Status visibility had to be immediate without clicking through menus.',
-        'Service desk consultants needed speed over completeness during critical incidents. When network outages occur, every second matters—quick scanning and one-tap actions over comprehensive displays.'
+        'Dashboard needed to eliminate manual configuration entirely. Users wanted intelligence, not customisation screens. Status visibility had to be immediate without clicking through menus.',
+        'Service desk consultants needed speed over completeness during critical incidents. Quick scanning and one-tap actions over comprehensive displays.'
       ]
     },
 
@@ -638,15 +614,15 @@ export const projects: Project[] = [
       image2: TenXTen,
       image3: Senario1,
       image4: Senario2,
-      caption1: '[Problem Statement] Tool-switching time (3hrs/day) → Support delays → Customer churn',
-      caption2: '[10x10 Ideation] 100 concept thumbnails exploring dashboard layouts and information hierarchy',
-      caption3: '[IT Manager Scenario] Ryan\'s morning: 8 apps, missed alert, delayed response causing escalation',
-      caption4: '[Service Desk Scenario] Toby during outage: frantically switching tools, unable to give accurate ETAs'
+      caption1: 'Problem statement: tool-switching time leading to support delays and churn',
+      caption2: '10x10 ideation: 100 concept thumbnails exploring dashboard layouts',
+      caption3: 'User scenario: 8 apps, missed alert, delayed response',
+      caption4: 'User scenario: switching tools during outage, unable to give accurate ETAs'
     },
     
     insights: {
-      headingTitle: 'Personalisation without manual effort was the highest-impact feature',
-      content: 'Kano Model testing with 4 participants identified smart defaults over configuration screens as the key need. Widget-based interface won decisively in testing—users praised "condensed clean interface" and said "simple is best."',
+      headingTitle: 'Personalisation without manual effort was the key feature',
+      content: 'Kano Model testing with 4 participants identified smart defaults over configuration screens as the key need. Widget-based interface won decisively. Users praised the "condensed clean interface" and said "simple is best."',
       userNeeds: [
         'Single source of truth for all service data',
         'Proactive notifications for critical incidents',
@@ -654,27 +630,27 @@ export const projects: Project[] = [
       ],
       designPrinciples: [
         'Speed over completeness during outages',
-        'Zero manual setup—automatic personalisation',
-        'Visual status indicators—awareness without clicking'
+        'Zero manual setup, automatic personalisation',
+        'Visual status indicators for awareness without clicking'
       ],
       images: []
     },
 
     designIteration: {
       concept: {
-        heading: 'Three concepts tested—users chose simplicity',
-        content: 'Sketched widget-based, card-based, and list-based layouts. All 3 users in early testing preferred the widget approach: "simple is best."',
+        heading: 'Three concepts tested, users chose simplicity',
+        content: 'I sketched three layout concepts and tested them with users. Concept 1: personalised suggestion widgets. Concept 2: real-time performance cards. Concept 3: scrollable drop-down list. All 3 participants preferred the widget approach. As one put it: "simple is best."',
         image: ImageFiller,
-        caption: '[Concept Sketches] Three layouts: (A) widget-based, (B) card-based, (C) list-based—widget won 3/3 votes'
+        caption: 'Low-fidelity concept sketch for Concept 1: personalised widget suggestions with an adaptive optimisation toggle'
       },
       
       prototype: {
         heading: 'First prototype succeeded but missed critical notifications',
-        content: '4 out of 5 participants completed all tasks successfully. But every single one asked: "How do I know if something needs attention?"—I had missed the notification system entirely.',
+        content: 'I built the prototype with a standard dashboard and an optimised dashboard toggled by an adaptive switch. 4 out of 5 participants completed all tasks. But every single one asked: "How do I know if something needs attention?" I had missed the notification system entirely.',
         beforeImage: ImageFiller,
         afterImage: ImageFiller,
-        beforeCaption: '[Initial Prototype] Widget layout missing status indicators and notification system',
-        afterCaption: '[Refined Prototype] Added status indicators (red/yellow/green), notification bell, visual alerts'
+        beforeCaption: 'Standard dashboard with core Telco features and the optimise toggle',
+        afterCaption: 'Optimised dashboard with personalised widgets displaying each user\'s most-used features'
       },
       
       testingWork: {
@@ -682,59 +658,54 @@ export const projects: Project[] = [
         image2: ImageFiller,
         image3: ImageFiller,
         image4: ImageFiller,
-        caption1: '[Usability Testing] Eye-tracking overlay showing gaze patterns on dashboard elements',
-        caption2: '[Task Completion] 4/5 completed all tasks with time-to-completion metrics',
-        caption3: '[Feedback Clusters] "Need status visibility" (5), "Too many clicks" (3), "Great layout" (4)',
-        caption4: '[Iteration Tracking] 3 prototype versions with specific changes based on user feedback'
+        caption1: 'Prototype iterations with task button, notification badges, and active inbox',
+        caption2: 'User testing with 5 participants. 4/5 completed all tasks with positive feedback',
+        caption3: '9 participants across two groups testing Prototype A vs Prototype B',
+        caption4: 'Prototype A results: all three hypotheses validated'
       },
       
       abTesting: {
         heading: 'A/B testing proved personalisation was essential',
-        content: 'Personalised dashboard completed tasks 60% faster and scored 4.6/5 satisfaction vs 3.2/5 for standard overview. Data validated the design decision.',
+        content: 'Prototype A adapts the dashboard to each user based on their usage patterns. Prototype B shows all features on one screen with drill-down navigation. After testing with 9 participants, Prototype A completed tasks 60% faster and scored 4.6/5 satisfaction vs 3.2/5 for Prototype B.',
         image: ImageFiller,
-        caption: '[A/B Results] Prototype A (personalised) 40% faster, 4.6/5 rating vs Prototype B 3.2/5'
+        caption: 'Prototype B: alternative layout showing all features on one screen with drill-down navigation'
       },
       
       finalSolution: {
         heading: 'Self-learning dashboard with zero setup time',
-        content: 'Machine learning observes user behaviour and auto-optimises the interface. Toggle on and the dashboard surfaces most-used tools with proactive notifications—no configuration screens, no training required.',
-        screens: [FinalBrand, FinalSocial, FinalLogo, FinalIsoScreens],
+        content: 'The finalised prototype learns how each user works and adapts the dashboard to suit. One toggle switches between standard and personalised. Proactive notifications were added based on user testing feedback.',
+        screens: [ImageFiller, ImageFiller],
         captions: [
-          '[Final Dashboard] Personalised layout with widget arrangement, status indicators, ML toggle',
-          '[Widget Customisation] Intelligent arrangement with usage frequency and automatic reordering',
-          '[Notification System] Proactive alerts with one-tap actions and escalation options',
-          '[Mobile Responsive] Condensed widget layout maintaining full functionality'
+          'Finalised dashboard with personalised widget layout, status indicators, and adaptive optimisation toggle',
+          'Finalised prototype with notification system, task management, and refined navigation'
         ]
       }
     },
 
     outcomes: {
       metrics: [
-        '64% faster task completion',
-        '5/5 test users completed workflows successfully',
-        'High-fidelity prototype produced'
+        'Reduced task completion time by 64%',
+        '4.6 out of 5 user satisfaction rating',
+        'All test users completed workflows successfully',
       ],
-      qualitative: []
+      qualitative: [
+        'Users preferred zero-setup personalisation over manual customisation',
+        'Notification system identified as critical missing feature during testing',
+        'Widget-based layout won unanimously over card and list alternatives'
+      ]
     },
     
     reflection: {
-      heading: 'Early testing saved weeks, data validated decisions',
+      heading: 'Early testing saved weeks',
       content: [
-        'Testing concept sketches before building high-fidelity designs prevented wasted effort. Users immediately told me "simple is best"—a signal I couldn\'t have gotten from assumptions alone.',
-        'A/B testing gave stakeholders measurable proof: "Prototype A completed tasks 60% faster" beats opinions every time. The biggest lesson: IT managers wanted at-a-glance status updates, not detailed data visualisations—that distinction shaped the entire widget philosophy.'
+        'Testing concept sketches before building high-fidelity designs prevented wasted effort. Users immediately told me "simple is best". A/B testing gave measurable proof that the personalised approach was the right call.',
       ]
     },
     
     learnings: [],
     nextSteps: '',
-    url: 'https://example.com',
     
-    projectWork: {
-      image1: ImageFiller,
-      image2: ImageFiller,
-      image3: ImageFiller,
-      image4: ImageFiller
-    }
+    projectWork: {}
   }
 },
 
@@ -930,6 +901,120 @@ export const projects: Project[] = [
         image2: ImageFiller,
         image3: ImageFiller,
         image4: ImageFiller
+      }
+    }
+  },
+
+  // ============================================
+  // CLUERA — Snapshot format
+  // ============================================
+  {
+    id: 'cluera',
+    title: 'Cluera',
+    subtitle: 'Etsy Review Intelligence · Micro-SaaS',
+    description: 'AI-powered review intelligence for Etsy sellers. Weekly insights delivered to their inbox.',
+    imageUrl: ClueraThumbnail,
+    comingSoon: false,
+    caseStudy: {
+      impact: 'Designed and launched a full micro-SaaS product from zero — brand, architecture, AI pipeline, and three-tier email report system — in a single intensive build sprint.',
+      heroImages: [ClueraThumbnail],
+      images: [],
+      problemImage: ImageFiller,
+      solutionImage: ImageFiller,
+      duration: '7 days',
+      date: 'April 2026',
+      role: [
+        'Product Strategy',
+        'UX/UI Design',
+        'Brand Design',
+        'Full-Stack Development',
+      ],
+      team: 'Solo (AI-assisted development)',
+      tools: ['Next.js', 'Supabase', 'Claude API', 'Stripe', 'Resend', 'Vercel', 'Figma'],
+      problemTitle: 'Etsy sellers had no way to understand what their reviews were telling them',
+      problem: 'Etsy sellers receive reviews every week but have no way to analyse them. Existing platforms focus on SEO and keyword research. Reviews are a side feature at best.',
+      solution: {
+        solutionTitle: 'Weekly AI-generated review intelligence delivered to your inbox',
+        content: 'Cluera connects to an Etsy shop, analyses every review, and delivers a report every Monday morning. No dashboard, no login. Open your inbox and the insight is there.',
+      },
+      research: { headingTitle: '', content: '' },
+      insights: { headingTitle: '', content: '' },
+      outcomes: {
+        metrics: [
+          'Full SaaS product designed and deployed in 7 days',
+          '98.9% gross margin ($0.10/user AI cost vs $9/month revenue)',
+          'First-to-market in automated Etsy review intelligence',
+        ]
+      },
+      reflection: {
+        heading: 'Product thinking matters more than execution speed',
+        content: [
+          'Choosing email over a dashboard, pricing at $9 instead of $19, and making every data point traceable to real API data. These decisions came before any code was written and shaped everything that followed.'
+        ]
+      },
+      learnings: [],
+      url: 'https://cluera.io',
+      projectWork: {
+        image1: ImageFiller,
+        image2: ImageFiller,
+        image3: ImageFiller
+      }
+    }
+  },
+
+  // ============================================
+  // MAINS — Snapshot format
+  // ============================================
+  {
+    id: 'mains',
+    title: 'MAINS',
+    subtitle: 'Infrastructure Connection Design Platform',
+    description: 'Design and quote electrical connections from satellite imagery — no site visit required.',
+    imageUrl: MainsHero,
+    comingSoon: false,
+    caseStudy: {
+      impact: 'Built an infrastructure connection platform from scratch. Map canvas, PDF quoting, voltage drop calculator, and multi-region support across Australia and New Zealand.',
+      heroImages: [MainsHero],
+      images: [],
+      problemImage: ImageFiller,
+      solutionImage: ImageFiller,
+      duration: '4 months',
+      date: 'May–August 2026',
+      role: [
+        'Product Strategy',
+        'UX/UI Design',
+        'Brand Design',
+        'Full-Stack Development',
+      ],
+      team: 'Solo (AI-assisted development)',
+      tools: ['Next.js', 'TypeScript', 'Supabase', 'Google Maps API', 'Tailwind', 'Vercel', 'Figma'],
+      problemTitle: 'Electricians had no modern tooling for connection design',
+      problem: 'ASP Level 2 electricians had no modern tooling for connection design. Manual measurements, spreadsheets, and guesswork. No way to draw routes on satellite imagery or generate quotes without a site visit.',
+      solution: {
+        solutionTitle: 'Draw cable routes on aerial imagery and generate quotes in minutes',
+        content: 'Enter an address, view aerial imagery, draw your connection route with live distance labels, and generate a PDF quote. Per-segment costing with material and labour breakdowns.',
+      },
+      research: { headingTitle: '', content: '' },
+      insights: { headingTitle: '', content: '' },
+      outcomes: {
+        metrics: [
+          'All major phases complete and deployed at getmains.com.au',
+          'Multi-region support — all AU states + NZ, 20+ DNSPs',
+          'Full security audit passed',
+        ]
+      },
+      reflection: {
+        heading: 'Building for a real industry changes everything',
+        content: [
+          'Working with a real electrician partner meant every feature had to hold up on site. The drawing engine and per-segment costing were the features that mattered. Everything else was secondary to getting a quote out the door fast.'
+        ]
+      },
+      learnings: [],
+      url: 'https://getmains.com.au',
+      projectWork: {
+        image1: ImageFiller,
+        image2: ImageFiller,
+        image3: ImageFiller
       }
     }
   }

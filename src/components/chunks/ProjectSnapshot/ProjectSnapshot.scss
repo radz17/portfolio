@@ -1,0 +1,105 @@
+@import '../../../styles/variables';
+
+// Accordion styles — everything else inherits from CaseStudy.scss via .case-study class
+
+.snapshot-accordion {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8rem;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin-bottom: 6rem;
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid $accent-light;
+
+    &:first-child {
+      border-top: 1px solid $accent-light;
+    }
+  }
+
+  .accordion-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: $font-family-base;
+    text-align: left;
+    color: $primary-color;
+
+    .accordion-title {
+      font-size: $font-size-body;
+      font-weight: $font-weight-regular;
+      letter-spacing: $letter-spacing-h2;
+      text-rendering: optimizeLegibility;
+    }
+
+    .accordion-icon {
+      font-size: 1.5rem;
+      font-weight: $font-weight-light;
+      color: $secondary-color;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-left: 1rem;
+      transition: color 0.15s ease;
+    }
+
+    &:hover .accordion-icon {
+      color: $primary-color;
+    }
+  }
+
+  .accordion-body {
+    overflow: hidden;
+
+    p {
+      font-family: $font-family-base;
+      font-size: $font-size-body;
+      font-weight: $font-weight-light;
+      letter-spacing: $letter-spacing-h2;
+      line-height: $line-height-body;
+      color: $secondary-color;
+      padding-bottom: 1.5rem;
+      margin: 0;
+      max-width: 54rem;
+      text-rendering: optimizeLegibility;
+    }
+  }
+}
+
+// Dark theme accordion
+.app.dark {
+  .snapshot-accordion {
+    .accordion-item {
+      border-color: rgba($background-color, 0.15);
+    }
+
+    .accordion-trigger {
+      color: $background-color;
+
+      .accordion-icon {
+        color: rgba($background-color, 0.4);
+      }
+
+      &:hover .accordion-icon {
+        color: $background-color;
+      }
+    }
+
+    .accordion-body p {
+      color: rgba($background-color, 0.8);
+    }
+  }
+}
+
+// Dev mode accordion
+.app.dev-mode {
+  .snapshot-accordion {
+    background-color: #a78bfa;
+  }
+}

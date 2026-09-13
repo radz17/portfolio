@@ -3,6 +3,12 @@ import Card from '../Card/Card';
 import { Project, projects } from '../../../data/projects';
 import './WorkSection.scss';
 
+// Display order — only these projects render, in this sequence
+const DISPLAY_ORDER = ['Telco', 'themeforge', 'cluera', 'mains'];
+const displayProjects = DISPLAY_ORDER
+  .map(id => projects.find(p => p.id === id))
+  .filter((p): p is Project => p !== undefined);
+
 interface WorkSectionProps {
   setSelectedCaseStudy: (project: Project | null) => void;
 }
@@ -14,7 +20,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setSelectedCaseStudy }) => {
     <section id="work" className="work section-content" aria-label="Work portfolio section">
       <div className="work-content">
         <div className="work-grid">
-          {projects.map((project) => {
+          {displayProjects.map((project) => {
             const comingSoon = !!project.comingSoon;
             return (
               <Card

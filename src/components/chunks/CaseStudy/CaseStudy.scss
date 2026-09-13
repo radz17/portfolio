@@ -205,7 +205,7 @@
       @media (max-width: $breakpoint-tablet) {
         padding: 1.5rem 0;
         gap: 1.5rem;
-        margin-bottom: 6;
+        margin-bottom: 6rem;
       }
 
       .context-grid {
@@ -477,6 +477,27 @@
     filter: blur(6px);
     opacity: 0.55;
     transform: translateZ(0);
+  }
+
+  &.case-study-wip--complete {
+    margin-top: 0;
+    pointer-events: auto;
+    -webkit-user-select: auto;
+    user-select: auto;
+
+    .wip-blur-wrapper {
+      max-height: none;
+      overflow: visible;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    .case-study-wip-inner {
+      filter: none;
+      opacity: 1;
+    }
   }
 }
 
