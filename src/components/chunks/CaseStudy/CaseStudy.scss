@@ -165,6 +165,16 @@
           margin-bottom: 1rem;
         }
       }
+
+      .case-study-hero-video {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 6px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid rgba($primary-color, 0.1);
+      }
     }
 
     .image-block {
@@ -307,8 +317,9 @@
           width: 100%;
           height: auto;
           object-fit: cover;
-          border-radius: 4px;
+          border-radius: 6px;
           margin-bottom: 1rem;
+          border: 1px solid rgba($primary-color, 0.1);
         }
 
         .image-caption {
@@ -533,6 +544,10 @@
             }
           }
         }
+
+        .case-study-hero-video {
+          border-color: rgba($background-color, 0.15);
+        }
       }
 
       .case-study-context {
@@ -574,6 +589,10 @@
         .finding-item,
         .insight-item {
           color: rgba($background-color, 1);
+        }
+
+        .image-block img {
+          border-color: rgba($background-color, 0.15);
         }
       }
 

@@ -59,15 +59,26 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
             </div>
           </div>
 
-          {project.caseStudy.heroImages.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`${project.title} - ${index + 1}`}
-              className="case-study-hero-image"
-              loading="lazy"
+          {project.caseStudy.heroVideo ? (
+            <video
+              src={project.caseStudy.heroVideo}
+              className="case-study-hero-video"
+              autoPlay
+              loop
+              muted
+              playsInline
             />
-          ))}
+          ) : (
+            project.caseStudy.heroImages.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={`${project.title} - ${index + 1}`}
+                className="case-study-hero-image"
+                loading="lazy"
+              />
+            ))
+          )}
         </div>
 
         {/* Context Section */}
@@ -140,7 +151,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
         )}
 
         {/* Project Mockup Images */}
-        {project.caseStudy.projectWork && (project.caseStudy.projectWork.image1 || project.caseStudy.projectWork.image2 || project.caseStudy.projectWork.image3) && (
+        {project.caseStudy.projectWork && (project.caseStudy.projectWork.image1 || project.caseStudy.projectWork.image2 || project.caseStudy.projectWork.image3 || project.caseStudy.projectWork.image4) && (
           <div className="content-section">
             <p className="section-label">The Product</p>
             {project.caseStudy.projectWork.image1 && (
@@ -156,6 +167,11 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
             {project.caseStudy.projectWork.image3 && (
               <div className="image-block">
                 <img src={project.caseStudy.projectWork.image3} alt={`${project.title} mockup`} loading="lazy" />
+              </div>
+            )}
+            {project.caseStudy.projectWork.image4 && (
+              <div className="image-block">
+                <img src={project.caseStudy.projectWork.image4} alt={`${project.title} mockup`} loading="lazy" />
               </div>
             )}
           </div>

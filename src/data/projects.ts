@@ -5,6 +5,7 @@ import ImageFiller from '../assets/images/Landing/image-filler-1.webp';
 
 //Project 1 - THEMEFORGE
 import ThemeForgeHero from '../assets/images/Themeforge/themeforge-hero.webp';
+import ThemeForgeVideo from '../assets/images/Themeforge/themeforge-vid-comp.mp4';
 import ThemeForgeProblem from '../assets/images/Themeforge/theme-problem.webp';
 import ThemeForgeSolution from '../assets/images/Themeforge/theme-solution.webp';
 
@@ -15,6 +16,7 @@ import ThemeForgeSolution from '../assets/images/Themeforge/theme-solution.webp'
 
 //Project 2 - TELSTRA (formerly Project 1)
 import TelcoHero from '../assets/images/P1/p1-hero-telco-v2.jpg';
+import TelcoVideo from '../assets/images/P1/telco-vid-comp.mp4';
 import TelcoSolution from '../assets/images/telco-solution-1.png';
 import TelcoProblem from '../assets/images/P1/p1-hero-problem.webp';
 
@@ -35,6 +37,7 @@ import FinalIsoScreens from '../assets/images/P3/p3-finial-iso-screens.webp';
 
 // Project 3 - CLUERA
 import ClueraThumbnail from '../assets/images/Cluera/cluera-thumbnail-mock.webp';
+import ClueraStyleGuide from '../assets/images/Cluera/cluera-style-guide.png';
 
 import P3Problem from '../assets/images/p3-problem.webp';
 import P3Solution from '../assets/images/P3/p3-hero-axis.webp';
@@ -51,6 +54,8 @@ import ZroThumbnail from '../assets/images/ZRO/zro-thumbnail.webp';
 
 // Project - MAINS
 import MainsHero from '../assets/images/Mains/mains-hero.png';
+import MainsStyleGuide from '../assets/images/Mains/mains-style-guide.png';
+import MainsVideo from '../assets/images/Mains/mains-vid-comp.mp4';
 
 
 
@@ -73,6 +78,7 @@ export interface Project {
   caseStudy: {
     impact: string;
     heroImages: string[];
+    heroVideo?: string;
     duration: string;
     date: string;
     role: string[];
@@ -400,8 +406,9 @@ export const projects: Project[] = [
     impact: 'Developed and launched an AI-powered RGB keyboard theme generator that visualises themes on an interactive keyboard.',
     
     heroImages: [ThemeForgeHero],
+    heroVideo: ThemeForgeVideo,
     images: [ThemeForgeHero],
-    
+
     duration: '14 days',
     date: 'January 2026',
     role: [
@@ -550,6 +557,7 @@ export const projects: Project[] = [
     impact: 'Designed an integrated dashboard that reduced task completion time by 64% for IT managers juggling 8 disconnected tools.',
     
     heroImages: [TelcoHero],
+    heroVideo: TelcoVideo,
     images: [TelcoHero],
     
     duration: '12 Weeks',
@@ -913,12 +921,12 @@ export const projects: Project[] = [
     imageUrl: ClueraThumbnail,
     comingSoon: false,
     caseStudy: {
-      impact: 'Designed and launched a full micro-SaaS product from zero — brand, architecture, AI pipeline, and three-tier email report system — in a single intensive build sprint.',
+      impact: 'Designed and launched a full micro-SaaS product from zero. Brand, architecture, AI pipeline, and three-tier email report system shipped in a single build sprint.',
       heroImages: [ClueraThumbnail],
       images: [],
       problemImage: ImageFiller,
       solutionImage: ImageFiller,
-      duration: '7 days',
+      duration: '6 weeks · Ongoing',
       date: 'April 2026',
       role: [
         'Product Strategy',
@@ -927,7 +935,7 @@ export const projects: Project[] = [
         'Full-Stack Development',
       ],
       team: 'Solo (AI-assisted development)',
-      tools: ['Next.js', 'Supabase', 'Claude API', 'Stripe', 'Resend', 'Vercel', 'Figma'],
+      tools: ['Next.js', 'Supabase', 'Claude API', 'Stripe', 'Figma'],
       problemTitle: 'Etsy sellers had no way to understand what their reviews were telling them',
       problem: 'Etsy sellers receive reviews every week but have no way to analyse them. Existing platforms focus on SEO and keyword research. Reviews are a side feature at best.',
       solution: {
@@ -938,8 +946,8 @@ export const projects: Project[] = [
       insights: { headingTitle: '', content: '' },
       outcomes: {
         metrics: [
-          'Full SaaS product designed and deployed in 7 days',
-          '98.9% gross margin ($0.10/user AI cost vs $9/month revenue)',
+          'Full SaaS product designed and deployed in a single sprint',
+          '98.9% gross margin. $0.10/user AI cost vs $9/month revenue',
           'First-to-market in automated Etsy review intelligence',
         ]
       },
@@ -954,7 +962,8 @@ export const projects: Project[] = [
       projectWork: {
         image1: ImageFiller,
         image2: ImageFiller,
-        image3: ImageFiller
+        image3: ClueraStyleGuide,
+        image4: ImageFiller
       }
     }
   },
@@ -972,19 +981,20 @@ export const projects: Project[] = [
     caseStudy: {
       impact: 'Built an infrastructure connection platform from scratch. Map canvas, PDF quoting, voltage drop calculator, and multi-region support across Australia and New Zealand.',
       heroImages: [MainsHero],
+      heroVideo: MainsVideo,
       images: [],
       problemImage: ImageFiller,
       solutionImage: ImageFiller,
-      duration: '4 months',
-      date: 'May–August 2026',
+      duration: '3 months (Ongoing)',
+      date: '2026',
       role: [
         'Product Strategy',
         'UX/UI Design',
         'Brand Design',
         'Full-Stack Development',
       ],
-      team: 'Solo (AI-assisted development)',
-      tools: ['Next.js', 'TypeScript', 'Supabase', 'Google Maps API', 'Tailwind', 'Vercel', 'Figma'],
+      team: 'Solo, with field testing from ECC Electrical',
+      tools: ['Next.js', 'Supabase', 'Google Maps API', 'Figma'],
       problemTitle: 'Electricians had no modern tooling for connection design',
       problem: 'ASP Level 2 electricians had no modern tooling for connection design. Manual measurements, spreadsheets, and guesswork. No way to draw routes on satellite imagery or generate quotes without a site visit.',
       solution: {
@@ -996,7 +1006,7 @@ export const projects: Project[] = [
       outcomes: {
         metrics: [
           'All major phases complete and deployed at getmains.com.au',
-          'Multi-region support — all AU states + NZ, 20+ DNSPs',
+          'Multi-region support across all AU states, NZ and 20+ DNSPs',
           'Full security audit passed',
         ]
       },
@@ -1011,7 +1021,8 @@ export const projects: Project[] = [
       projectWork: {
         image1: ImageFiller,
         image2: ImageFiller,
-        image3: ImageFiller
+        image3: MainsStyleGuide,
+        image4: ImageFiller
       }
     }
   }
