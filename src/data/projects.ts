@@ -53,7 +53,12 @@ import P3DraftBrand from '../assets/images/P3/p3-proto-branding.webp';
 import ZroThumbnail from '../assets/images/ZRO/zro-thumbnail.webp';
 
 // Project - MAINS
-import MainsHero from '../assets/images/Mains/mains-hero.png';
+import MainsThumb from '../assets/images/Mains/mains-thumb.webp';
+import MainsProblem from '../assets/images/Mains/mains-problem.webp';
+import MainsMock1 from '../assets/images/Mains/mains-mock-1.webp';
+import MainsMock2 from '../assets/images/Mains/mains-mock-2.webp';
+import MainsMock3 from '../assets/images/Mains/mains-mock-3.webp';
+import MainsSolution1 from '../assets/images/Mains/mains-solution-1.webp';
 import MainsStyleGuide from '../assets/images/Mains/mains-style-guide.png';
 import MainsVideo from '../assets/images/Mains/mains-vid-comp.mp4';
 
@@ -976,15 +981,15 @@ export const projects: Project[] = [
     title: 'MAINS',
     subtitle: 'Infrastructure Connection Design Platform',
     description: 'Design and quote electrical connections from satellite imagery — no site visit required.',
-    imageUrl: MainsHero,
+    imageUrl: MainsThumb,
     comingSoon: false,
     caseStudy: {
       impact: 'Built an infrastructure connection platform from scratch. Map canvas, PDF quoting, voltage drop calculator, and multi-region support across Australia and New Zealand.',
-      heroImages: [MainsHero],
+      heroImages: [MainsSolution1],
       heroVideo: MainsVideo,
       images: [],
-      problemImage: ImageFiller,
-      solutionImage: ImageFiller,
+      problemImage: MainsProblem,
+      solutionImage: MainsSolution1,
       duration: '3 months (Ongoing)',
       date: '2026',
       role: [
@@ -1019,10 +1024,10 @@ export const projects: Project[] = [
       learnings: [],
       url: 'https://getmains.com.au',
       projectWork: {
-        image1: ImageFiller,
-        image2: ImageFiller,
-        image3: MainsStyleGuide,
-        image4: ImageFiller
+        image1: MainsMock1,
+        image2: MainsMock3,
+        image3: MainsMock2,
+        image4: MainsStyleGuide
       }
     }
   }

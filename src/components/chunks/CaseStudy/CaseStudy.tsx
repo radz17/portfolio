@@ -62,11 +62,13 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
           {project.caseStudy.heroVideo ? (
             <video
               src={project.caseStudy.heroVideo}
+              poster={project.caseStudy.heroImages[0]}
               className="case-study-hero-video"
               autoPlay
               loop
               muted
               playsInline
+              preload="auto"
             />
           ) : (
             project.caseStudy.heroImages.map((img, index) => (
@@ -153,7 +155,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
         {/* Project Mockup Images */}
         {project.caseStudy.projectWork && (project.caseStudy.projectWork.image1 || project.caseStudy.projectWork.image2 || project.caseStudy.projectWork.image3 || project.caseStudy.projectWork.image4) && (
           <div className="content-section">
-            <p className="section-label">The Product</p>
+            <p className="section-label">Product</p>
             {project.caseStudy.projectWork.image1 && (
               <div className="image-block">
                 <img src={project.caseStudy.projectWork.image1} alt={`${project.title} mockup`} loading="lazy" />

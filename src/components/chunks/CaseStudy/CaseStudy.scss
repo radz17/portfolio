@@ -312,7 +312,12 @@
       // Image Block (Single image + caption)
       .image-block {
         margin-top: 2rem;
-        
+
+        // No heading/text before it — the flex gap alone is enough
+        .section-label + & {
+          margin-top: 0;
+        }
+
         img {
           width: 100%;
           height: auto;
