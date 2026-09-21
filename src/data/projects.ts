@@ -5,6 +5,7 @@ import ImageFiller from '../assets/images/Landing/image-filler-1.webp';
 
 //Project 1 - THEMEFORGE
 import ThemeForgeHero from '../assets/images/Themeforge/themeforge-hero.webp';
+import ThemeForgeVideoPoster from '../assets/images/Themeforge/themeforge-vid-poster.jpg';
 import ThemeForgeVideo from '../assets/images/Themeforge/themeforge-vid-comp.mp4';
 import ThemeForgeProblem from '../assets/images/Themeforge/theme-problem.webp';
 import ThemeForgeSolution from '../assets/images/Themeforge/theme-solution.webp';
@@ -16,6 +17,7 @@ import ThemeForgeSolution from '../assets/images/Themeforge/theme-solution.webp'
 
 //Project 2 - TELSTRA (formerly Project 1)
 import TelcoHero from '../assets/images/P1/p1-hero-telco-v2.jpg';
+import TelcoVideoPoster from '../assets/images/P1/telco-vid-poster.jpg';
 import TelcoVideo from '../assets/images/P1/telco-vid-comp.mp4';
 import TelcoSolution from '../assets/images/telco-solution-1.png';
 import TelcoProblem from '../assets/images/P1/p1-hero-problem.webp';
@@ -54,6 +56,7 @@ import ZroThumbnail from '../assets/images/ZRO/zro-thumbnail.webp';
 
 // Project - MAINS
 import MainsThumb from '../assets/images/Mains/mains-thumb-v2.webp';
+import MainsVideoPoster from '../assets/images/Mains/mains-vid-poster.jpg';
 import MainsProblem from '../assets/images/Mains/mains-problem.webp';
 import MainsMock1 from '../assets/images/Mains/mains-mock-1.webp';
 import MainsMock2 from '../assets/images/Mains/mains-mock-2.webp';
@@ -412,7 +415,7 @@ export const projects: Project[] = [
   caseStudy: {
     impact: 'Developed and launched an AI-powered RGB keyboard theme generator that visualises themes on an interactive keyboard.',
     
-    heroImages: [ThemeForgeHero],
+    heroImages: [ThemeForgeVideoPoster],
     heroVideo: ThemeForgeVideo,
     images: [ThemeForgeHero],
 
@@ -563,7 +566,7 @@ export const projects: Project[] = [
   caseStudy: {
     impact: 'Designed an integrated dashboard that reduced task completion time by 64% for IT managers juggling 8 disconnected tools.',
     
-    heroImages: [TelcoHero],
+    heroImages: [TelcoVideoPoster],
     heroVideo: TelcoVideo,
     images: [TelcoHero],
     
@@ -989,7 +992,7 @@ export const projects: Project[] = [
     comingSoon: false,
     caseStudy: {
       impact: 'Designed and built an infrastructure connection platform from scratch. Map canvas, PDF quoting, voltage drop calculator, and multi-region support across Australia and New Zealand.',
-      heroImages: [MainsThumb],
+      heroImages: [MainsVideoPoster],
       heroVideo: MainsVideo,
       images: [],
       problemImage: MainsProblem,

@@ -13,11 +13,23 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onBack, isCaseStudyView }) => {
   const [isOpen, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('intro');
+  const [resumeClicked, setResumeClicked] = useState(false);
   const rafRef = useRef<number | null>(null);
+  const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const toggleMobileMenu = () => {
     setOpen(!isOpen);
   };
+
+  const handleResumeClick = () => {
+    setResumeClicked(true);
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    resumeTimeoutRef.current = setTimeout(() => setResumeClicked(false), 1000);
+  };
+
+  useEffect(() => () => {
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -146,6 +158,38 @@ const Header: React.FC<HeaderProps> = ({ onBack, isCaseStudyView }) => {
                   </motion.a>
                 </motion.div>
               ))}
+              <motion.div
+                custom={5}
+                initial="closed"
+                animate="open"
+                exit="closed"
+                variants={linkVariants}
+                className="resume-item"
+              >
+                <motion.a
+                  href="/Kyle_Radcliffe_Resume.pdf"
+                  download="Kyle_Radcliffe_Resume.pdf"
+                  onClick={handleResumeClick}
+                  initial={{ opacity: 0.5 }}
+                  whileHover={{ opacity: 1, transition: { duration: 0.1, ease: 'linear' } }}
+                  animate={{ opacity: resumeClicked ? 1 : 0.5, transition: { duration: resumeClicked ? 0.1 : 0.4, ease: 'linear' } }}
+                >
+                  Resume
+                </motion.a>
+                <AnimatePresence>
+                  {resumeClicked && (
+                    <motion.span
+                      className="resume-flash"
+                      aria-hidden="true"
+                      initial={{ opacity: 0, x: -12 }}
+                      animate={{ opacity: 1, x: 0, transition: { duration: 0.12, ease: 'easeOut' } }}
+                      exit={{ opacity: 0, x: -12, transition: { duration: 0.15, ease: 'easeIn' } }}
+                    >
+                      😎
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             </div>
           </motion.nav>
         )}

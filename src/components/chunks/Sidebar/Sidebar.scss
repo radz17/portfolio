@@ -46,6 +46,19 @@
         }
       }
     }
+
+    .resume-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      .resume-flash {
+        font-size: 0.9rem;
+        line-height: 1;
+        position: relative;
+        top: 0.125rem;
+      }
+    }
   }
 }
 
