@@ -1,5 +1,5 @@
 // CaseStudy.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import './CaseStudy.scss';
 import { Project } from '../../../data/projects';
 
@@ -12,6 +12,8 @@ const COMPLETE_CASE_STUDY_IDS = ['Telco', 'themeforge', 'cluera', 'mains'];
 
 const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
   const isComplete = COMPLETE_CASE_STUDY_IDS.includes(project.id);
+  const [videoPainted, setVideoPainted] = useState(false);
+  const [posterLoaded, setPosterLoaded] = useState(false);
 
   const ctaButtons = (
     <div className="case-study-cta">
@@ -60,16 +62,28 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
           </div>
 
           {project.caseStudy.heroVideo ? (
-            <video
-              src={project.caseStudy.heroVideo}
-              poster={project.caseStudy.heroImages[0]}
-              className="case-study-hero-video"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-            />
+            <div className="case-study-hero-video-wrapper">
+              {posterLoaded && (
+                <video
+                  src={project.caseStudy.heroVideo}
+                  poster={project.caseStudy.heroImages[0]}
+                  className="case-study-hero-video"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  onPlaying={() => setVideoPainted(true)}
+                />
+              )}
+              <img
+                src={project.caseStudy.heroImages[0]}
+                alt=""
+                aria-hidden="true"
+                onLoad={() => setPosterLoaded(true)}
+                className={`case-study-hero-video-cover${videoPainted ? ' is-hidden' : ''}`}
+              />
+            </div>
           ) : (
             project.caseStudy.heroImages.map((img, index) => (
               <img
@@ -159,9 +173,9 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
             {project.caseStudy.projectWork.heading && (
               <h3 className="section-heading">{project.caseStudy.projectWork.heading}</h3>
             )}
-            {project.caseStudy.projectWork.content && (
-              <p className="section-text">{project.caseStudy.projectWork.content}</p>
-            )}
+            {project.caseStudy.projectWork.content?.map((paragraph, index) => (
+              paragraph && <p key={index} className="section-text">{paragraph}</p>
+            ))}
             {project.caseStudy.projectWork.image1 && (
               <div className="image-block">
                 <img src={project.caseStudy.projectWork.image1} alt={`${project.title} mockup`} loading="lazy" />

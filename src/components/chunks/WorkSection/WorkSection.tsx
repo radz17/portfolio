@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Card from '../Card/Card';
 import { Project, projects } from '../../../data/projects';
-import { prefetchVideo } from '../../../utils/videoPreload';
 import './WorkSection.scss';
 
 // Display order — only these projects render, in this sequence
-const DISPLAY_ORDER = ['Telco', 'mains'];
+const DISPLAY_ORDER = ['Telco', 'mains', 'themeforge', 'cluera'];
 const displayProjects = DISPLAY_ORDER
   .map(id => projects.find(p => p.id === id))
   .filter((p): p is Project => p !== undefined);
@@ -31,10 +30,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setSelectedCaseStudy }) => {
                 imageUrl={project.imageUrl || '/assets/images/fallback-project.webp'}
                 onClick={comingSoon ? undefined : () => setSelectedCaseStudy(project)}
                 isHovered={hoveredCardId === project.id}
-                onHoverChange={(hovered) => {
-                  setHoveredCardId(hovered ? project.id : null);
-                  if (hovered) prefetchVideo(project.caseStudy.heroVideo);
-                }}
+                onHoverChange={(hovered) => setHoveredCardId(hovered ? project.id : null)}
                 hasAnyHovered={hoveredCardId !== null}
                 comingSoon={comingSoon}
               />

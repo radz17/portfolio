@@ -5,6 +5,7 @@ import ImageFiller from '../assets/images/Landing/image-filler-1.webp';
 
 //Project 1 - THEMEFORGE
 import ThemeForgeHero from '../assets/images/Themeforge/themeforge-hero.webp';
+import ThemeForgeThumb from '../assets/images/Themeforge/themeforge-thumb-v10.webp';
 import ThemeForgeVideoPoster from '../assets/images/Themeforge/themeforge-vid-poster.jpg';
 import ThemeForgeVideo from '../assets/images/Themeforge/themeforge-vid-comp.mp4';
 import ThemeForgeProblem from '../assets/images/Themeforge/theme-problem.webp';
@@ -19,6 +20,7 @@ import ThemeForgeSolution from '../assets/images/Themeforge/theme-solution.webp'
 import TelcoHero from '../assets/images/P1/p1-hero-telco-v2.jpg';
 import TelcoThumb from '../assets/images/P1/telco-thumb-v10.webp';
 import TelcoVideoPoster from '../assets/images/P1/telco-vid-poster.jpg';
+import TelcoABTest from '../assets/images/P1/AB-test.webp';
 import TelcoVideo from '../assets/images/P1/telco-vid-comp.mp4';
 import TelcoSolution from '../assets/images/telco-solution-1.png';
 import TelcoProblem from '../assets/images/P1/p1-hero-problem.webp';
@@ -40,6 +42,7 @@ import FinalIsoScreens from '../assets/images/P3/p3-finial-iso-screens.webp';
 
 // Project 3 - CLUERA
 import ClueraThumbnail from '../assets/images/Cluera/cluera-thumbnail-mock.webp';
+import ClueraThumbV10 from '../assets/images/Cluera/cluera-thumb-v10.webp';
 import ClueraStyleGuide from '../assets/images/Cluera/cluera-style-guide.png';
 
 import P3Problem from '../assets/images/p3-problem.webp';
@@ -194,7 +197,7 @@ export interface Project {
     url?: string;
     projectWork?: {
       heading?: string;
-      content?: string;
+      content?: string[];
       image1?: string;
       image2?: string;
       image3?: string;
@@ -408,10 +411,10 @@ export const projects: Project[] = [
 
 {
   id: 'themeforge',
-  title: 'ThemeForge',
+  title: 'Themeforge',
   subtitle: 'AI-Powered RGB Keyboard Theme Platform',
-  description: 'AI powered mechanical keyboard theme generator launched in 7 days, achieving 100/100 Lighthouse performance score.',
-  imageUrl: ThemeForgeHero,
+  description: 'First to market AI powered mechanical keyboard theme generator.',
+  imageUrl: ThemeForgeThumb,
   comingSoon: false,
   caseStudy: {
     impact: 'Developed and launched an AI-powered RGB keyboard theme generator that visualises themes on an interactive keyboard.',
@@ -683,7 +686,7 @@ export const projects: Project[] = [
       abTesting: {
         heading: 'A/B testing proved personalisation was essential',
         content: 'Prototype A adapts the dashboard to each user based on their usage patterns. Prototype B shows all features on one screen with drill-down navigation. After testing with 9 participants, Prototype A completed tasks 60% faster and scored 4.6/5 satisfaction vs 3.2/5 for Prototype B.',
-        image: ImageFiller,
+        image: TelcoABTest,
         caption: 'Prototype B: alternative layout showing all features on one screen with drill-down navigation'
       },
       
@@ -928,8 +931,8 @@ export const projects: Project[] = [
     id: 'cluera',
     title: 'Cluera',
     subtitle: 'Etsy Review Intelligence · Micro-SaaS',
-    description: 'AI-powered review intelligence for Etsy sellers. Weekly insights delivered to their inbox.',
-    imageUrl: ClueraThumbnail,
+    description: 'Review intelligence tool for Etsy sellers. Weekly insights delivered to their inbox.',
+    imageUrl: ClueraThumbV10,
     comingSoon: false,
     caseStudy: {
       impact: 'Designed and launched a full micro-SaaS product from zero. Brand, architecture, AI pipeline, and three-tier email report system shipped in a single build sprint.',
@@ -972,7 +975,7 @@ export const projects: Project[] = [
       url: 'https://cluera.io',
       projectWork: {
         heading: 'Placeholder heading — replace with real copy',
-        content: 'Placeholder text — replace with real copy describing the process, testing, and design decisions behind the final product.',
+        content: ['Placeholder text — replace with real copy describing the process, testing, and design decisions behind the final product.'],
         image1: ImageFiller,
         image2: ImageFiller,
         image3: ClueraStyleGuide,
@@ -986,7 +989,7 @@ export const projects: Project[] = [
   // ============================================
   {
     id: 'mains',
-    title: 'MAINS',
+    title: 'Mains',
     subtitle: 'Infrastructure Connection Design Platform',
     description: 'Design and quote electrical connections from satellite imagery, no site visit required.',
     imageUrl: MainsThumb,
@@ -1033,7 +1036,10 @@ export const projects: Project[] = [
       url: 'https://getmains.com.au',
       projectWork: {
         heading: 'From discovery to live field testing',
-        content: 'Kicked off with competitive analysis, problem framing, and a direct conversation with an ASP Level 2 electrician to identify the features that actually mattered. Shipped a focused MVP, iterated on the pain points he surfaced, and polished the core flows. ECC Electrical is now using it to quote and submit real jobs, with testing and iteration still ongoing.',
+        content: [
+          'Kicked off with competitive analysis, problem framing, and a direct conversation with an ASP Level 2 electrician to identify the features that actually mattered. Shipped a focused MVP, iterated on the pain points he surfaced, and polished the core flows.',
+          'ECC Electrical is now using it to quote and submit real jobs, with testing and iteration still ongoing.'
+        ],
         image1: MainsMock1,
         image2: MainsMock3,
         image3: MainsMock2,

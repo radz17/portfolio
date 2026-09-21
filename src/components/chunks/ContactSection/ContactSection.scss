@@ -196,6 +196,11 @@
             .resume-flash {
               font-size: 0.9em;
               line-height: 1;
+
+              @media (max-width: $breakpoint-tablet) {
+                position: relative;
+                top: -0.5rem;
+              }
             }
           }
 
