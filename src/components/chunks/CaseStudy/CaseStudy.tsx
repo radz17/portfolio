@@ -156,6 +156,12 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
         {project.caseStudy.projectWork && (project.caseStudy.projectWork.image1 || project.caseStudy.projectWork.image2 || project.caseStudy.projectWork.image3 || project.caseStudy.projectWork.image4) && (
           <div className="content-section">
             <p className="section-label">Product</p>
+            {project.caseStudy.projectWork.heading && (
+              <h3 className="section-heading">{project.caseStudy.projectWork.heading}</h3>
+            )}
+            {project.caseStudy.projectWork.content && (
+              <p className="section-text">{project.caseStudy.projectWork.content}</p>
+            )}
             {project.caseStudy.projectWork.image1 && (
               <div className="image-block">
                 <img src={project.caseStudy.projectWork.image1} alt={`${project.title} mockup`} loading="lazy" />

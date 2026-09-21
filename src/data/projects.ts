@@ -53,12 +53,12 @@ import P3DraftBrand from '../assets/images/P3/p3-proto-branding.webp';
 import ZroThumbnail from '../assets/images/ZRO/zro-thumbnail.webp';
 
 // Project - MAINS
-import MainsThumb from '../assets/images/Mains/mains-thumb.webp';
+import MainsThumb from '../assets/images/Mains/mains-thumb-v2.webp';
 import MainsProblem from '../assets/images/Mains/mains-problem.webp';
 import MainsMock1 from '../assets/images/Mains/mains-mock-1.webp';
 import MainsMock2 from '../assets/images/Mains/mains-mock-2.webp';
 import MainsMock3 from '../assets/images/Mains/mains-mock-3.webp';
-import MainsSolution1 from '../assets/images/Mains/mains-solution-1.webp';
+import MainsSolution1 from '../assets/images/Mains/mains-solution-v1.webp';
 import MainsStyleGuide from '../assets/images/Mains/mains-style-guide.png';
 import MainsVideo from '../assets/images/Mains/mains-vid-comp.mp4';
 
@@ -189,6 +189,8 @@ export interface Project {
     images: string[];
     url?: string;
     projectWork?: {
+      heading?: string;
+      content?: string;
       image1?: string;
       image2?: string;
       image3?: string;
@@ -965,6 +967,8 @@ export const projects: Project[] = [
       learnings: [],
       url: 'https://cluera.io',
       projectWork: {
+        heading: 'Placeholder heading — replace with real copy',
+        content: 'Placeholder text — replace with real copy describing the process, testing, and design decisions behind the final product.',
         image1: ImageFiller,
         image2: ImageFiller,
         image3: ClueraStyleGuide,
@@ -980,17 +984,17 @@ export const projects: Project[] = [
     id: 'mains',
     title: 'MAINS',
     subtitle: 'Infrastructure Connection Design Platform',
-    description: 'Design and quote electrical connections from satellite imagery — no site visit required.',
+    description: 'Design and quote electrical connections from satellite imagery, no site visit required.',
     imageUrl: MainsThumb,
     comingSoon: false,
     caseStudy: {
-      impact: 'Built an infrastructure connection platform from scratch. Map canvas, PDF quoting, voltage drop calculator, and multi-region support across Australia and New Zealand.',
-      heroImages: [MainsSolution1],
+      impact: 'Designed and built an infrastructure connection platform from scratch. Map canvas, PDF quoting, voltage drop calculator, and multi-region support across Australia and New Zealand.',
+      heroImages: [MainsThumb],
       heroVideo: MainsVideo,
       images: [],
       problemImage: MainsProblem,
       solutionImage: MainsSolution1,
-      duration: '3 months (Ongoing)',
+      duration: '2 months (Ongoing)',
       date: '2026',
       role: [
         'Product Strategy',
@@ -999,7 +1003,7 @@ export const projects: Project[] = [
         'Full-Stack Development',
       ],
       team: 'Solo, with field testing from ECC Electrical',
-      tools: ['Next.js', 'Supabase', 'Google Maps API', 'Figma'],
+      tools: ['Next.js', 'Supabase', 'Google Maps API', 'Figma', 'Claude Code'],
       problemTitle: 'Electricians had no modern tooling for connection design',
       problem: 'ASP Level 2 electricians had no modern tooling for connection design. Manual measurements, spreadsheets, and guesswork. No way to draw routes on satellite imagery or generate quotes without a site visit.',
       solution: {
@@ -1024,6 +1028,8 @@ export const projects: Project[] = [
       learnings: [],
       url: 'https://getmains.com.au',
       projectWork: {
+        heading: 'From discovery to live field testing',
+        content: 'Kicked off with competitive analysis, problem framing, and a direct conversation with an ASP Level 2 electrician to identify the features that actually mattered. Shipped a focused MVP, iterated on the pain points he surfaced, and polished the core flows. ECC Electrical is now using it to quote and submit real jobs, with testing and iteration still ongoing.',
         image1: MainsMock1,
         image2: MainsMock3,
         image3: MainsMock2,

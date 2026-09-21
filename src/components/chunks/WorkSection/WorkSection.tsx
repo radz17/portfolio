@@ -5,7 +5,7 @@ import { prefetchVideo } from '../../../utils/videoPreload';
 import './WorkSection.scss';
 
 // Display order — only these projects render, in this sequence
-const DISPLAY_ORDER = ['Telco', 'themeforge', 'cluera', 'mains'];
+const DISPLAY_ORDER = ['Telco', 'mains'];
 const displayProjects = DISPLAY_ORDER
   .map(id => projects.find(p => p.id === id))
   .filter((p): p is Project => p !== undefined);
