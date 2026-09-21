@@ -17,6 +17,7 @@ import ThemeForgeSolution from '../assets/images/Themeforge/theme-solution.webp'
 
 //Project 2 - TELSTRA (formerly Project 1)
 import TelcoHero from '../assets/images/P1/p1-hero-telco-v2.jpg';
+import TelcoThumb from '../assets/images/P1/telco-thumb-v10.webp';
 import TelcoVideoPoster from '../assets/images/P1/telco-vid-poster.jpg';
 import TelcoVideo from '../assets/images/P1/telco-vid-comp.mp4';
 import TelcoSolution from '../assets/images/telco-solution-1.png';
@@ -560,8 +561,8 @@ export const projects: Project[] = [
   id: 'Telco',
   title: 'Telco',
   subtitle: 'Enterprise Dashboard • B2B Platform',
-  description: 'Enterprise dashboard redesign reducing task time by 64% through intelligent automation.',
-  imageUrl: TelcoHero,
+  description: 'Enterprise dashboard redesign reducing task time through intelligent automation.',
+  imageUrl: TelcoThumb,
   comingSoon: false,
   caseStudy: {
     impact: 'Designed an integrated dashboard that reduced task completion time by 64% for IT managers juggling 8 disconnected tools.',

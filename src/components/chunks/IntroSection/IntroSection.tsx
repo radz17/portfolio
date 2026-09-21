@@ -6,8 +6,8 @@ import Sticky1 from '../../../assets/images/Landing/intro-sticky.webp';
 
 const text = [
   "I'm a designer",
-  "who builds.",
-  "Concept to",
+  "who builds,",
+  "concept to",
   "production",
   
 ];
