@@ -21,7 +21,7 @@ const ValuesSection: React.FC = () => {
           </div>
           <div className="values-item">
             <p>
-              I spent over 10 years in the construction industry, working with and leading teams on multimillion-dollar projects before transitioning into design. Building taught me that quality work means no shortcuts — everything needs to hold up over time. After travelling through 24 countries, from Saigon's bustling markets to Edinburgh's rainy streets, I learned to put people at the centre of everything I make. Whether I'm exploring new technology or chasing down new challenges, my curiosity drives me to produce high-quality work with clarity and purpose. I'm here to design products that actually matter.
+              I'm a Product Designer who works across UX, UI and full-stack development. I've designed enterprise dashboards and shipped micro-SaaS products, taking ideas from research through to production. Before design, I spent over 10 years in the construction industry, working with and leading teams on multimillion-dollar projects. Building taught me that quality work means no shortcuts, and everything needs to hold up over time. After travelling through 24 countries, from Saigon's bustling markets to Edinburgh's rainy streets, I learned to put people at the centre of everything I make. Whether I'm exploring new technology or chasing down new challenges, my curiosity drives me to produce high-quality work with clarity and purpose. I'm here to design products that actually matter.
             </p>
           </div>
           <div className="values-item">
