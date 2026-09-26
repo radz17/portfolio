@@ -962,7 +962,7 @@ export const projects: Project[] = [
       problem: 'The reviews are all there, but reading through hundreds of them to spot patterns is not realistic for a small seller. Existing tools focus on SEO and keyword research, so reviews are a side feature at best.',
       solution: {
         solutionTitle: 'Clear review insights delivered straight to the seller\'s inbox',
-        content: 'Cluera connects to an Etsy shop, reads every review, and turns them into a clear report that lands in the inbox, weekly on Pro and daily on Growth. Once a shop is connected, sellers don\'t need to log back in to see their results. There is a dashboard for business details and old reports.',
+        content: 'Cluera connects to an Etsy shop and turns a large volume of reviews into insights the owner can act on, from what customers value to their biggest pain points. The report lands in the inbox, weekly on Pro and daily on Growth.',
       },
       research: { headingTitle: '', content: '' },
       insights: { headingTitle: '', content: '' },
