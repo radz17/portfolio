@@ -44,6 +44,13 @@ import FinalIsoScreens from '../assets/images/P3/p3-finial-iso-screens.webp';
 import ClueraThumbnail from '../assets/images/Cluera/cluera-thumbnail-mock.webp';
 import ClueraThumbV10 from '../assets/images/Cluera/cluera-thumb-v10.webp';
 import ClueraStyleGuide from '../assets/images/Cluera/cluera-style-guide.png';
+import ClueraVideo from '../assets/images/Cluera/cluera-vid.mp4';
+import ClueraVideoPoster from '../assets/images/Cluera/cluera-vid-poster.jpg';
+import ClueraProblem from '../assets/images/Cluera/problem.webp';
+import ClueraSolution from '../assets/images/Cluera/solution.webp';
+import ClueraMock1 from '../assets/images/Cluera/mock-1.webp';
+import ClueraMock2 from '../assets/images/Cluera/mock-2.webp';
+import ClueraMock3 from '../assets/images/Cluera/mock-3.webp';
 
 import P3Problem from '../assets/images/p3-problem.webp';
 import P3Solution from '../assets/images/P3/p3-hero-axis.webp';
@@ -931,15 +938,16 @@ export const projects: Project[] = [
     id: 'cluera',
     title: 'Cluera',
     subtitle: 'Etsy Review Intelligence · Micro-SaaS',
-    description: 'Review intelligence tool for Etsy sellers. Weekly insights delivered to their inbox.',
+    description: 'Review intelligence for Etsy sellers. Clear insights delivered to their inbox, weekly or daily.',
     imageUrl: ClueraThumbV10,
     comingSoon: false,
     caseStudy: {
-      impact: 'Designed and launched a full micro-SaaS product from zero. Brand, architecture, AI pipeline, and three-tier email report system shipped in a single build sprint.',
-      heroImages: [ClueraThumbnail],
+      impact: 'Designed and launched a micro-SaaS product from scratch. Etsy OAuth onboarding, AI review analysis, and weekly email reports across three pricing tiers.',
+      heroImages: [ClueraVideoPoster],
+      heroVideo: ClueraVideo,
       images: [],
-      problemImage: ImageFiller,
-      solutionImage: ImageFiller,
+      problemImage: ClueraProblem,
+      solutionImage: ClueraSolution,
       duration: '6 weeks · Ongoing',
       date: 'April 2026',
       role: [
@@ -948,38 +956,42 @@ export const projects: Project[] = [
         'Brand Design',
         'Full-Stack Development',
       ],
-      team: 'Solo (AI-assisted development)',
+      team: 'Solo',
       tools: ['Next.js', 'Supabase', 'Claude API', 'Stripe', 'Figma'],
-      problemTitle: 'Etsy sellers had no way to understand what their reviews were telling them',
-      problem: 'Etsy sellers receive reviews every week but have no way to analyse them. Existing platforms focus on SEO and keyword research. Reviews are a side feature at best.',
+      problemTitle: 'Busy Etsy shops collect hundreds of reviews every week, with no practical way to pull insights out of them',
+      problem: 'The reviews are all there, but reading through hundreds of them to spot patterns is not realistic for a small seller. Existing tools focus on SEO and keyword research, so reviews are a side feature at best.',
       solution: {
-        solutionTitle: 'Weekly AI-generated review intelligence delivered to your inbox',
-        content: 'Cluera connects to an Etsy shop, analyses every review, and delivers a report every Monday morning. No dashboard, no login. Open your inbox and the insight is there.',
+        solutionTitle: 'Clear review insights delivered straight to the seller\'s inbox',
+        content: 'Cluera connects to an Etsy shop, reads every review, and turns them into a clear report that lands in the inbox, weekly on Pro and daily on Growth. Once a shop is connected, sellers don\'t need to log back in to see their results. There is a dashboard for business details and old reports.',
       },
       research: { headingTitle: '', content: '' },
       insights: { headingTitle: '', content: '' },
       outcomes: {
         metrics: [
-          'Full SaaS product designed and deployed in a single sprint',
-          '98.9% gross margin. $0.10/user AI cost vs $9/month revenue',
-          'First-to-market in automated Etsy review intelligence',
+          'Designed, shipped, and deployed at cluera.io',
+          '98.9% gross margin. $0.10 AI cost per user vs $9/month revenue',
+          'No existing tool offered automated Etsy review intelligence',
         ]
       },
       reflection: {
-        heading: 'Product thinking matters more than execution speed',
+        heading: 'Staying agile and letting user feedback shape the product',
         content: [
-          'Choosing email over a dashboard, pricing at $9 instead of $19, and making every data point traceable to real API data. These decisions came before any code was written and shaped everything that followed.'
+          'Choosing email over a dashboard was the starting point, not the finished plan. As I put Cluera in front of Etsy sellers, their feedback kept reshaping the functionality and the pricing tiers.',
+          'Shipping early and adapting to what sellers said mattered more than getting it right the first time.'
         ]
       },
       learnings: [],
       url: 'https://cluera.io',
       projectWork: {
-        heading: 'Placeholder heading — replace with real copy',
-        content: ['Placeholder text — replace with real copy describing the process, testing, and design decisions behind the final product.'],
-        image1: ImageFiller,
-        image2: ImageFiller,
-        image3: ClueraStyleGuide,
-        image4: ImageFiller
+        heading: 'Designed to fit into a seller\'s day without adding anything to it, then built to run itself.',
+        content: [
+          'Competitor research showed reviews were a side feature in every Etsy seller tool, so I designed around one rule: no new habits. I sketched low-fidelity wireframes for the marketing page and a dashboard, which sellers only need for business details, old reports and competitor analysis.',
+          'My first full-stack SaaS, and it runs fully automated. Vercel cron jobs trigger each report, an AI agent fills my email template with the seller\'s Etsy data, and Resend sends it. Testing with Etsy owners from Reddit is ongoing.'
+        ],
+        image1: ClueraMock1,
+        image2: ClueraMock2,
+        image3: ClueraMock3,
+        image4: ClueraStyleGuide
       }
     }
   },

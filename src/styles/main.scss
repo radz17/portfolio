@@ -325,3 +325,13 @@ main {
     }
   }
 }
+// Page-level fade between views. CSS (not Framer Motion) so the end of the
+// animation can never leave a one-frame opacity:0 gap that flashes the page.
+.view-fade {
+  animation: view-fade-in 0.2s ease-out both;
+}
+
+@keyframes view-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

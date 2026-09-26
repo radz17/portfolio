@@ -1,5 +1,4 @@
 import React, { useState, lazy, Suspense } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import MainLayout from './components/layouts/MainLayout';
@@ -39,41 +38,27 @@ const App: React.FC = () => {
     <>
     <MainLayout
       stuffInside={
-        <AnimatePresence mode="wait">
-          {selectedCaseStudy ? (
-            <motion.div
-              key="case-study"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0, transition: { duration: 0 } }}
-              transition={{ duration: 0.2 }}
-            >
-              <Suspense fallback={null}>
-                {selectedCaseStudy.displayType === 'snapshot' ? (
-                  <ProjectSnapshot
-                    project={selectedCaseStudy}
-                    onBack={handleBack}
-                  />
-                ) : (
-                  <CaseStudy
-                    project={selectedCaseStudy}
-                    onBack={handleBack}
-                  />
-                )}
-              </Suspense>
-            </motion.div>
-          ) : (
-            <motion.div
-              key="portfolio"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0, transition: { duration: 0 } }}
-              transition={{ duration: 0.2 }}
-            >
-              <Portfolio setSelectedCaseStudy={handleCaseStudySelect} />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        selectedCaseStudy ? (
+          <div key="case-study" className="view-fade">
+            <Suspense fallback={null}>
+              {selectedCaseStudy.displayType === 'snapshot' ? (
+                <ProjectSnapshot
+                  project={selectedCaseStudy}
+                  onBack={handleBack}
+                />
+              ) : (
+                <CaseStudy
+                  project={selectedCaseStudy}
+                  onBack={handleBack}
+                />
+              )}
+            </Suspense>
+          </div>
+        ) : (
+          <div key="portfolio" className="view-fade">
+            <Portfolio setSelectedCaseStudy={handleCaseStudySelect} />
+          </div>
+        )
       }
       resetCaseStudy={resetCaseStudy}
       isCaseStudyOpen={!!selectedCaseStudy}
