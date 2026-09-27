@@ -1,0 +1,27 @@
+# Kyle Radcliffe
+
+> Product Designer based in Newcastle, Australia, working across UX/UI, brand design, and full-stack development. This site is a single-page application rendered client-side, so tools that don't execute JavaScript will only see this file and the page's meta tags. Everything below reflects the actual content of the site.
+
+## About
+
+- Product Designer with a Bachelor's in UX & Web Design from Torrens University.
+- Spent over 10 years in the construction industry, leading teams on multimillion-dollar projects, before moving into design.
+- Works end-to-end: product strategy, UX/UI design, brand design, and full-stack development (Next.js, TypeScript, Supabase, Figma).
+- Based in Newcastle, NSW, Australia. Open to new opportunities.
+
+## Case studies
+
+These are presented as case studies on the homepage (kyleradcliffe.com.au), not separate pages.
+
+- **Telco** — Enterprise Dashboard, B2B Platform. Enterprise dashboard redesign reducing task time through intelligent automation. Designed an integrated dashboard that reduced task completion time by 64% for IT managers juggling 8 disconnected tools.
+- **Mains** (https://getmains.com.au) — Infrastructure Connection Design Platform. Lets electricians design and quote electrical connections from satellite imagery, no site visit required. Built solo with Next.js, Supabase, Google Maps API, and Claude Code, with real-world field testing from ECC Electrical.
+- **Themeforge** — AI-Powered RGB Keyboard Theme Platform. First-to-market AI powered mechanical keyboard theme generator that visualises themes on an interactive keyboard. Built with Next.js, Firebase, and the Claude API.
+- **Cluera** (https://cluera.io) — Etsy Review Intelligence, Micro-SaaS. Automated review analysis service for Etsy sellers: connects to a shop and turns a large volume of reviews into insights the owner can act on, delivered by email weekly or daily depending on plan. Solo-built full-stack SaaS product using Next.js, Supabase, the Claude API, and Stripe.
+
+## Links
+
+- Homepage: https://kyleradcliffe.com.au
+- Resume (PDF): https://kyleradcliffe.com.au/Kyle_Radcliffe_Resume.pdf
+- GitHub: https://www.github.com/radz17
+- LinkedIn: https://www.linkedin.com/in/kyle-radcliffe/
+- Email: yo@kyleradcliffe.com.au

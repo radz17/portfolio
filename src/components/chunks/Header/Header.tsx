@@ -96,12 +96,30 @@ const Header: React.FC<HeaderProps> = ({ onBack, isCaseStudyView }) => {
   };
 
   const handleScroll = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const y = section.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: y });
-      setActiveSection(sectionId);
+    if (onBack) {
+      onBack();
     }
+
+    const scrollToSection = () => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const y = section.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: y });
+        setActiveSection(sectionId);
+      } else if (sectionId === 'intro') {
+        window.scrollTo({ top: 0 });
+        setActiveSection(sectionId);
+      }
+    };
+
+    // If the section is already in the DOM (portfolio visible), scroll immediately.
+    // Otherwise wait for the case study to unmount and the portfolio to mount.
+    if (document.getElementById(sectionId) || sectionId === 'intro') {
+      scrollToSection();
+    } else {
+      setTimeout(scrollToSection, 250);
+    }
+
     if (isOpen) {
       toggleMobileMenu();
     }
