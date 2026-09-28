@@ -27,8 +27,6 @@ import TelcoProblem from '../assets/images/P1/p1-hero-problem.webp';
 
 import User1 from '../assets/images/P1/p1-white-paper-user1.webp';
 import User2 from '../assets/images/P1/p1-white-paper-user2.webp';
-import CompAnalysis from '../assets/images/P1/p1-white-paper-comp-analysis.webp';
-import CompSwot from '../assets/images/P1/p1-white-paper-comp-swot.webp';
 
 import Challange from '../assets/images/P1/p1-define-problem-statment.webp';
 import TenXTen from '../assets/images/P1/p1-define-10x10.webp';
@@ -575,7 +573,7 @@ export const projects: Project[] = [
   imageUrl: TelcoThumb,
   comingSoon: false,
   caseStudy: {
-    impact: 'Designed an integrated dashboard that reduced task completion time by 64% for IT managers juggling 8 disconnected tools.',
+    impact: 'Redesigning Telstra Connect into a single adaptive dashboard.',
     
     heroImages: [TelcoVideoPoster],
     heroVideo: TelcoVideo,
@@ -584,28 +582,28 @@ export const projects: Project[] = [
     duration: '12 Weeks',
     date: '2024',
     role: ['UX Design', 'User Research', 'Prototyping'],
-    team: '1 Designer',
+    team: 'Solo Designer',
     tools: ['Figma'],
     
-    problemTitle: 'IT managers juggled 8+ disconnected tools to monitor networks',
-    problem: 'IT managers spent 3+ hours daily switching between apps to monitor networks and respond to incidents. Every hour wasted cost Telstra in support tickets and renewal risk as enterprise clients threatened to switch.',
+    problemTitle: 'Telco Enterprise apps operated in isolation, with no integrated view for decision-making',
+    problem: 'Telco Enterprise applications were operating independently with no cross-app integration. Users were reactively managing their business through isolated views, with no way to get an integrated perspective for decision-making.',
     problemImage: TelcoProblem,
     solutionImage: TelcoSolution,
 
     solution: {
-      solutionTitle: 'A dashboard that learns your workflow—zero setup required',
-      content: 'The system observes how you work and adapts the interface with a simple toggle to a personalised workspace. Competitors require 15+ minutes of manual configuration; this takes zero seconds.',
+      solutionTitle: 'A dashboard that learns your workflow, with zero setup required',
+      content: 'I designed an adaptive dashboard that consolidates everything into one screen. It learns from user behaviour and surfaces relevant data automatically. Real-time status cards, proactive notifications, and role-based navigation, with no setup or configuration required.',
       keyFeatures: [],
       images: [TelcoSolution]
     },
 
     research: {
-      headingTitle: 'Competitors offered features, not usability',
-      content: 'Optus, Aussie Broadband, and Vodafone all had feature-rich platforms with slow loading, confusing navigation, and manual setup friction. Users didn\'t want more tools. They wanted smarter tools.',
+      headingTitle: 'Users wanted one screen, not eight apps',
+      content: 'I ran interviews, surveys, and Kano model testing across IT managers and network engineers.',
       keyFindings: [
-        'All competitors relied on manual dashboard customisation',
-        'Service desk consultants spent 40% of workday chasing status updates',
-        'IT managers prioritised proactive alerts over real-time visualisations (3:1 margin)'
+        'Users wanted one screen for everything, not separate apps',
+        'Manual customisation felt like a chore. Automatic personalisation tested better every time',
+        'During outages, speed mattered more than completeness. Status visibility had to be instant'
       ],
       researchMethods: [
         'SWOT analysis on Optus platform',
@@ -619,19 +617,16 @@ export const projects: Project[] = [
     researchWork: {
       image1: User1,
       image2: User2,
-      image3: CompAnalysis,
-      image4: CompSwot,
-      caption1: 'IT Manager persona, Ryan Quinn: 3+ hours daily switching apps',
-      caption2: 'Service Desk persona, Toby Matthews: delayed incident response from chasing updates',
-      caption3: 'Competitive analysis of Optus, Aussie Broadband, and Vodafone',
-      caption4: 'SWOT analysis of Optus platform'
+      caption1: 'IT Manager persona, Ryan Quinn: constantly switching between apps to keep on top of network issues',
+      caption2: 'Service Desk persona, Toby Matthews: incident response delayed by chasing updates across platforms'
     },
 
     define: {
       heading: 'Three requirements emerged from research',
       content: [
-        'Dashboard needed to eliminate manual configuration entirely. Users wanted intelligence, not customisation screens. Status visibility had to be immediate without clicking through menus.',
-        'Service desk consultants needed speed over completeness during critical incidents. Quick scanning and one-tap actions over comprehensive displays.'
+        'First, Telstra\'s brief listed a customisable dashboard as a requirement, but Kano model testing showed users didn\'t want configuration screens. They wanted a dashboard that already knew what mattered to them. This became the core design principle: deliver the outcome of customisation without asking users to do the work.',
+        'Second, service desk consultants needed speed during incidents. Quick scanning and one-tap actions, not comprehensive displays they had to dig through.',
+        'Third, status visibility had to be immediate, with no clicking through menus to find out if something was broken.'
       ]
     },
 
@@ -647,17 +642,17 @@ export const projects: Project[] = [
     },
     
     insights: {
-      headingTitle: 'Personalisation without manual effort was the key feature',
-      content: 'Kano Model testing with 4 participants identified smart defaults over configuration screens as the key need. Widget-based interface won decisively. Users praised the "condensed clean interface" and said "simple is best."',
+      headingTitle: 'Smart defaults beat configuration screens',
+      content: 'Kano testing confirmed smart defaults beat configuration screens. A widget-based interface won decisively. Users called it a "condensed clean interface" and kept saying "simple is best."',
       userNeeds: [
-        'Single source of truth for all service data',
-        'Proactive notifications for critical incidents',
-        'Instant access to frequently-used features'
+        'One place for all service data',
+        'Proactive notifications when something needs attention',
+        'Quick access to the features they use most'
       ],
       designPrinciples: [
         'Speed over completeness during outages',
-        'Zero manual setup, automatic personalisation',
-        'Visual status indicators for awareness without clicking'
+        'Zero setup, automatic personalisation',
+        'Visual status indicators without needing to click through'
       ],
       images: []
     },
@@ -665,14 +660,14 @@ export const projects: Project[] = [
     designIteration: {
       concept: {
         heading: 'Three concepts tested, users chose simplicity',
-        content: 'I sketched three layout concepts and tested them with users. Concept 1: personalised suggestion widgets. Concept 2: real-time performance cards. Concept 3: scrollable drop-down list. All 3 participants preferred the widget approach. As one put it: "simple is best."',
+        content: 'I sketched three layout concepts and tested them with users. Personalised widgets, real-time performance cards, and a scrollable list. All participants preferred widgets.',
         image: ImageFiller,
         caption: 'Low-fidelity concept sketch for Concept 1: personalised widget suggestions with an adaptive optimisation toggle'
       },
       
       prototype: {
         heading: 'First prototype succeeded but missed critical notifications',
-        content: 'I built the prototype with a standard dashboard and an optimised dashboard toggled by an adaptive switch. 4 out of 5 participants completed all tasks. But every single one asked: "How do I know if something needs attention?" I had missed the notification system entirely.',
+        content: 'First prototype had a standard and optimised dashboard toggled by an adaptive switch. User testing went well but every tester flagged the same gap: no way to know when something needs attention. Notifications went into the final design.',
         beforeImage: ImageFiller,
         afterImage: ImageFiller,
         beforeCaption: 'Standard dashboard with core Telco features and the optimise toggle',
@@ -691,15 +686,15 @@ export const projects: Project[] = [
       },
       
       abTesting: {
-        heading: 'A/B testing proved personalisation was essential',
-        content: 'Prototype A adapts the dashboard to each user based on their usage patterns. Prototype B shows all features on one screen with drill-down navigation. After testing with 9 participants, Prototype A completed tasks 60% faster and scored 4.6/5 satisfaction vs 3.2/5 for Prototype B.',
+        heading: 'Smaller thumbnails won over larger cards',
+        content: 'Tested two dashboard layouts with 9 participants. A had smaller thumbnails across the top, B had larger cards in the centre. A won on completion speed and satisfaction.',
         image: TelcoABTest,
-        caption: 'Prototype B: alternative layout showing all features on one screen with drill-down navigation'
+        caption: 'Prototype A with smaller thumbnails across the top, Prototype B with larger cards in the centre'
       },
       
       finalSolution: {
         heading: 'Self-learning dashboard with zero setup time',
-        content: 'The finalised prototype learns how each user works and adapts the dashboard to suit. One toggle switches between standard and personalised. Proactive notifications were added based on user testing feedback.',
+        content: 'The final dashboard was adaptive and personalised. Proactive notifications, task management, and cleaner navigation all came directly from what testing revealed.',
         screens: [ImageFiller, ImageFiller],
         captions: [
           'Finalised dashboard with personalised widget layout, status indicators, and adaptive optimisation toggle',
@@ -710,9 +705,9 @@ export const projects: Project[] = [
 
     outcomes: {
       metrics: [
-        'Reduced task completion time by 64%',
-        '4.6 out of 5 user satisfaction rating',
-        'All test users completed workflows successfully',
+        'Prototype A validated through A/B testing',
+        'All three design hypotheses confirmed',
+        'Notification system added from user feedback',
       ],
       qualitative: [
         'Users preferred zero-setup personalisation over manual customisation',
@@ -722,9 +717,10 @@ export const projects: Project[] = [
     },
     
     reflection: {
-      heading: 'Early testing saved weeks',
+      heading: 'Trusting the research over the literal brief',
       content: [
-        'Testing concept sketches before building high-fidelity designs prevented wasted effort. Users immediately told me "simple is best". A/B testing gave measurable proof that the personalised approach was the right call.',
+        'Testing rough concepts early saved weeks of effort. Users told me what they wanted and A/B testing backed it up.',
+        'The brief said "customisable dashboard." Research said users needed something different. Following the research over the literal brief, and having data to back that call, is what held this project together.'
       ]
     },
     
