@@ -17,21 +17,20 @@ import ThemeForgeSolution from '../assets/images/Themeforge/theme-solution.webp'
 
 
 //Project 2 - TELSTRA (formerly Project 1)
-import TelcoHero from '../assets/images/P1/p1-hero-telco-v2.jpg';
 import TelcoThumb from '../assets/images/P1/telco-thumb-v10.webp';
 import TelcoVideoPoster from '../assets/images/P1/telco-vid-poster.jpg';
 import TelcoABTest from '../assets/images/P1/AB-test.webp';
+import TelcoFinal1 from '../assets/images/P1/final-product-1.webp';
+import TelcoFinal2 from '../assets/images/P1/final-product-2.webp';
+import TelcoDesign1 from '../assets/images/P1/design-1.webp';
+import TelcoDesign2 from '../assets/images/P1/design-2.webp';
 import TelcoVideo from '../assets/images/P1/telco-vid-comp.mp4';
-import TelcoSolution from '../assets/images/telco-solution-1.png';
-import TelcoProblem from '../assets/images/P1/p1-hero-problem.webp';
+import TelcoSolution from '../assets/images/P1/solution.webp';
+import TelcoProblem from '../assets/images/P1/problem.webp';
 
-import User1 from '../assets/images/P1/p1-white-paper-user1.webp';
-import User2 from '../assets/images/P1/p1-white-paper-user2.webp';
 
-import Challange from '../assets/images/P1/p1-define-problem-statment.webp';
-import TenXTen from '../assets/images/P1/p1-define-10x10.webp';
-import Senario1 from '../assets/images/P1/p1-define-user1.webp';
-import Senario2 from '../assets/images/P1/p1-define-user2.webp';
+import TelcoDefine1 from '../assets/images/P1/define-1.webp';
+import TelcoDefine2 from '../assets/images/P1/define-2.webp';
 
 import FinalBrand from '../assets/images/P3/p3-finial-branding.webp';
 import FinalSocial from '../assets/images/P3/p3-finial-social.webp';
@@ -156,6 +155,8 @@ export interface Project {
         content: string;
         image?: string;
         caption?: string;
+        image2?: string;
+        caption2?: string;
       };
       prototype: {
         heading: string;
@@ -422,13 +423,13 @@ export const projects: Project[] = [
   imageUrl: ThemeForgeThumb,
   comingSoon: false,
   caseStudy: {
-    impact: 'Developed and launched an AI-powered RGB keyboard theme generator that visualises themes on an interactive keyboard.',
+    impact: 'Built and launched the first AI-powered RGB theme generator for mechanical keyboards.',
     
     heroImages: [ThemeForgeVideoPoster],
     heroVideo: ThemeForgeVideo,
     images: [ThemeForgeHero],
 
-    duration: '14 days',
+    duration: '14 Days',
     date: 'January 2026',
     role: [
       'Product Research',
@@ -439,26 +440,26 @@ export const projects: Project[] = [
     team: 'Solo',
     tools: ['Next.js', 'Firebase', 'Claude API', 'Vercel', 'Figma'],
     
-    problemTitle: 'RGB theme customisation for mechanical keyboards requires hours of manual trial-and-error',
-    problem: 'Keyboard enthusiasts spent valuable time manually creating themes with little to no direction or way to preview their thought of theme. Existing desktop tools (OpenRGB, SignalRGB, Wootility) all lacked user prompted generation.',
+    problemTitle: 'Creating RGB themes meant hours of manual colour picking with no way to preview the result',
+    problem: 'Creating RGB themes for mechanical keyboards meant hours of manual colour picking with no way to preview the result. Every existing tool was a desktop app. OpenRGB, SignalRGB, Wootility. None offered AI generation or web-based preview.',
     problemImage: ThemeForgeProblem,
     solutionImage: ThemeForgeSolution,
     
     solution: {
-      solutionTitle: 'AI-powered theme generation with live preview—zero installation required',
-      content: 'Users describe their vision in natural language, Claude AI generates a theme instantly, and the live visualiser shows exactly how it looks before touching hardware.',
+      solutionTitle: 'AI-powered theme generation with live preview, zero installation required',
+      content: 'I built a web app where users describe a theme in plain language and AI generates it instantly. A live keyboard visualiser shows exactly how it looks before exporting to hardware. No installation, no account required.',
       keyFeatures: [],
       images: [ThemeForgeHero]
     },
     
     research: {
       headingTitle: 'Zero competitors existed despite massive demand',
-      content: 'Every RGB tool on the market was a desktop application with no preview. Reddit\'s r/MechanicalKeyboards (2M+ members) regularly discussed RGB frustrations. Wooting had just shipped 23K keyboards to early adopters.',
+      content: 'Reddit\'s r/MechanicalKeyboards (2M+ members) constantly discussed RGB frustrations. Wooting had just shipped 23K keyboards with no dedicated theme ecosystem.',
       keyFindings: [
         'No competitor offered web-based preview',
-        '900K addressable enthusiast market',
-        '23K+ Wooting 80HE keyboards just shipped',
-        'Users wasting hours on trial-and-error'
+        'Every tool required desktop installation',
+        'Users were spending hours on trial-and-error with no visual feedback',
+        '900K addressable enthusiast market with zero AI-powered options'
       ],
       researchMethods: [
         'Competitive analysis of 5 major RGB tools',
@@ -477,19 +478,19 @@ export const projects: Project[] = [
     },
     
     define: {
-      heading: 'Speed over scope — ship fast to capture first-mover advantage',
+      heading: 'Speed over scope: shipping fast to capture first-mover advantage',
       content: [
-        'Zero competitors meant the window was temporary. Every decision prioritised launch velocity: one keyboard, 50 curated themes, no user accounts. Can we ship this week?'
+        'Zero competitors meant the window was temporary. I prioritised launch velocity: one keyboard model, 50 curated themes, no user accounts. Ship fast, validate, expand later.'
       ]
     },
     
     insights: {
       headingTitle: 'Users wanted bold visuals and control',
-      content: 'Users rejected conservative defaults. Background gradients went from 15% to 55% opacity after repeated requests for more colour. The refinement system became critical for tweaking without regenerating.',
+      content: 'Users rejected conservative colour defaults. They wanted bold, high-contrast themes. Background gradients became a critical feature after early feedback showed 55% opacity worked better than the original 15%.',
       userNeeds: [
-        'Visual preview before hardware commitment',
+        'Visual preview before committing to hardware',
         'Iteration without starting over',
-        'Bold, high-contrast themes (not conservative defaults)'
+        'Bold, high-contrast themes as defaults'
       ],
       designPrinciples: [
         'Speed to value: working theme in under 60 seconds',
@@ -502,7 +503,7 @@ export const projects: Project[] = [
     designIteration: {
       concept: {
         heading: 'From gaming aesthetic to professional minimalism',
-        content: 'Initial designs felt amateur. Cosmic gradients, heavy shadows, flashy gaming vibes. Studying Wootility.io inspired a pivot to minimalism. Went from "cool tool" to "professional platform."',
+        content: 'Initial designs leaned into gaming aesthetics. Cosmic gradients, heavy shadows, flashy colours. It felt amateur. Studying Wootility.io\'s interface inspired a pivot to clean minimalism. Professional tool, not a gaming gimmick.',
         image: ImageFiller,
         caption: 'Design evolution: flashy gaming aesthetic vs minimal professional interface inspired by Wootility'
       },
@@ -524,8 +525,8 @@ export const projects: Project[] = [
       },
       
       finalSolution: {
-        heading: 'Shipped in 14 days with zero errors',
-        content: '50 curated themes, 9 keyboard animations, AI generation with live preview, and full legal compliance. Production build with zero console errors.',
+        heading: 'Shipped the full stack in 14 days',
+        content: 'Shipped the full stack in 14 days. Next.js frontend, Firebase for theme storage, Claude API for generation. The keyboard visualiser renders themes in real time using the actual Wooting key layout. One-click export generates a Wootility-compatible file. Launched at themeforge.dev as the first AI-powered keyboard theme generator on the market, with users creating and sharing themes within the first week and no marketing spend.',
         screens: [ImageFiller, ImageFiller],
         captions: [
           'Theme detail with live keyboard visualiser and colour codes',
@@ -537,8 +538,8 @@ export const projects: Project[] = [
     outcomes: {
       metrics: [
         'First to market in AI keyboard themes',
+        'Shipped in 14 days, concept to production',
         '20+ users with zero marketing',
-        '14 days from concept to production',
       ],
       qualitative: [
         'Zero TypeScript errors, zero console errors in production',
@@ -547,9 +548,9 @@ export const projects: Project[] = [
     },
     
     reflection: {
-      heading: 'Shipping beats perfecting',
+      heading: 'Scope control made this possible',
       content: [
-        'This was the first product I actually shipped. UX education taught me how to think about design but not how to scope under pressure, debug at 2am, or launch something that isn\'t perfect yet. The biggest lesson was that finishing matters more than polishing.',
+        'Scope control made this possible. The temptation was to support every keyboard brand from day one. Locking to Wooting only meant I could ship in two weeks instead of two months. First-mover advantage mattered more than feature completeness.'
       ]
     },
     
@@ -577,7 +578,7 @@ export const projects: Project[] = [
     
     heroImages: [TelcoVideoPoster],
     heroVideo: TelcoVideo,
-    images: [TelcoHero],
+    images: [],
     
     duration: '12 Weeks',
     date: '2024',
@@ -599,7 +600,7 @@ export const projects: Project[] = [
 
     research: {
       headingTitle: 'Users wanted one screen, not eight apps',
-      content: 'I ran interviews, surveys, and Kano model testing across IT managers and network engineers.',
+      content: 'I ran interviews, surveys, and Kano model testing across 8 different users to understand how they were working across disconnected apps.',
       keyFindings: [
         'Users wanted one screen for everything, not separate apps',
         'Manual customisation felt like a chore. Automatic personalisation tested better every time',
@@ -615,10 +616,10 @@ export const projects: Project[] = [
     },
 
     researchWork: {
-      image1: User1,
-      image2: User2,
-      caption1: 'IT Manager persona, Ryan Quinn: constantly switching between apps to keep on top of network issues',
-      caption2: 'Service Desk persona, Toby Matthews: incident response delayed by chasing updates across platforms'
+      image1: ImageFiller,
+      image2: ImageFiller,
+      caption1: '[Need to complete]',
+      caption2: '[Need to complete]'
     },
 
     define: {
@@ -631,14 +632,10 @@ export const projects: Project[] = [
     },
 
     defineWork: {
-      image1: Challange,
-      image2: TenXTen,
-      image3: Senario1,
-      image4: Senario2,
-      caption1: 'Problem statement: tool-switching time leading to support delays and churn',
-      caption2: '10x10 ideation: 100 concept thumbnails exploring dashboard layouts',
-      caption3: 'User scenario: 8 apps, missed alert, delayed response',
-      caption4: 'User scenario: switching tools during outage, unable to give accurate ETAs'
+      image1: TelcoDefine1,
+      image2: TelcoDefine2,
+      caption1: 'Challenge statement: combining all Telco Enterprise apps into one seamless platform',
+      caption2: '10x10 ideation: 10 feature concepts exploring dashboard layouts'
     },
     
     insights: {
@@ -661,8 +658,10 @@ export const projects: Project[] = [
       concept: {
         heading: 'Three concepts tested, users chose simplicity',
         content: 'I sketched three layout concepts and tested them with users. Personalised widgets, real-time performance cards, and a scrollable list. All participants preferred widgets.',
-        image: ImageFiller,
-        caption: 'Low-fidelity concept sketch for Concept 1: personalised widget suggestions with an adaptive optimisation toggle'
+        image: TelcoDesign1,
+        caption: 'Low-fidelity wireframe for Concept 1',
+        image2: TelcoDesign2,
+        caption2: 'Feedback capture grid from concept testing'
       },
       
       prototype: {
@@ -695,10 +694,10 @@ export const projects: Project[] = [
       finalSolution: {
         heading: 'Self-learning dashboard with zero setup time',
         content: 'The final dashboard was adaptive and personalised. Proactive notifications, task management, and cleaner navigation all came directly from what testing revealed.',
-        screens: [ImageFiller, ImageFiller],
+        screens: [TelcoFinal1, TelcoFinal2],
         captions: [
-          'Finalised dashboard with personalised widget layout, status indicators, and adaptive optimisation toggle',
-          'Finalised prototype with notification system, task management, and refined navigation'
+          'Tasks screen with task management and weekly activity tracking',
+          'Overview and Network Performance screens showing the personalised widget layout'
         ]
       }
     },

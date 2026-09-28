@@ -316,7 +316,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
 
             {/* Design & Iteration Section */}
             {project.caseStudy.designIteration && (
-              <div className="content-section">
+              <div className="content-section content-section--group">
                 {project.caseStudy.designIteration.concept.heading && (
                   <div className="content-section">
                     <p className="section-label">Design & Iteration</p>
@@ -327,6 +327,14 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
                         <img src={project.caseStudy.designIteration.concept.image} alt="Initial concept" loading="lazy" />
                         {project.caseStudy.designIteration.concept.caption && (
                           <p className="image-caption">{project.caseStudy.designIteration.concept.caption}</p>
+                        )}
+                      </div>
+                    )}
+                    {project.caseStudy.designIteration.concept.image2 && (
+                      <div className="image-block">
+                        <img src={project.caseStudy.designIteration.concept.image2} alt="Initial concept" loading="lazy" />
+                        {project.caseStudy.designIteration.concept.caption2 && (
+                          <p className="image-caption">{project.caseStudy.designIteration.concept.caption2}</p>
                         )}
                       </div>
                     )}
@@ -356,6 +364,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
                 )}
                 {project.caseStudy.designIteration.abTesting.heading && (
                   <div className="content-section">
+                    <p className="section-label">A/B Testing</p>
                     <h3 className="section-heading">{project.caseStudy.designIteration.abTesting.heading}</h3>
                     <p className="section-text">{project.caseStudy.designIteration.abTesting.content}</p>
                     {project.caseStudy.designIteration.abTesting.image && (
@@ -370,6 +379,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
                 )}
                 {project.caseStudy.designIteration.finalSolution.heading && (
                   <div className="content-section">
+                    <p className="section-label">Finalised Product</p>
                     <h3 className="section-heading">{project.caseStudy.designIteration.finalSolution.heading}</h3>
                     <p className="section-text">{project.caseStudy.designIteration.finalSolution.content}</p>
                     {project.caseStudy.designIteration.finalSolution.screens &&
