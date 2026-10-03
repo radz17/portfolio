@@ -19,7 +19,11 @@ import ThemeForgeSolution from '../assets/images/Themeforge/theme-solution.webp'
 //Project 2 - TELSTRA (formerly Project 1)
 import TelcoThumb from '../assets/images/P1/telco-thumb-v10.webp';
 import TelcoVideoPoster from '../assets/images/P1/telco-vid-poster.jpg';
-import TelcoABTest from '../assets/images/P1/AB-test.webp';
+import TelcoABTest from '../assets/images/P1/abtest.webp';
+import TelcoResearch1 from '../assets/images/P1/research-1.webp';
+import TelcoResearch2 from '../assets/images/P1/research-2.webp';
+import TelcoDesign3 from '../assets/images/P1/design-3.webp';
+import TelcoDesign4 from '../assets/images/P1/design-4.webp';
 import TelcoFinal1 from '../assets/images/P1/final-product-1.webp';
 import TelcoFinal2 from '../assets/images/P1/final-product-2.webp';
 import TelcoDesign1 from '../assets/images/P1/design-1.webp';
@@ -616,10 +620,10 @@ export const projects: Project[] = [
     },
 
     researchWork: {
-      image1: ImageFiller,
-      image2: ImageFiller,
-      caption1: '[Need to complete]',
-      caption2: '[Need to complete]'
+      image1: TelcoResearch1,
+      image2: TelcoResearch2,
+      caption1: 'Kano model mapping feature requirements by satisfaction and functionality',
+      caption2: 'Feedback capture grid from early research interviews'
     },
 
     define: {
@@ -667,10 +671,10 @@ export const projects: Project[] = [
       prototype: {
         heading: 'First prototype succeeded but missed critical notifications',
         content: 'First prototype had a standard and optimised dashboard toggled by an adaptive switch. User testing went well but every tester flagged the same gap: no way to know when something needs attention. Notifications went into the final design.',
-        beforeImage: ImageFiller,
-        afterImage: ImageFiller,
-        beforeCaption: 'Standard dashboard with core Telco features and the optimise toggle',
-        afterCaption: 'Optimised dashboard with personalised widgets displaying each user\'s most-used features'
+        beforeImage: TelcoDesign3,
+        afterImage: TelcoDesign4,
+        beforeCaption: 'Full prototype build in Figma',
+        afterCaption: 'Final prototype iterations based on user feedback'
       },
       
       testingWork: {
