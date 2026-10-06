@@ -40,7 +40,7 @@ const ContactSection: React.FC = () => {
           <div className="contact-text">
             <p>I'm open to new opportunities.</p>
             <p className="contact-location">Newcastle, NSW.</p>
-            <h4>I've recently graduated <br /> Torrens University.</h4>
+            <h4>Bachelor's in <br /> UX & Web Design <br /> Torrens University</h4>
             <div className="social-links">
               <motion.a
                 href="mailto:yo@kyleradcliffe.com.au"

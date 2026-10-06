@@ -911,7 +911,7 @@ export const projects: Project[] = [
         heading: 'Designed to fit into a seller\'s day without adding anything to it, then built to run itself.',
         content: [
           'Competitor research showed reviews were a side feature in every Etsy seller tool, so I designed around one rule: no new habits. I sketched low-fidelity wireframes for the marketing page and a dashboard, which sellers only need for business details, old reports and competitor analysis.',
-          'My first full-stack SaaS, and it runs fully automated. Vercel cron jobs trigger each report, an AI agent fills my email template with the seller\'s Etsy data, and Resend sends it. Testing with Etsy owners from Reddit is ongoing.'
+          'It runs fully automated. Vercel cron jobs trigger each report, an AI agent fills my email template with the seller\'s Etsy data, and Resend sends it. Testing with Etsy owners from Reddit is ongoing.'
         ],
         image1: ClueraMock1,
         image2: ClueraMock2,
