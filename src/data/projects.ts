@@ -4,12 +4,15 @@ import Mock2 from '../assets/images/mock-2-1400.webp';
 import ImageFiller from '../assets/images/Landing/image-filler-1.webp';
 
 //Project 1 - THEMEFORGE
-import ThemeForgeHero from '../assets/images/Themeforge/themeforge-hero.webp';
 import ThemeForgeThumb from '../assets/images/Themeforge/themeforge-thumb-v10.webp';
 import ThemeForgeVideoPoster from '../assets/images/Themeforge/themeforge-vid-poster.jpg';
 import ThemeForgeVideo from '../assets/images/Themeforge/themeforge-vid-comp.mp4';
-import ThemeForgeProblem from '../assets/images/Themeforge/theme-problem.webp';
-import ThemeForgeSolution from '../assets/images/Themeforge/theme-solution.webp';
+import ThemeForgeProblem from '../assets/images/Themeforge/problem.webp';
+import ThemeForgeSolution from '../assets/images/Themeforge/solution.webp';
+import ThemeForgeFinal1 from '../assets/images/Themeforge/fp-1.webp';
+import ThemeForgeFinal2 from '../assets/images/Themeforge/fp-2.webp';
+import ThemeForgeFinal3 from '../assets/images/Themeforge/fp-3.webp';
+import ThemeForgeFinal4 from '../assets/images/Themeforge/fp-4.webp';
 
 
 
@@ -431,7 +434,7 @@ export const projects: Project[] = [
     
     heroImages: [ThemeForgeVideoPoster],
     heroVideo: ThemeForgeVideo,
-    images: [ThemeForgeHero],
+    images: [],
 
     duration: '14 Days',
     date: 'January 2026',
@@ -451,103 +454,17 @@ export const projects: Project[] = [
     
     solution: {
       solutionTitle: 'AI-powered theme generation with live preview, zero installation required',
-      content: 'I built a web app where users describe a theme in plain language and AI generates it instantly. A live keyboard visualiser shows exactly how it looks before exporting to hardware. No installation, no account required.',
-      keyFeatures: [],
-      images: [ThemeForgeHero]
+      content: 'I built a web app where users describe a theme in plain language and AI generates it instantly. A live keyboard visualiser shows exactly how it looks before exporting to hardware. No installation, no account required.'
     },
-    
-    research: {
-      headingTitle: 'Zero competitors existed despite massive demand',
-      content: 'Reddit\'s r/MechanicalKeyboards (2M+ members) constantly discussed RGB frustrations. Wooting had just shipped 23K keyboards with no dedicated theme ecosystem.',
-      keyFindings: [
-        'No competitor offered web-based preview',
-        'Every tool required desktop installation',
-        'Users were spending hours on trial-and-error with no visual feedback',
-        '900K addressable enthusiast market with zero AI-powered options'
-      ],
-      researchMethods: [
-        'Competitive analysis of 5 major RGB tools',
-        'Community research across r/MechanicalKeyboards (2M members)',
-        'Market sizing from industry sales data',
-        'Timing analysis of Wooting 80HE launch momentum'
-      ],
-      images: []
-    },
-    
-    researchWork: {
-      image1: ImageFiller,
-      image2: ImageFiller,
-      caption1: 'Competitive analysis mapping existing tools against web preview and AI generation',
-      caption2: 'Market sizing: 15M keyboards annually, 9M with RGB, 900K enthusiasts'
-    },
-    
-    define: {
-      heading: 'Speed over scope: shipping fast to capture first-mover advantage',
-      content: [
-        'Zero competitors meant the window was temporary. I prioritised launch velocity: one keyboard model, 50 curated themes, no user accounts. Ship fast, validate, expand later.'
-      ]
-    },
-    
-    insights: {
-      headingTitle: 'Users wanted bold visuals and control',
-      content: 'Users rejected conservative colour defaults. They wanted bold, high-contrast themes. Background gradients became a critical feature after early feedback showed 55% opacity worked better than the original 15%.',
-      userNeeds: [
-        'Visual preview before committing to hardware',
-        'Iteration without starting over',
-        'Bold, high-contrast themes as defaults'
-      ],
-      designPrinciples: [
-        'Speed to value: working theme in under 60 seconds',
-        'Show, don\'t tell: live visualiser demonstrates results',
-        'Minimal friction: one-click export, zero account requirements'
-      ],
-      images: []
-    },
-    
-    designIteration: {
-      concept: {
-        heading: 'From gaming aesthetic to professional minimalism',
-        content: 'Initial designs leaned into gaming aesthetics. Cosmic gradients, heavy shadows, flashy colours. It felt amateur. Studying Wootility.io\'s interface inspired a pivot to clean minimalism. Professional tool, not a gaming gimmick.',
-        image: ImageFiller,
-        caption: 'Design evolution: flashy gaming aesthetic vs minimal professional interface inspired by Wootility'
-      },
-      
-      prototype: {
-        heading: 'Five iterations to pixel-perfect keyboard layout',
-        content: 'Wooting\'s 87-key layout requires exact key widths that early prototypes missed. Cross-referencing official screenshots got it to pixel-perfect accuracy with smooth wave timing.',
-        beforeImage: ImageFiller,
-        afterImage: ImageFiller,
-        beforeCaption: 'Early prototype with missing F-keys and incorrect widths',
-        afterCaption: 'Final layout matching Wooting 80HE specs with accurate key widths'
-      },
-      
-      abTesting: {
-        heading: 'Layout testing validated 20/60/20 split',
-        content: 'Three layouts tested: centred with sidebars, full-width stacked, and 20/60/20 split. Users wanted the keyboard visually dominant (60% width) while keeping quick access to colour codes and instructions.',
-        image: ImageFiller,
-        caption: 'Three layouts compared. 20/60/20 split won with user preference data'
-      },
-      
-      finalSolution: {
-        heading: 'Shipped the full stack in 14 days',
-        content: 'Shipped the full stack in 14 days. Next.js frontend, Firebase for theme storage, Claude API for generation. The keyboard visualiser renders themes in real time using the actual Wooting key layout. One-click export generates a Wootility-compatible file. Launched at themeforge.dev as the first AI-powered keyboard theme generator on the market, with users creating and sharing themes within the first week and no marketing spend.',
-        screens: [ImageFiller, ImageFiller],
-        captions: [
-          'Theme detail with live keyboard visualiser and colour codes',
-          'AI generator with chat interface and live preview'
-        ]
-      }
-    },
-    
+
+    research: { headingTitle: '', content: '' },
+    insights: { headingTitle: '', content: '' },
+
     outcomes: {
       metrics: [
         'First to market in AI keyboard themes',
         'Shipped in 14 days, concept to production',
         '20+ users with zero marketing',
-      ],
-      qualitative: [
-        'Zero TypeScript errors, zero console errors in production',
-        'Professional positioning through minimal design and legal compliance'
       ]
     },
     
@@ -559,10 +476,19 @@ export const projects: Project[] = [
     },
     
     learnings: [],
-    nextSteps: '',
     url: 'https://themeforge.dev',
-    
-    projectWork: {}
+
+    projectWork: {
+      heading: 'Built to capture first-mover advantage in a market that didn\'t exist yet',
+      content: [
+        'Competitive analysis confirmed zero tools offered AI generation or web-based preview for RGB keyboards. Reddit\'s r/MechanicalKeyboards (2M+ members) constantly discussed RGB frustrations, and Wooting had just shipped 23K keyboards with no dedicated theme ecosystem. The window was temporary, so I scoped to one keyboard model.',
+        'Launched at themeforge.dev with a live keyboard visualiser, AI chat generator, and one-click Wootility export. Users were creating and sharing themes within the first week.'
+      ],
+      image1: ThemeForgeFinal1,
+      image2: ThemeForgeFinal2,
+      image3: ThemeForgeFinal3,
+      image4: ThemeForgeFinal4
+    }
   }
 },
 
