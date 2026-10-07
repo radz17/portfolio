@@ -960,7 +960,7 @@ export const projects: Project[] = [
         metrics: [
           'All major phases complete and deployed at getmains.com.au',
           'Multi-region support across all AU states, NZ and 20+ DNSPs',
-          'Full security audit passed',
+          'Quotes generated in minutes from aerial imagery, no site visit needed',
         ]
       },
       reflection: {
